@@ -1,0 +1,20 @@
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+#options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+##########################
+clientes <- sample(seq(300, 1000, 100),1)
+karro <- ("solo carro")
+aptto <- ("solo apartamento")
+kazza <- ("solo casa")
+karrokazza <- ("carro y casa")
+karroaptto <- ("carro y apartamento")
+halgunna <- sample(c(karro, aptto, kazza, karrokazza, karroaptto),1)

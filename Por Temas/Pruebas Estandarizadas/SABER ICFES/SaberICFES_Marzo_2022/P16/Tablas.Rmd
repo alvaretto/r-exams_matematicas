@@ -1,0 +1,19 @@
+# Carga las librerías
+library(knitr)
+library(kableExtra)
+
+# Crea un dataframe con los datos de tu tabla
+datos <- data.frame(
+  "Programa (Una carga de ropa)" = c("Algodones", "Mixto", "Vestidos", "Sintéticos", "Delicados", "De lana", "Express", "Tendidos"),
+  "Duración" = c("2h 30 min", "1h 30 min", "1h 40 min", "1h 10 min", "50 min", "50 min", "20 min", "1h 10 min"),
+  "Agua (L)" = c(70, 50, 40, 50, 70, 20, 30, 60),
+  "Detergente (g)" = c(65, 75, 55, 65, 45, 45, 65, 80)
+)
+
+# Utiliza kable y kableExtra para formatear la tabla
+tabla <- kable(datos, "latex", booktabs = T, caption = "Tabla 1") %>%
+  kable_styling(latex_options = c("striped", "scale_down")) %>%
+  row_spec(0, bold = T, color = "white", background = "#FE996B")
+
+# Imprime la tabla
+print(tabla)

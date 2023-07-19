@@ -1,0 +1,281 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(gtools)
+library(glue)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+
+poblasiom <- sample(4:9,1)
+poblasiom
+
+muesstra <- sample(c(poblasiom-1,poblasiom-2),1)
+muesstra
+
+resaux1 <- factorial(poblasiom+muesstra-1)
+resaux1
+
+resaux2 <- factorial(muesstra-1)
+resaux2
+
+resaux3 <- factorial(poblasiom)
+resaux3
+
+pobmu <- poblasiom-muesstra
+pobmu
+finalt <- pobmu+1
+finalt
+
+rescorr <-  resaux1/(resaux2*resaux3)
+rescorr 
+
+incorr1 <- sample(c(factorial(poblasiom),factorial(muesstra)),1)
+incorr1 
+
+incorr2 <- sample(c(factorial(poblasiom+muesstra-1),
+                    factorial(muesstra-1)),1)
+incorr2
+
+incorr3 <- sample(c((incorr1+incorr2),(rescorr+2)),1)
+incorr3
+
+hnu <- muesstra+poblasiom-1
+hnu
+
+uip <- muesstra-1
+uip
+
+dew <- poblasiom-1
+dew
+
+pok <- poblasiom+1
+pok
+
+glue_collapse(glue("{poblasiom:1}"), width = poblasiom+1)
+faktorialpob <- glue_collapse(poblasiom:1,"*", last = "*")
+faktorialpob
+
+glue_collapse(glue("{hnu:pok}"), width = hnu+1)
+parazimp <- glue_collapse(hnu:pok,"*", last = "*")
+parazimp
+
+glue_collapse(glue("{uip:1}"), width = uip+1)
+bafr <- glue_collapse(uip:1,"*", last = "*")
+bafr
+
+glue_collapse(glue("{poblasiom:finalt}"), width = poblasiom+1)
+finalt<- glue_collapse(poblasiom:finalt,"*", last = "*")
+finalt
+
+image01ccr01 <- '
+  \\begin{center}
+  \\pgfplotsset{compat=1.18}
+	\\begin{tikzpicture}
+\\tikzstyle{level 1} = [sibling distance=7.5cm, level distance=1.5cm]
+\\tikzstyle{level 2} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 3} = [sibling distance=3.5cm, level distance=1cm]
+\\tikzstyle{level 4} = [sibling distance=2.5cm, level distance=1cm]
+\\tikzstyle{level 5} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 6} = [sibling distance=1.5cm, level distance=1cm]
+\\tikzstyle{arestas}=[rectangle,rounded corners=4pt,fill=orange!30,draw=black,font=\\large]
+\\tikzstyle{berdex}=[rectangle,rounded corners=3pt,fill=green!30,draw=black,font=\\large]
+\\node[berdex]{¿Están todos los elementos?}
+child{
+node{SÍ}
+    child{
+    node{Permutación}
+        child{
+        node[berdex]{¿Hay repetición?}
+            child{
+            node{SÍ}
+                child{
+				        node[arestas]{1}
+				        }
+            }
+            child{
+            node{NO}
+                child{
+				        node[arestas]{2}
+                }
+				        child{
+				        node[berdex]{¿Circular?}
+				            child{
+				            node[arestas]{3}
+				            }
+                }   
+            }
+        }
+    }
+}
+child{
+node{NO}
+    child{
+    node[berdex]{¿Importa el orden?}
+        child{
+        node{SÍ}
+            child{
+            node{Variación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{4}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{5}
+				                }
+                    }
+                }
+            }
+        }
+        child{
+        node{NO}
+            child{
+            node{Combinación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{6}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{7}
+				                }
+                    }
+                }
+            }
+        }
+    }    
+};
+\\end{tikzpicture}   
+\\end{center}
+'
+
+image02ccr01 <- '
+  \\centering
+	\\begin{tikzpicture}
+	\\node{
+    \\centering
+    \\begin{tabular}{|c|c|c|}
+    \\hline
+        Opción & Descripción & Fórmula \\\\ \\hline
+        1 & Permutación con repetición & $\\mathrm{P}_{a;b;c;...}^{n}=\\frac{n!}{a!\\cdot b!\\cdot c!\\cdot ...}$ \\\\ \\hline
+        2 & Permutación sin repetición & $\\mathrm{P}_{n}=n!$ \\\\ \\hline
+        3 & Permutación circular & $\\mathrm{PC}_{n}^{}=(n-1)!$ \\\\ \\hline
+        4 & Variación con repetición & $\\mathrm{VR}_{k}^{n}=n^{k}$ \\\\ \\hline
+        5 & Variación sin repetición & $\\mathrm{V}_{k}^{n}=\\frac{n!}{(n-k)!}$ \\\\ \\hline
+        6 & Combinación con repetición & $\\mathrm{CR}_{k}^{n}=\\frac{(k+n-1)!}{(k-1)! \\cdot n!}$ \\\\ \\hline
+        7 & Combinación sin repetición & $\\mathrm{C}_{k}^{n}=\\frac{n!}{(n - k)!\\cdot k!}$ \\\\ \\hline
+    \\end{tabular}
+	};
+\\end{tikzpicture} 
+'
+
+image03ccr01 <- '
+\\begin{center}
+\\begin{tikzpicture}
+\\node {
+  $\\begin{aligned}
+  
+{CR}_{k}^{n}&=\\frac{(k+n-1)!}{(k-1)!* n!} \\\\
+{CR}_{%s}^{%s}&=\\frac{(%s+%s-1)!}{(%s-1)!* %s!} \\\\
+&=\\frac{%s!}{%s!* %s!} \\\\
+&=\\frac{%s* \\color{red} \\cancelto{1}{%s!}}{%s* \\color{red} \\cancelto{1}{%s!}} \\\\
+{CR}_{%s}^{%s}&=%s
+
+  \\end{aligned}$
+  };
+\\end{tikzpicture}
+\\end{center}
+'
+image03ccr01 <- sprintf(image03ccr01,muesstra,poblasiom,muesstra,poblasiom,
+                        muesstra,poblasiom,hnu,uip,poblasiom,parazimp,poblasiom,
+                        bafr,poblasiom,muesstra,poblasiom,rescorr)
+```
+
+Question
+========
+\
+En una bodega hay `r poblasiom` tipos diferentes de botellas. ¿De cuántas formas se pueden elegir `r muesstra` botellas?
+
+Answerlist
+----------
+*  de `r rescorr` formas posibles
+*  de `r incorr1` formas posibles
+*  de `r incorr2` formas posibles
+*  de `r incorr3` formas posibles
+
+Solution
+========
+\
+Para llegar a la respuesta correcta debemos hacernos una serie de preguntas, siguiendo la ruta que nos muestra el siguiente diagrama de árbol:
+
+\
+```{r image01ccr01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01ccr01, name = "image01ccr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",                                    "calc","3d"),packages=c("tikz","booktabs","pgfplots",                                                                "tkz-euclide"), width = "11.5cm")
+```
+\
+
+* ¿Están todos los elementos? No. La población (`r poblasiom`) no es igual a la muestra (`r muesstra`).
+* ¿Importa el orden? No. No hay beneficios adicionales por tener una ubicación específica.
+* ¿Hay repetición? Sí. Se pueden escoger varias botellas del mismo tipo.
+* Entonces, estamos ante un caso de Combinación Con Repetición (Opción 6):
+
+\
+```{r image02ccr01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image02ccr01, name = "image02ccr01", markup = "markdown",format = typ, library = c("3d", "babel", "positioning"), packages=c("tikz","xcolor"),width = "11.5cm")
+```
+
+Sabiendo que $n=`r poblasiom`$ (población) y que $k=`r muesstra`$ (muestra), reemplazamos en la fórmula:
+
+\
+```{r image03ccr01, warning=FALSE,echo = FALSE, results = "asis"}
+if(poblasiom<=6){
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03ccr01, name = "image03ccr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"),
+             width = "6.5cm")}else{
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03ccr01, name = "image03ccr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"),
+             width = "5.5cm")}
+               
+```
+
+
+Por tanto, de las `r poblasiom` botellas diferentes se pueden elegir `r muesstra` de `r rescorr` formas posibles.
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

@@ -1,0 +1,101 @@
+```{r configuración inicial, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+#options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+
+
+Question
+========
+\
+De los `r n1` estudiantes de un salón debo seleccionar `r n2` para llevarlos a un almuerzo. ¿De cuántas formas diferentes puedo seleccionar a los `r n2` estudiantes?
+
+Answerlist
+----------
+
+*  de `r rescorr` formas
+*  de `r incorr1` formas
+*  de `r incorr2` formas
+*  de `r incorr3` formas
+
+Solution
+========
+
+\
+Para llegar a la respuesta correcta debemos hacernos una serie de preguntas, siguiendo la ruta que nos indica el siguiente árbol de decisión:
+
+\
+```{r image01csr01, echo=FALSE, warning=FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01csr01, name = "image01csr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots",
+                                                            "tkz-euclide"), 
+             width = "11cm")
+```
+\
+
+* ¿Están todos los elementos? No. La población (`r extudiamtes`) no es igual a la muestra (`r eleggidos`).
+* ¿Importa el orden? No. No hay un beneficio por ocupar un lugar específico.
+* ¿Hay repetición? No. Un estudiante no puede ocupar más de un puesto a la vez.
+* Entonces, estamos ante un caso de Combinación Sin Repetición (Opción 7):
+
+\
+```{r image02csr01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image02csr01, name = "image02csr01", markup = "markdown",
+             format = typ, library = c("3d", "babel", "positioning"), 
+             packages=c("tikz","xcolor", "booktabs"),width = "10.1cm")
+```
+
+
+Sabiendo que $n=`r extudiamtes`$ (población) y que $k=`r eleggidos`$ (muestra), reemplazamos en la fórmula:
+
+\
+```{r image03csr01, warning=FALSE,echo = FALSE, results = "asis"}
+if(extudiamtes<=16){
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03csr01, name = "image03csr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"), 
+             width = "9.5cm")}else{
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03csr01, name = "image03csr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"), 
+             width = "9.5cm")
+             }
+```
+
+\
+Por tanto, el profesor puede acomodar a los `r extudiamtes` estudiantes en los `r eleggidos` asientos de la primera fila de `r rescorr` formas.
+
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

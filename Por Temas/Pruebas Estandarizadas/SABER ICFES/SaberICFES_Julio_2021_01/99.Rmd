@@ -1,0 +1,152 @@
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+##opts_chunk$set(fig.cap="")
+options(tinytex.verbose = TRUE)
+library(exams)
+typ <- match_exams_device()
+
+deporte <- sample(c("fútbol","natación","baloncesto","patinaje","tenis","atletismo","squash"),3)
+deporte
+
+solofut <- sample(2:20,1)
+solofut
+solonat <- sample(2:20,1)
+solonat
+solobal <- sample(2:20,1)
+solobal
+
+fut_nat <- sample(2:20,1)
+fut_nat
+nat_bal <- sample(2:20,1)
+nat_bal
+fut_bal <- sample(2:20,1)
+fut_bal
+fut_nat_bal <- sample(2:20,1)
+fut_nat_bal
+
+todosfut<-(solofut+fut_nat+fut_bal+fut_nat_bal)
+todosfut
+todosnat<-(solonat+fut_nat+nat_bal+fut_nat_bal)
+todosnat
+todosbal<-(solobal+fut_bal+nat_bal+fut_nat_bal)
+todosbal
+
+ordenao <- sort(c(todosfut,todosnat,todosbal),decreasing=T)
+mayor <- ordenao[1]
+mayor
+
+otrosdep<-sample(1:20,1)
+otrosdep
+univ<-(solofut+fut_nat+solonat+fut_nat_bal+fut_bal+nat_bal+solobal+otrosdep)
+univ
+
+
+dibujo23 <- '
+\\pgfplotsset{width=7cm,compat=1.17}
+	\\begin{tikzpicture}
+		\\begin{axis}[
+			ybar,
+			ymajorgrids,
+			enlargelimits=0.2,
+			width=12cm,
+			legend style={at={(0.5,1.16)},
+				anchor=north,legend columns=1},
+			ylabel={Número de personas},
+			xlabel={DEPORTES},
+			ymin=5,
+			ymax=%s,
+			symbolic x coords={%s,%s,%s},
+			xtick=data,
+			bar width=1.8cm,
+			nodes near coords,
+			nodes near coords align={vertical},
+			x tick label style={rotate=0,anchor=north},
+			]
+			\\addplot [black,fill=black] coordinates {(%s,%s) (%s,%s) (%s,%s)};
+			\\legend{Número de personas en cada deporte}
+		\\end{axis}
+	\\end{tikzpicture}
+'
+dibujo23 <- sprintf(dibujo23,mayor,deporte[1],deporte[2],deporte[3],deporte[1],todosfut,deporte[2],todosnat,deporte[3],todosbal) 
+
+
+grafika02b <- '
+\\begin{tikzpicture}
+       \\node{
+             \\begin{venndiagram3sets}[
+             labelOnlyA={%s},
+             labelOnlyB={%s},
+             labelOnlyC={%s},
+             labelOnlyAB={%s},
+             labelOnlyAC={%s},
+             labelOnlyBC={%s},
+             labelABC={%s},
+             labelNotABC={%s}]
+             \\node [right=5cm,color=black] {\\huge {S}};
+             \\end{venndiagram3sets}
+             };
+\\end{tikzpicture}
+'
+grafika02b <- sprintf(grafika02b,solofut,solonat,solobal,fut_nat,fut_bal,nat_bal,fut_nat_bal,otrosdep)
+```
+
+Question
+========
+Un club deportivo elaboró una encuesta a `r univ` personas de una comunidad acerca de los deportes que les gusta practicar. A continuación se muestran los resultados
+\
+
+* `r solofut` personas practican solamente `r deporte[1]`
+* `r solonat` personas practican solamente `r deporte[2]`
+* `r solobal` personas practican solamente `r deporte[3]`
+* `r fut_nat_bal` personas practican `r deporte[1]`, `r deporte[2]` y `r deporte[3]`
+* `r fut_nat` personas practican `r deporte[1]` y `r deporte[2]`, pero no `r deporte[3]`
+* `r fut_bal` personas practican `r deporte[1]` y `r deporte[3]`, pero no `r deporte[2]`
+* `r nat_bal` personas practican `r deporte[3]` y `r deporte[2]`, pero no `r deporte[1]`
+* `r otrosdep` personas practican deportes distintos a `r deporte[3]`, `r deporte[2]` y `r deporte[1]`.
+
+
+Usando la información obtenida en la encuesta se elaboraron las siguientes gráficas:
+
+\
+```{r dibujo23, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+include_tikz(dibujo23, name = "dibujo_99_2", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("pgfplots","tikz","xcolor"),width = "8cm")
+```
+
+\
+```{r grafica02, warning=FALSE,echo = FALSE, results = "asis"}
+include_tikz(grafika02b, name = "grafiko99_2", markup = "markdown",format = typ,packages = c("venndiagram"),width = "6cm")
+```
+\
+
+* A = Practican `r deporte[1]`
+* B = Practican `r deporte[2]`
+* C = Practican `r deporte[3]`
+* S = Practican algún deporte.
+\
+
+Con  relación  a  estas  gráficas,  es posible  afirmar  que  de  la información de la
+
+Answerlist
+----------
+* gráfica  2   se   puede   deducir   que   55   personas   practican solamente dos deportes
+* gráfica  2  se  puede  determinar  el  número  de  personas  que practican solo un deporte.
+* gráfica  1  se  puede  deducir  que  40  personas  no  practican ninguno de los tres deportes.
+* gráfica  1  se  puede  determinar  el  número  de  personas  que practican al menos un deporte.
+
+Solution
+========
+Answerlist
+----------
+* Falso
+* Verdadero
+* Falso
+* Falso
+
+
+Meta-information
+================
+exname: Mice
+extype: schoice
+exsolution: 0100
+exshuffle: TRUE

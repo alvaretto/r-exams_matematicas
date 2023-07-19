@@ -1,0 +1,207 @@
+# Recordatorio: Cambiar type = "html" o "latex", según el caso en el
+# chunk de Xtable
+
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+library(xtable)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+```
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import random
+import numpy as np
+import statistics
+
+# Decidimos cuántas filas tendrá la tabla
+num_filas = random.randint(5, 10)
+
+# Generamos los datos aleatorios
+edades = random.sample(range(20, 80), num_filas)
+print(edades)
+
+# random.sample arroja valores aleaatorios, sin repetición
+num_personas = random.sample(range(1, 20), num_filas)
+print(num_personas)
+
+# Creamos el DataFrame
+data = {'Edades': edades, 'Número de personas': num_personas}
+df = pd.DataFrame(data)
+print(df)
+
+# Función Media
+def media_edades(df):
+    weighted_sum = (df['Edades'] * df['Número de personas']).sum()
+    total_frequency = df['Número de personas'].sum()
+    media = weighted_sum / total_frequency
+    return media
+
+# Calculamos la media de edades
+media = media_edades(df)
+media_edad = round(media, 2)
+
+print('La media de edades es:', media_edad)
+
+#--------------------------------------------------
+
+# Convertimos df a diccionario(list)
+frecuencias = df.to_dict(orient='list')
+frecuencias2 = {edad: n_personas for edad, n_personas in zip(frecuencias['Edades'], frecuencias['Número de personas'])}
+
+# Función Moda
+def moda(frecuencias2):
+    max_frecuencia = max(frecuencias2.values())
+    modas = [valor for valor, frecuencia in frecuencias2.items() if frecuencia == max_frecuencia]
+    return modas
+
+moda_edad = moda(frecuencias2)
+
+# El valor más alto de las frecuencias (Número de Personas)
+max_frecuencia = max(frecuencias["Número de personas"])
+
+print('La moda de edades es:', moda_edad)
+
+#------------------------------------------------
+
+# Función Mediana
+def median_from_frequency_table(frequency_table):
+    n = sum(frequency_table.values())
+    cumulative_frequency = 0
+    for value, frequency in frequency_table.items():
+        cumulative_frequency += frequency
+        if cumulative_frequency >= n / 2:
+            return value
+
+# Ejemplo de uso
+frequency_table = frecuencias2
+median = median_from_frequency_table(frequency_table)
+mediana_edad = median
+
+print('La mediana de edades es:', mediana_edad)
+
+# Generamos las opciones de respuesta para la media
+correct_answer1 = media_edad
+malamedia1 = media_edad + random.uniform(1, 10)
+malamedia2 = media_edad - random.uniform(1, 10)
+malamedia3 = random.uniform(20, 80)
+
+incorrect_answers1 = [malamedia1, malamedia2, malamedia3]
+options1 = incorrect_answers1 + [correct_answer1]
+random.shuffle(options1)
+
+# Bucle while para comprobar que todas las opciones son diferentes entre sí
+while len(set(options1)) != len(options1):
+    correct_answer1 = media_edad
+    malamedia1 = media_edad + random.uniform(1, 10)
+    malamedia2 = media_edad - random.uniform(1, 10)
+    malamedia3 = random.uniform(20, 80)
+    incorrect_answers1 = [malamedia1, malamedia2, malamedia3]
+    options1 = incorrect_answers1 + [correct_answer1]
+    random.shuffle(options1)
+
+# Generamos las opciones de respuesta para la mediana
+correct_answer2 = round(mediana_edad, 2)
+incorrect_answers2 = [round(mediana_edad + random.randint(1, 10), 2), 
+                     round(mediana_edad - random.randint(1, 10), 2), 
+                     round(random.randint(20, 80), 2)]
+options2 = incorrect_answers2 + [correct_answer2]
+random.shuffle(options2)
+
+# Bucle while para comprobar que todas las opciones de respuesta son diferentes entre sí
+while len(set(options2)) != len(options2):
+    correct_answer2 = round(mediana_edad, 2)
+    incorrect_answers2 = [round(mediana_edad + random.randint(1, 10), 2), 
+                          round(mediana_edad - random.randint(1, 10), 2), 
+                          round(random.randint(20, 80), 2)]
+    options2 = incorrect_answers2 + [correct_answer2]
+    random.shuffle(options2)
+
+# Generamos las opciones de respuesta para la moda
+correct_answer3 = moda_edad
+incorrect_answers3 = [moda_edad[0] + random.randint(1, 10), 
+                      moda_edad[0] - random.randint(1, 10), 
+                      random.randint(20, 80)]
+options3 = incorrect_answers3 + correct_answer3
+
+# Bucle while para comprobar que todas las opciones de respuesta son diferentes entre sí
+while len(set(options3)) != len(options3):
+    correct_answer3 = moda_edad
+    incorrect_answers3 = [moda_edad[0] + random.randint(1, 10), 
+                          moda_edad[0] - random.randint(1, 10), 
+                          random.randint(20, 80)]
+    options3 = incorrect_answers3 + correct_answer3
+    random.shuffle(options3)
+```
+
+
+
+```{r data05, echo = FALSE, results = "asis"}
+library(reticulate)
+
+media0 <- py$correct_answer1
+media1 <- round(py$malamedia1, 2)
+media2 <- py$correct_answer1
+media3 <- round(py$malamedia3, 2)
+
+mediana0 <- py$correct_answer2
+mediana1 <- py$incorrect_answers2[1]
+mediana2 <- py$incorrect_answers2[2]
+mediana3 <- py$incorrect_answers2[3]
+
+moda0 <- py$correct_answer3
+moda1 <- py$incorrect_answers3[1]
+moda2 <- py$max_frecuencia
+moda3 <- py$correct_answer3
+```
+
+Question
+========
+\
+La tabla muestra las edades (en años) de personas que habitan un conjunto residencial.
+
+\
+```{r, eval=TRUE, only.contents=TRUE, echo=FALSE, results='asis', warning=FALSE, message=FALSE, error=FALSE, comment=FALSE}
+library(exams)
+library(xtable)
+library(reticulate)
+
+df_R <- py$df
+df_R[] <- lapply(df_R, as.integer)
+
+print(xtable(df_R), include.rownames=FALSE, type = "latex", comment=F, digits=c(0,0))
+```
+
+\
+Según esa información,
+
+Answerlist
+----------
+*  La media de los datos es `r media0`; la mediana es `r mediana0` y la moda es `r moda0`.
+*  La media de los datos es `r media1`; la mediana es `r mediana1` y la moda es `r moda1`.
+*  La media de los datos es `r media2`; la mediana es `r mediana2` y la moda es `r moda2`.
+*  La media de los datos es `r media3`; la mediana es `r mediana3` y la moda es `r moda3`.
+
+Solution
+========
+
+La media de los datos es `r media0`; la mediana es `r mediana0` y la moda es `r moda0`.
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:Permutaciones(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

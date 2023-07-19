@@ -1,0 +1,89 @@
+```{r data generation, echo = FALSE, results = "hide"}
+#load the exams package
+library(exams)
+#match the device to the type of file
+typ <- match_exams_device()
+
+#generate a vector of 5 random numbers between 150 and 490
+puntaje<-c(sample(150:490 ,5))
+#sort the vector in ascending order
+orden<-sort(puntaje)
+#find the minimum value of the vector
+mini<-min(puntaje)
+#find the maximum value of the vector
+maxi<-max(puntaje)
+
+
+##buyo<-sample(c("Pipe", "Yeya", "Tusho","Melo"),2)
+##buyo
+#create empty vectors
+
+#fill the first element of the questions vector with the minimum and maximum values of the vector
+questions<-solutions<-explanations<-NULL
+questions[1]<-paste("Entre ",mini, "y " ,maxi,".")
+solutions[1]<-TRUE
+explanations[1]<-"."
+
+questions[2]<-paste("Entre ",mini, "y " ,orden[4],".")
+solutions[2]<-FALSE
+explanations[2]<-"."
+
+questions[3]<-paste("Entre ",orden[2], "y " ,maxi,".")
+solutions[3]<-FALSE
+explanations[3]<-"."
+
+questions[4]<-paste("Entre ",orden[2], "y " ,orden[4],".")
+solutions[4]<-FALSE
+explanations[4]<-"."
+orden<-sample(1:4)
+questions<-questions[orden]
+solutions<-solutions[orden]
+explanations<-explanations[orden]
+
+image01 <- '
+\\begin{tikzpicture}
+  \\node{
+    \\begin{tabular}{|c|c|}
+      \\hline
+      Código del estudiante & Puntaje \\\\ \\hline
+      {1}      & {%s}      \\\\ \\hline
+      {2}      & {%s}      \\\\ \\hline
+      {3}      & {%s}      \\\\ \\hline
+      {4}      & {%s}      \\\\ \\hline
+      {5}      & {%s}      \\\\ \\hline
+    \\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image01 <-sprintf(image01, puntaje[1],puntaje[2],puntaje[3],puntaje[4],puntaje[5])
+```
+
+Question
+========
+En la tabla se presentan los cinco mejores puntajes en el examen Saber 11 de un colegio:
+\
+
+```{r image01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01, name = "grafiko1", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "5cm")
+```
+
+¿Entre qué valores se encuentran todos los puntajes mostrados en la tabla?
+
+```{r questionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(questions, markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(ifelse(solutions, "Verdadero", "Falso"), markup = "markdown")
+```
+
+Meta-information
+================
+exname: MMMEdadesTkZ(single-choice)
+extype: schoice
+exsolution: `r mchoice2string(solutions)`

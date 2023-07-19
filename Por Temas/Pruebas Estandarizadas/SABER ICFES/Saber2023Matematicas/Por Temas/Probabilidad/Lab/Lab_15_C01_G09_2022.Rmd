@@ -1,0 +1,121 @@
+```{r, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+library(MASS)
+library (stats)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+#options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+
+
+# Definimos la cantidad de personas (entre 50 y 100)
+r <- sample(100:300, 1)
+r
+
+
+# Generamos los valores de probabilidad para cada bien
+# prob_carro <- runif(1, min=0, max=0.5)
+# prob_apartamento <- runif(1, min=0, max=0.5-prob_carro)
+# prob_casa <- runif(1, min=0, max=0.5-prob_carro-prob_apartamento)
+# prob_carro_y_casa <- runif(1, min=0, max=0.5-prob_carro-prob_apartamento-prob_casa)
+# prob_carro_y_apartamento <- 1-prob_carro-prob_apartamento-prob_casa-prob_carro_y_casa
+
+
+prob_carro <- sample(10:r, 1)
+prob_carro
+prob_apartamento <- sample(10:r, 1)
+prob_apartamento
+prob_casa <- sample(10:r, 1)
+prob_casa
+prob_carro_y_casa <- sample(10:r, 1)
+prob_carro_y_casa
+prob_carro_y_apartamento <- sample(10:r, 1)
+prob_carro_y_apartamento
+
+# Creamos el bucle while
+suma <- 0 # Inicializamos la suma en cero
+while(suma != r){
+  # Calculamos la suma actual de las variables
+  suma <- prob_carro + prob_apartamento + prob_casa + prob_carro_y_casa + prob_carro_y_apartamento
+  
+  # Si la suma es igual a r, salimos del bucle
+  if(suma == r){
+    break
+  }
+  
+  # Si la suma es menor que r, generamos nuevas variables aleatorias y volvemos a calcular la suma
+  if(suma < r){
+    prob_carro <- sample(10:r, 1)
+    prob_apartamento <- sample(10:r, 1)
+    prob_casa <- sample(10:r, 1)
+    prob_carro_y_casa <- sample(10:r, 1)
+    prob_carro_y_apartamento <- sample(10:r, 1)
+  }
+  
+  # Si la suma es mayor que r, generamos nuevas variables aleatorias y volvemos a calcular la suma
+  if(suma > r){
+    prob_carro <- sample(10:r, 1)
+    prob_apartamento <- sample(10:r, 1)
+    prob_casa <- sample(10:r, 1)
+    prob_carro_y_casa <- sample(10:r, 1)
+    prob_carro_y_apartamento <- sample(10:r, 1)
+  }
+}
+
+# Imprimimos los resultados
+print(prob_carro)
+print(prob_apartamento)
+print(prob_casa)
+print(prob_carro_y_casa)
+print(prob_carro_y_apartamento)
+
+
+
+
+# Aseguramos que todos los fraccionarios son diferentes entre sí
+probabilidades <- c(prob_carro, prob_apartamento, prob_casa, prob_carro_y_casa, prob_carro_y_apartamento)
+while (length(unique(probabilidades)) != length(probabilidades)) {
+    prob_carro <- sample(10:r, 1)
+    prob_carro
+    prob_apartamento <- sample(10:r, 1)
+    prob_apartamento
+    prob_casa <- sample(10:r, 1)
+    prob_casa
+    prob_carro_y_casa <- sample(10:r, 1)
+    prob_carro_y_casa
+    prob_carro_y_apartamento <- sample(10:r, 1)
+    prob_carro_y_apartamento
+}
+#prob_carro <- prob_carro/r
+```
+
+
+
+
+```{python}
+from fractions import Fraction
+
+
+fraccion = Fraction(py$prob_carro)
+
+print(fraccion) # salida: 3333/10000
+```
+
+
+
+```{r, echo = FALSE, results = "hide"}
+# Imprimimos los resultados
+print(paste("Cantidad de personas:", r))
+print(paste("Probabilidad de tener solo carro:", prob_carro))
+print(paste("Probabilidad de tener solo apartamento:", prob_apartamento))
+print(paste("Probabilidad de tener solo casa:", prob_casa))
+print(paste("Probabilidad de tener carro y casa:", prob_carro_y_casa))
+print(paste("Probabilidad de tener carro y apartamento:", prob_carro_y_apartamento))
+```

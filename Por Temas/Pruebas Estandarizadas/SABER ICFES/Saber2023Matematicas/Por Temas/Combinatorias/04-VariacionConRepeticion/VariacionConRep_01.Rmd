@@ -1,0 +1,247 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(gtools)
+library(glue)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+limitpob1 <- sample(0:10,1)
+limitpob1
+limitpob2 <- sample(limitpob1 + 5:36,1)
+limitpob2
+todox <- limitpob2 - limitpob1
+todox <- todox + 1
+todox
+todel <- c(limitpob1:limitpob2)
+todel
+
+muesstra <- sample(2:4,1)
+muesstra
+
+msretro <- sample(c(limitpob1:limitpob2),muesstra)
+msretro
+
+msretro2 <- msretro[order(-msretro)]
+msretro2
+
+rescorr <-  todox^muesstra
+rescorr
+
+incorraux1 <- permutations(todox, muesstra, todel)
+incorraux1 <- nrow(incorraux1)
+
+incorr1 <- sample(c(incorraux1,rescorr-incorraux1,rescorr+incorraux1),1)
+incorr1
+
+incorraux2 <- combinations(todox, muesstra, todel)
+incorraux2 <- nrow(incorraux2)
+
+incorr2 <- sample(c(incorraux2,rescorr-incorraux2,rescorr+incorraux2),1)
+incorr2
+
+incorr3 <- sample(c(todox,muesstra),1)
+incorr3
+
+imagevcr1a <-'
+  \\begin{center}
+  \\pgfplotsset{compat=1.18}
+	\\begin{tikzpicture}
+\\tikzstyle{level 1} = [sibling distance=7.5cm, level distance=1.5cm]
+\\tikzstyle{level 2} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 3} = [sibling distance=3.5cm, level distance=1cm]
+\\tikzstyle{level 4} = [sibling distance=2.5cm, level distance=1cm]
+\\tikzstyle{level 5} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 6} = [sibling distance=1.5cm, level distance=1cm]
+\\tikzstyle{arestas}=[rectangle,rounded corners=4pt,fill=orange!30,draw=black,font=\\large]
+\\tikzstyle{berdex}=[rectangle,rounded corners=3pt,fill=green!30,draw=black,font=\\large]
+\\node[berdex]{¿Están todos los elementos?}
+child{
+node{SÍ}
+    child{
+    node{Permutación}
+        child{
+        node[berdex]{¿Hay repetición?}
+            child{
+            node{SÍ}
+                child{
+				        node[arestas]{1}
+				        }
+            }
+            child{
+            node{NO}
+                child{
+				        node[arestas]{2}
+                }
+				        child{
+				        node[berdex]{¿Circular?}
+				            child{
+				            node[arestas]{3}
+				            }
+                }   
+            }
+        }
+    }
+}
+child{
+node{NO}
+    child{
+    node[berdex]{¿Importa el orden?}
+        child{
+        node{SÍ}
+            child{
+            node{Variación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{4}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{5}
+				                }
+                    }
+                }
+            }
+        }
+        child{
+        node{NO}
+            child{
+            node{Combinación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{6}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{7}
+				                }
+                    }
+                }
+            }
+        }
+    }    
+};
+\\end{tikzpicture}   
+\\end{center}
+'
+
+imagevcr1b <-'
+  \\centering
+	\\begin{tikzpicture}
+	\\node{
+    \\centering
+    \\begin{tabular}{|c|c|c|}
+    \\hline
+        Opción & Descripción & Fórmula \\\\ \\hline
+        1 & Permutación con repetición & $\\mathrm{P}_{a;b;c;...}^{n}=\\frac{n!}{a!\\cdot b!\\cdot c!\\cdot ...}$ \\\\ \\hline
+        2 & Permutación sin repetición & $\\mathrm{P}_{n}=n!$ \\\\ \\hline
+        3 & Permutación circular & $\\mathrm{PC}_{n}^{}=(n-1)!$ \\\\ \\hline
+        4 & Variación con repetición & $\\mathrm{VR}_{k}^{n}=n^{k}$ \\\\ \\hline
+        5 & Variación sin repetición & $\\mathrm{V}_{k}^{n}=\\frac{n!}{(n-k)!}$ \\\\ \\hline
+        6 & Combinación con repetición & $\\mathrm{CR}_{k}^{n}=\\frac{(k+n-1)!}{(k-1)! \\cdot n!}$ \\\\ \\hline
+        7 & Combinación sin repetición & $\\mathrm{C}_{k}^{n}=\\frac{n!}{(n - k)!\\cdot k!}$ \\\\ \\hline
+    \\end{tabular}
+	};
+\\end{tikzpicture} 
+'
+
+image03vcr01 <- '
+\\begin{center}
+\\begin{tikzpicture}
+\\node {
+  $\\begin{aligned}
+
+{VR}_{k}^{n}&=n^k \\\\
+{VR}_{%s}^{%s}&=%s^%s \\\\
+&=%s \\\\
+{VR}_{%s}^{%s}&=%s 
+
+  \\end{aligned}$
+  };
+\\end{tikzpicture}
+\\end{center}
+'
+image03vcr01 <- sprintf(image03vcr01,muesstra,todox,todox,muesstra,rescorr,
+                        muesstra,todox,rescorr)
+```
+Question
+========
+\
+Al girar una ruleta puede salir como resultado cualquier número natural comprendido entre `r limitpob1` y `r limitpob2`, incluidos estos dos números. (Esta ruleta puede tener características diferentes a las tradicionales). Si se gira la ruleta `r muesstra` veces, ¿cuántos resultados pueden obtenerse?
+
+
+
+
+Answerlist
+----------
+
+*  `r rescorr`
+*  `r incorr1`
+*  `r incorr2`
+*  `r incorr3`
+
+Solution
+========
+
+\
+Para llegar a la respuesta correcta debemos hacernos una serie de preguntas, siguiendo la ruta que nos muestra el siguiente diagrama de árbol:
+
+\
+```{r imagevcr1a, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(imagevcr1a, name = "imagevcr1a", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",                                    "calc","3d"),packages=c("tikz","booktabs","pgfplots",                                                                "tkz-euclide"), width = "11.5cm")
+```
+\
+
+* ¿Están todos los elementos? No. La población (`r todox`) no es igual a la muestra (`r muesstra`).
+* ¿Importa el orden? Sí. No es lo mismo apostar por `r msretro` que apostar por `r msretro2`.
+* ¿Hay repetición? Sí. Por ejemplo, el resultado `r msretro` puede repetirse en los demás giros de la ruleta.
+* Entonces, estamos ante un caso de Variación Con Repetición (Opción 4):
+
+
+```{r imagevcr1b, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(imagevcr1b, name = "imagevcr1b", markup = "markdown",format = typ, library = c("3d", "babel", "positioning"), packages=c("tikz","xcolor"),width = "11.5cm")
+```
+
+\
+Sabiendo que $n=`r todox`$ (población) y que $k=`r muesstra`$ (muestra), reemplazamos en la fórmula:
+
+```{r image03vcr01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03vcr01, name = "image03vcr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"), 
+             width = "4.5cm")
+```
+
+Por tanto, se pueden obtener `r rescorr` resultados posibles.
+
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

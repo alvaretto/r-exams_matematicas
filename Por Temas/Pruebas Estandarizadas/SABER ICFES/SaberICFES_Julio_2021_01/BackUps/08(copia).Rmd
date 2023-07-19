@@ -1,0 +1,235 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+options(scipen=999)
+typ <- match_exams_device()
+
+gasto<-sample(seq(from = 300, to = 500, by = 20), 6)
+gasto
+ingresoe<-sample(c(gasto[]*1.2,gasto[]*1.5),6)
+ingresoe
+ingreso<-sort(ingresoe,decreasing=T)
+ingreso
+ingreso2<-sort(ingreso)
+ingreso2
+
+image08_01 <- '
+\\begin{tikzpicture}
+  \\node{
+    \\begin{tabular}{|c|c|c|}
+      \\hline
+      Mes & Gasto mensual      &  Ingreso mensual\\\\
+          & (Miles de pesos)   &  (Miles de pesos)\\\\ \\hline
+      {Enero}      & {%s}      & {%s}\\\\ \\hline
+      {Febrero}    & {%s}      & {%s}\\\\ \\hline
+      {Marzo}      & {%s}      & {%s}\\\\ \\hline
+      {Abril}      & {%s}      & {%s}\\\\ \\hline
+      {Mayo}       & {%s}      & {%s}\\\\ \\hline
+      {Junio}      & {%s}      & {%s}\\\\ \\hline
+    \\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image08_01 <-sprintf(image08_01, gasto[1], ingreso[1], gasto[2], ingreso[2],gasto[3], ingreso[3],gasto[4], ingreso[4],gasto[5], ingreso[5],gasto[6], ingreso[6])
+
+image08_02a <- '
+\\pgfplotsset{width=6cm,compat=1.17}
+	\\begin{tikzpicture}
+		\\begin{axis}[
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=-1},
+			ymin=0,
+			ymax=900,
+			symbolic x coords={Enero,Febrero,Marzo,Abril,Mayo,Junio},
+			xtickmin=Enero, xtickmax=Junio,
+			ymajorgrids,
+			width=\\linewidth,
+			height=6cm,
+			]
+			\\addplot[ybar,fill=blue!60, bar width = 1cm] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};		   
+			\\addplot [ultra thick] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};
+		    \\legend{Gasto mensual, Ingreso mensual}
+		\\end{axis}
+	\\end{tikzpicture}
+'
+image08_02a <- sprintf(image08_02a, gasto[1], gasto[2], gasto[3], gasto[4], gasto[5], gasto[6], ingreso[1],ingreso[2], ingreso[3],ingreso[4],ingreso[5],ingreso[6])
+
+image08_02b <- '
+\\pgfplotsset{width=6cm,compat=1.17}
+	\\begin{tikzpicture}
+		\\begin{axis}[
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=-1},
+			ymin=0,
+			ymax=900,
+			symbolic x coords={Enero,Febrero,Marzo,Abril,Mayo,Junio},
+			xtickmin=Enero, xtickmax=Junio,
+			ymajorgrids,
+			width=\\linewidth,
+			height=6cm,
+			]
+			\\addplot[ybar,fill=blue!60, bar width = 1cm] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};		   
+			\\addplot [ultra thick] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};
+		    \\legend{Gasto mensual, Ingreso mensual}
+		\\end{axis}
+	\\end{tikzpicture}
+'
+image08_02b <- sprintf(image08_02b, gasto[1], gasto[2], gasto[3], gasto[4], gasto[5], gasto[6], ingreso2[1],ingreso2[2], ingreso2[3],ingreso2[4],ingreso2[5],ingreso2[6])
+
+image08_02c <- '
+\\pgfplotsset{width=6cm,compat=1.17}
+	\\begin{tikzpicture}
+		\\begin{axis}[
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=-1},
+			ymin=0,
+			ymax=900,
+			symbolic x coords={Enero,Febrero,Marzo,Abril,Mayo,Junio},
+			xtickmin=Enero, xtickmax=Junio,
+			ymajorgrids,
+			width=\\linewidth,
+			height=6cm,
+			]
+			\\addplot[ybar,fill=blue!60, bar width = 1cm] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};		   
+			\\addplot [ultra thick] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};
+		    \\legend{Gasto mensual, Ingreso mensual}
+		\\end{axis}
+	\\end{tikzpicture}
+'
+image08_02c <- sprintf(image08_02c,gasto[1],ingreso2[2],ingreso2[3],ingreso2[4],ingreso2[5],ingreso2[6],ingreso[1],ingreso[2], ingreso[3],ingreso[4],ingreso[5],ingreso[6])
+
+image08_02d <- '
+\\pgfplotsset{width=6cm,compat=1.17}
+	\\begin{tikzpicture}
+		\\begin{axis}[
+			legend style={at={(0.5,-0.15)},anchor=north,legend columns=-1},
+			ymin=0,
+			ymax=900,
+			symbolic x coords={Enero,Febrero,Marzo,Abril,Mayo,Junio},
+			xtickmin=Enero, xtickmax=Junio,
+			ymajorgrids,
+			width=\\linewidth,
+			height=6cm,
+			]
+			\\addplot[ybar,fill=blue!60, bar width = 1cm] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};		   
+			\\addplot [ultra thick] coordinates{
+				(Enero,   %s)
+				(Febrero, %s)
+				(Marzo,   %s)
+				(Abril,   %s)
+				(Mayo,    %s)
+				(Junio,   %s)				
+			};
+		    \\legend{Gasto mensual, Ingreso mensual}
+		\\end{axis}
+	\\end{tikzpicture}
+'
+image08_02d <- sprintf(image08_02d,gasto[1],ingreso[2],ingreso[3],ingreso[4],ingreso[5],ingreso[6],gasto[1], gasto[2], gasto[3], gasto[4], gasto[5], gasto[6])
+```
+
+Question
+========
+La tabla muestra el ingreso y gasto mensual de una familia durante los primeros seis meses del año:
+\
+
+```{r image08_01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image08_01, name = "grafiko08_01", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "7cm")
+```
+\
+
+La gráfica que representa correctamente la información presentada en la tabla es
+\
+
+Answerlist
+----------
+* \
+
+```{r image08_02a, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image08_02a, name = "grafiko08_02a", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("pgfplots","tikz","xcolor"),width = "7cm")
+```
+
+* \
+
+```{r image08_02b, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image08_02b, name = "grafiko08_02b", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("pgfplots","tikz","xcolor"),width = "7cm")
+```
+
+* \
+
+```{r image08_02c, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image08_02c, name = "grafiko08_02c", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("pgfplots","tikz","xcolor"),width = "7cm")
+```
+
+* \
+
+```{r image08_02d, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image08_02d, name = "grafiko08_02d", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("pgfplots","tikz","xcolor"),width = "7cm")
+```
+
+
+Solution
+========
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:Saber11Mat2021_1_08(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

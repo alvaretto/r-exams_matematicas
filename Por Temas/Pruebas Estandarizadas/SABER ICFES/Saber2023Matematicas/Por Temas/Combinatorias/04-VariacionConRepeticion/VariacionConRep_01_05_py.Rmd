@@ -1,0 +1,250 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r configuración inicial, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+#options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+def variacion_con_repeticion(n, r):
+    """
+    Esta función calcula la variación con repetición de n elementos tomados 
+    de r en r.
+    
+    :param n: El número total de elementos
+    :param r: El número de elementos a seleccionar
+    :return: El número de variaciones con repetición de n elementos tomados 
+    de r en r
+    """
+    return n ** r
+```
+
+```{python}
+import random
+
+numero_aleatorio1 = random.randint(10, 30)
+n1 = numero_aleatorio1
+print(n1)
+
+numero_aleatorio2 = random.randint(2, 6)
+n2 = numero_aleatorio2
+print(n2)
+
+# Usando la función creada
+vcr1 = variacion_con_repeticion(n1, n2)
+```
+
+```{r, echo = FALSE, results = "hide"}
+library(tinytex)
+library(magick)
+# Renombramos las variables, desde Python hacia R
+n1 <- py$n1
+n2 <- py$n2
+vcr1 <- py$vcr1
+vcr2 <- sample(c(vcr1 - 50, vcr1 + 50),1)
+vcr3 <- sample(c(vcr1 - 100, vcr1 + 100),1)
+vcr4 <- sample(c(vcr1 / 2, vcr1 * 2),1)
+
+vcr01_01a <-'
+\\begin{center}
+  \\pgfplotsset{compat=newest}
+	\\begin{tikzpicture}[		level 1/.style={sibling distance=7.5cm, level distance=1.5cm},		level 2/.style={sibling distance=2cm, level distance=1cm},		level 3/.style={sibling distance=3.5cm, level distance=1cm},		level 4/.style={sibling distance=2.5cm, level distance=1cm},		level 5/.style={sibling distance=2cm, level distance=1cm},		level 6/.style={sibling distance=1.5cm, level distance=1cm},		arestas/.style={rectangle,rounded corners=4pt,fill=orange!30,draw=black,font=\\large},		berdex/.style={rectangle,rounded corners=3pt,fill=green!30,draw=black,font=\\large}	]
+	\\node[berdex]{¿Están todos los elementos?}
+	child{
+		node{SÍ}
+	    child{
+	    	node{Permutación}
+	        child{
+	        	node[berdex]{¿Hay repetición?}
+	            child{
+	            	node{SÍ}
+	                child{
+				        node[arestas]{1}
+				    }
+	            }
+	            child{
+	            	node{NO}
+	                child{
+				        node[arestas]{2}
+	                }
+				        child{
+				        node[berdex]{¿Circular?}
+				            child{
+				            node[arestas]{3}
+				            }
+	                }   
+	            }
+	        }
+	    }
+	}
+	child{
+		node{NO}
+	    child{
+	    	node[berdex]{¿Importa el orden?}
+	        child{
+	        	node{SÍ}
+	            child{
+	            	node{Variación}
+	                child{
+	                	node[berdex]{¿Repetición?}
+	                    child{
+	                    	node{SÍ}
+	                        child{
+						        node[arestas]{4}
+						    }
+	                    }
+	                    child{
+	                    	node{NO}
+	                        child{
+						        node[arestas]{5}
+						    }
+	                    }
+	                }
+	            }
+	        }
+	        child{
+	        	node{NO}
+	            child{
+	            	node{Combinación}
+	                child{
+	                	node[berdex]{¿Repetición?}
+	                    child{
+	                    	node{SÍ}
+	                        child{
+						        node[arestas]{6}
+						    }
+	                    }
+	                    child{
+	                    	node{NO}
+	                        child{
+						        node[arestas]{7}
+						    }
+	                    }
+	                }
+	            }
+	        }
+	    }    
+	};
+	\\end{tikzpicture}   
+\\end{center}
+'
+
+vcr01_01b <- '
+\\centering
+	\\begin{tikzpicture}
+	\\node{
+    \\centering
+    \\begin{tabular}{|c|c|c|}
+    \\hline
+        Opción & Descripción & Fórmula \\\\ \\hline
+        1 & Permutación con repetición & $\\mathrm{P}_{a;b;c;...}^{n}=\\frac{n!}{a!\\cdot b!\\cdot c!\\cdot ...}$ \\\\ \\hline
+        2 & Permutación sin repetición & $\\mathrm{P}_{n}=n!$ \\\\ \\hline
+        3 & Permutación circular & $\\mathrm{PC}_{n}^{}=(n-1)!$ \\\\ \\hline
+        4 & Variación con repetición & $\\mathrm{VR}_{k}^{n}=n^{k}$ \\\\ \\hline
+        5 & Variación sin repetición & $\\mathrm{V}_{k}^{n}=\\frac{n!}{(n-k)!}$ \\\\ \\hline
+        6 & Combinación con repetición & $\\mathrm{CR}_{k}^{n}=\\frac{(k+n-1)!}{(n-1)! \\cdot k!}$ \\\\ \\hline
+        7 & Combinación sin repetición & $\\mathrm{C}_{k}^{n}=\\frac{n!}{(n - k)!\\cdot k!}$ \\\\ \\hline
+    \\end{tabular}
+	};
+\\end{tikzpicture} 
+'
+
+vcr01_01c <- '
+\\begin{center}
+\\begin{tikzpicture}
+\\node {
+  $\\begin{aligned}
+
+{VR}_{k}^{n}&=n^k \\\\
+{VR}_{%s}^{%s}&=%s^%s \\\\
+&=%s \\\\
+{VR}_{%s}^{%s}&=%s 
+
+  \\end{aligned}$
+  };
+\\end{tikzpicture}
+\\end{center}
+'
+
+vcr01_01c <- sprintf(vcr01_01c,n2,n1,n1,n2,vcr1,n2,n1,vcr1)
+```
+
+Question
+========
+\
+De los `r n1` estudiantes de un salón debo seleccionar `r n2` para llevarlos a un almuerzo. El primer elegido podrá repetir almuerzo. Un mismo estudiante puede ser seleccionado más de una vez ¿De cuántas formas diferentes puedo seleccionar a los `r n2` estudiantes?
+
+
+Answerlist
+----------
+
+*  `r vcr1`
+*  `r vcr2`
+*  `r vcr3`
+*  `r vcr4`
+
+
+Solution
+========
+
+\
+Para llegar a la respuesta correcta debemos hacernos una serie de preguntas, siguiendo la ruta que nos muestra el siguiente árbol de decisión:
+
+\
+```{r vcr01_01a, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(vcr01_01a, name = "vcr01_01a", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",                                    "calc","3d"),packages=c("tikz","booktabs","pgfplots",                                                                "tkz-euclide"), width = "11.5cm")
+```
+
+\
+
+* ¿Están todos los elementos? No. La población (`r n1`) no es igual a la muestra (`r n2`).
+* ¿Importa el orden? Sí. Se obtienen mejores beneficios siendo el primer elegido.
+* ¿Hay repetición? Sí. Un mismo estudiante puede ser seleccionado más de una vez.
+* Entonces, estamos ante un caso de Variación Con Repetición (Opción 4):
+
+\
+
+```{r vcr01_01b, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(vcr01_01b, name = "vcr01_01b", markup = "markdown",format = typ, library = c("3d", "babel", "positioning"), packages=c("tikz","xcolor"),width = "11.5cm")
+```
+
+\
+
+Sabiendo que $n=`r n1`$ (población) y que $k=`r n2`$ (muestra), reemplazamos en la fórmula:
+
+```{r vcr01_01c, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(vcr01_01c, name = "vcr01_01c", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"), 
+             width = "4.5cm")
+```
+
+\
+
+Por tanto, puedo escoger a los `r n2` estudiantes de  `r vcr1` maneras diferentes.
+
+
+Meta-information
+================
+
+exname: VariacionConRep_01_05_py(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: TRUE

@@ -1,0 +1,14 @@
+\documentclass{article}
+\begin{document}
+
+You can type R commands in your \LaTeX{} document which will be processed and their output included in the document:
+
+<<echo=FALSE, cache=TRUE>>=
+# Create a sequence of numbers
+X = 2:10
+
+# Display basic statistical measures
+summary(X)
+
+@
+\end{document}

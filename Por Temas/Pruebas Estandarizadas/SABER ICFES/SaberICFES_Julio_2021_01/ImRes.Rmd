@@ -1,0 +1,95 @@
+```{r datos1, echo = FALSE, results = "hide"}
+##knitr::opts_chunk$set(echo = FALSE)
+##opts_chunk$set(fig.cap="")
+##options(tinytex.verbose = TRUE)
+library(exams)
+typ <- match_exams_device()
+
+image01<-'
+\\begin{tikzpicture}[x={5mm}, y={5mm}, z={(20:5mm)}, green!75!gray, line width=1.025pt]
+    \\draw[dashed] (0, 0, 0) coordinate (O) -- (0, 0, 2) coordinate (A) -- (6, 0, 2) coordinate (B);
+    \\draw[dashed] (A) -- (0, 8, 2) coordinate (C);
+    \\draw (O) -- (6, 0, 0) coordinate (D) -- (6, 8, 0) coordinate (E) -- (0, 8, 0) coordinate (F) -- cycle;
+    \\draw (D) -- (B) -- (6, 8, 2) coordinate (G) -- (E);
+    \\draw (F) -- (C) -- (G);
+\\end{tikzpicture}
+'
+
+image02<-'
+\\begin{tikzpicture}[x={5mm}, y={5mm}, z={(20:5mm)}, red!75!gray, line width=1.025pt]
+    \\draw[dashed] (0, 0, 0) coordinate (O) -- (0, 0, 2) coordinate (A) -- (6, 0, 2) coordinate (B);
+    \\draw[dashed] (A) -- (0, 8, 2) coordinate (C);
+    \\draw (O) -- (6, 0, 0) coordinate (D) -- (6, 8, 0) coordinate (E) -- (0, 8, 0) coordinate (F) -- cycle;
+    \\draw (D) -- (B) -- (6, 8, 2) coordinate (G) -- (E);
+    \\draw (F) -- (C) -- (G);
+\\end{tikzpicture}
+'
+
+image03<-'
+\\begin{tikzpicture}[x={5mm}, y={5mm}, z={(20:5mm)}, black!75!gray, line width=1.025pt]
+    \\draw[dashed] (0, 0, 0) coordinate (O) -- (0, 0, 2) coordinate (A) -- (6, 0, 2) coordinate (B);
+    \\draw[dashed] (A) -- (0, 8, 2) coordinate (C);
+    \\draw (O) -- (6, 0, 0) coordinate (D) -- (6, 8, 0) coordinate (E) -- (0, 8, 0) coordinate (F) -- cycle;
+    \\draw (D) -- (B) -- (6, 8, 2) coordinate (G) -- (E);
+    \\draw (F) -- (C) -- (G);
+\\end{tikzpicture}
+'
+
+image04<-'
+\\begin{tikzpicture}[x={5mm}, y={5mm}, z={(20:5mm)}, blue!75!gray, line width=1.025pt]
+    \\draw[dashed] (0, 0, 0) coordinate (O) -- (0, 0, 2) coordinate (A) -- (6, 0, 2) coordinate (B);
+    \\draw[dashed] (A) -- (0, 8, 2) coordinate (C);
+    \\draw (O) -- (6, 0, 0) coordinate (D) -- (6, 8, 0) coordinate (E) -- (0, 8, 0) coordinate (F) -- cycle;
+    \\draw (D) -- (B) -- (6, 8, 2) coordinate (G) -- (E);
+    \\draw (F) -- (C) -- (G);
+\\end{tikzpicture}
+'
+
+
+```
+
+Question
+========
+¿Cuál de las siguientes figuras representa bla, bla, bla..?
+
+Answerlist
+----------
+
+* \
+```{r grafica01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01, name = "grafiko1", markup = "markdown",format = typ,library = c("babel","calc","3d"),width = "3cm")
+```
+* \
+```{r grafica02, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image02, name = "grafiko2", markup = "markdown",format = typ, library = c("3d", "babel", "angles"), packages=c("tikz-cd"),width = "3cm")
+```
+* \ 
+```{r grafica03, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03, name = "grafiko3", markup = "markdown",format = typ,library = c("babel","calc","3d"),width = "3cm")
+```
+* \
+```{r grafica04, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image04, name = "grafiko4", markup = "markdown",format = typ, library = c("3d", "babel", "angles"), packages=c("tikz-cd"),width = "3cm")
+```
+
+
+Solution
+========
+
+Answerlist
+----------
+* True
+* False
+* False
+* False
+
+Meta-information
+================
+exname:Pedorros(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

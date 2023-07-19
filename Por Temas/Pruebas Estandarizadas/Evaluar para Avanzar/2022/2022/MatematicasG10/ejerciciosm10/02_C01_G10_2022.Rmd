@@ -1,0 +1,75 @@
+```{r, include=FALSE, fig.align='center'}
+download.file("https://i.postimg.cc/J7p7mnZ0/imagen02a.png", "imagen02a.png")
+## Para salidas PDF la imagen debe ser aumentada a un 90%, aprox.
+```
+
+```{r data generation, echo = FALSE, results = "hide"}
+
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+options(tinytex.verbose = TRUE)
+typ <- match_exams_device()
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,fig.align="center")
+```
+
+Question
+========
+\
+En un museo se desea colocar un láser que formará parte del sistema de seguridad y que protege 5 obras de arte que se encuentran en un nicho. El haz de luz emitido por el láser recorre el nicho como se muestra en la figura.\
+
+<p align="center">
+\hfil ![](imagen02a.png){width=60%} \hfil
+</p>
+
+\
+Debido a que el nicho es rectangular, los muros superior e inferior forman dos rectas paralelas entre sí.
+Adicionalmente, se conoce el valor del ángulo $\boldsymbol{\alpha}$, y se desea conocer el valor del ángulo $\boldsymbol{\beta}$ con el fin de verificar la correcta ubicación del láser. Para ello, el administrador del museo realiza el siguiente procedimiento:\
+
+
+**Paso 1.** Resta a 180° el valor de $\boldsymbol{\gamma}$. Este valor corresponde al valor del ángulo $\boldsymbol{\alpha}$.<br/>
+\
+**Paso 2.** Iguala el valor del ángulo $\boldsymbol{\alpha}$ obtenido en el paso 1 al valor del ángulo $\boldsymbol{\beta}$.<br/>
+\
+\
+Una persona afirma que con este procedimiento NO es posible determinar el ángulo $\boldsymbol{\beta}$.<br/>
+\
+\
+¿Es verdadera la afirmación de la persona?
+
+
+Answerlist
+----------
+
+-  No, porque los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ son complementarios y los ángulos $\boldsymbol{\alpha}$ y $\boldsymbol{\beta}$ son opuestos por el vértice. <br/>
+
+-  Sí, porque los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ son suplementarios, entonces suman 90° y no 180°. <br/>
+
+-  No, porque los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ son suplementarios y los ángulos $\boldsymbol{\alpha}$ y $\boldsymbol{\beta}$ son alternos externos. <br/>
+
+-  Sí, porque los ángulos $\boldsymbol{\alpha}$ y $\boldsymbol{\beta}$ tienen dirección diferente, por lo tanto no serían iguales. <br/>
+
+Solution
+========
+\
+Como los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ juntos forman un ángulo de 180°, entonces, los ángulos son **suplementarios**. Por tanto, al conocer el valor de $\boldsymbol{\gamma}$ se puede determinar el valor de $\boldsymbol{\alpha}$. Además, como $\boldsymbol{\alpha}$ y $\boldsymbol{\beta}$ son **ángulos alternos externos**, entonces tienen la misma medida, por lo que al conocer el valor del ángulo $\boldsymbol{\alpha}$ se conoce el valor del ángulo $\boldsymbol{\beta}$.\
+
+**Análisis de las opciones incorrectas:**\
+\
+"No, porque los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ son complementarios y los ángulos $\boldsymbol{\alpha}$ y $\boldsymbol{\beta}$ son opuestos por el vértice". Posiblemente los estudiantes que escogen esta opción consideren que los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ juntos tienen la misma medida que los ángulos del rectángulo que forma el nicho, por lo que juntos miden 90°, es decir son **ángulos complementarios**. Por tanto, al conocer el valor de $\boldsymbol{\gamma}$ se puede determinar el valor de $\boldsymbol{\alpha}$. Además, tal vez estén considerando que $\boldsymbol{\alpha}$ está a la derecha de la línea roja y $\boldsymbol{\beta}$ a la izquierda, entonces, piensen que son opuestos por el vértice, lo que asegura que tienen la misma medida.
+
+\
+"Sí, porque los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ son suplementarios, entonces suman 90° y no 180°". Posiblemente los estudiantes que escogen esta opción concluyan que los ángulos $\boldsymbol{\gamma}$ y $\boldsymbol{\alpha}$ juntos tienen la misma medida que los ángulos del rectángulo que forma el nicho, por lo que juntos miden 90° y no 180°, siendo **ángulos sumplementarios**.
+
+\
+"Sí, porque los ángulos $\boldsymbol{\alpha}$ y $\boldsymbol{\beta}$ tienen dirección diferente, por lo tanto no serían iguales". Posiblemente los estudiantes que escogen esta opción identifiquen que el ángulo $\boldsymbol{\alpha}$ esté en la parte superior del muro superior y el ángulo $\boldsymbol{\beta}$ en la parte inferior del muro inferior, y concluyan que deben tener medidas diferentes.
+
+
+Meta-information
+================
+
+exname: Angulos(single-choice)
+extype: schoice
+exsolution: 0010
+exshuffle: TRUE

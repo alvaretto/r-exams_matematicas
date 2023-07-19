@@ -1,0 +1,43 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(tidyverse)
+library(RColorBrewer)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+### Generar datos aleatorios para los clientes y el tipo de vivienda
+clientes <- sample(seq(300, 1000, 100), 1)
+tipos_vivienda <- c("solo carro", "solo apartamento", "solo casa", "carro y casa", "carro y apartamento")
+tipo_vivienda <- sample(tipos_vivienda, 1)
+
+### Generar números aleatorios para los usuarios
+porc <- seq(50, clientes, 10)
+uzuarioz <- sample(porc, 5, replace = FALSE)
+while(sum(uzuarioz) != clientes) {
+  uzuarioz <- sample(porc, 5, replace = FALSE)
+}
+zolokarro <- uzuarioz[5]
+zoloapto <- uzuarioz[4]
+zolokaza <- uzuarioz[3]
+karroykaza <- uzuarioz[2]
+karroyapto <- uzuarioz[1]
+
+### Asignar colores a los usuarios
+colores <- brewer.pal(5, "Set1")
+
+### Mostrar un gráfico de dispersión
+ggplot(data.frame(x = c("solo carro", "solo apartamento", "solo casa", "carro y casa", "carro y apartamento"),
+                  y = c(zolokarro, zoloapto, zolokaza, karroykaza, karroyapto)),
+       aes(x, y)) + 
+  geom_point(aes(color = factor(x)), size = 3) + 
+  scale_color_manual(values = colores) + 
+  labs(x = "Tipo de vivienda", y = "Número de usuarios")
+
+```
+

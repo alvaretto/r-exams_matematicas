@@ -1,0 +1,268 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(gtools)
+library(glue)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+c2 <- sample(1:5,1)
+c3 <- sample(1:5,1)
+
+poblaxiom <- sample(12:21,1)
+
+lostres <- c(1:poblaxiom)
+             
+mmuextra <- sample(4:7,1)
+
+pobmu <- poblaxiom-mmuextra
+pobmu
+finalt <- pobmu+1
+finalt
+
+rescorr <-  permutations(poblaxiom, mmuextra, lostres)
+rescorr <- nrow(rescorr)
+
+incorr1 <- combinations(poblaxiom, mmuextra, lostres)
+incorr1 <- nrow(incorr1)
+
+incorr2 <- sample(c(poblaxiom+mmuextra,poblaxiom-mmuextra),1)
+
+incorr3 <- sample(c(rescorr+2,rescorr-2),1)
+
+mplanos <- sample(c(100,200),1)
+
+glue_collapse(glue("{poblaxiom:1}"), width = poblaxiom+1)
+faktorialpob <- glue_collapse(poblaxiom:1,"*", last = "*")
+faktorialpob
+
+glue_collapse(glue("{pobmu:1}"), width = pobmu+1)
+faktorialmu <- glue_collapse(pobmu:1,"*", last = "*")
+faktorialmu
+
+glue_collapse(glue("{poblaxiom:pobmu}"), width = poblaxiom+1)
+fakpobsimp <- glue_collapse(poblaxiom:pobmu,"*", last = "*")
+fakpobsimp
+
+glue_collapse(glue("{poblaxiom:finalt}"), width = poblaxiom+1)
+finalt<- glue_collapse(poblaxiom:finalt,"*", last = "*")
+finalt
+
+imagepsr02<-'
+  \\begin{center}
+  \\pgfplotsset{compat=1.18}
+	\\begin{tikzpicture}
+\\tikzstyle{level 1} = [sibling distance=7.5cm, level distance=1.5cm]
+\\tikzstyle{level 2} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 3} = [sibling distance=3.5cm, level distance=1cm]
+\\tikzstyle{level 4} = [sibling distance=2.5cm, level distance=1cm]
+\\tikzstyle{level 5} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 6} = [sibling distance=1.5cm, level distance=1cm]
+\\tikzstyle{arestas}=[rectangle,rounded corners=4pt,fill=orange!30,draw=black,font=\\large]
+\\tikzstyle{berdex}=[rectangle,rounded corners=3pt,fill=green!30,draw=black,font=\\large]
+\\node[berdex]{¿Están todos los elementos?}
+child{
+node{SÍ}
+    child{
+    node{Permutación}
+        child{
+        node[berdex]{¿Hay repetición?}
+            child{
+            node{SÍ}
+                child{
+				        node[arestas]{1}
+				        }
+            }
+            child{
+            node{NO}
+                child{
+				        node[arestas]{2}
+                }
+				        child{
+				        node[berdex]{¿Circular?}
+				            child{
+				            node[arestas]{3}
+				            }
+                }   
+            }
+        }
+    }
+}
+child{
+node{NO}
+    child{
+    node[berdex]{¿Importa el orden?}
+        child{
+        node{SÍ}
+            child{
+            node{Variación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{4}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{5}
+				                }
+                    }
+                }
+            }
+        }
+        child{
+        node{NO}
+            child{
+            node{Combinación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{6}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{7}
+				                }
+                    }
+                }
+            }
+        }
+    }    
+};
+\\end{tikzpicture}   
+\\end{center}
+'
+
+image02psr02b<-'
+  \\centering
+	\\begin{tikzpicture}
+	\\node{
+    \\centering
+    \\begin{tabular}{|c|c|c|}
+    \\hline
+        Opción & Descripción & Fórmula \\\\ \\hline
+        1 & Permutación con repetición & $\\mathrm{P}_{a;b;c;...}^{n}=\\frac{n!}{a!\\cdot b!\\cdot c!\\cdot ...}$ \\\\ \\hline
+        2 & Permutación sin repetición & $\\mathrm{P}_{n}=n!$ \\\\ \\hline
+        3 & Permutación circular & $\\mathrm{PC}_{n}^{}=(n-1)!$ \\\\ \\hline
+        4 & Variación con repetición & $\\mathrm{VR}_{k}^{n}=n^{k}$ \\\\ \\hline
+        5 & Variación sin repetición & $\\mathrm{V}_{k}^{n}=\\frac{n!}{(n-k)!}$ \\\\ \\hline
+        6 & Combinación con repetición & $\\mathrm{CR}_{k}^{n}=\\frac{(k+n-1)!}{(n-1)! \\cdot k!}$ \\\\ \\hline
+        7 & Combinación sin repetición & $\\mathrm{C}_{k}^{n}=\\frac{n!}{(n - k)!\\cdot k!}$ \\\\ \\hline
+    \\end{tabular}
+	};
+\\end{tikzpicture} 
+'
+
+image03vsr01 <- '
+\\begin{center}
+\\begin{tikzpicture}
+\\node {
+  $\\begin{aligned}
+
+{V}_{k}^{n}&=\\frac{n!}{(n-k)!} \\\\
+{V}_{%s}^{%s}&=\\frac{%s!}{(%s-%s)!} \\\\
+&=\\frac{%s!}{%s!} \\\\
+&=\\frac{%s}{%s} \\\\
+&=\\frac{%s* %s!}{%s!} \\\\
+&=\\frac{%s* \\color{red} \\cancelto{1}{%s!}}{\\color{red} \\cancelto{1}{%s!}} \\\\
+&=\\frac{%s*1}{1} \\\\
+&=\\frac{%s}{1} \\\\
+{V}_{%s}^{%s}&=%s
+
+  \\end{aligned}$
+  };
+\\end{tikzpicture}
+\\end{center}
+'
+image03vsr01 <- sprintf(image03vsr01,mmuextra,poblaxiom,poblaxiom,poblaxiom,
+                        mmuextra,poblaxiom,pobmu,faktorialpob,faktorialmu,finalt,
+                        pobmu,pobmu,finalt,pobmu,pobmu,finalt,rescorr,mmuextra,
+                        poblaxiom,rescorr)
+```
+
+Question
+========
+
+\
+En un curso de `r poblaxiom` estudiantes todos quieren sentarse en los `r mmuextra` asientos de la primera fila, porque bajo los asientos hay un premio diferente para cada uno.
+
+¿De cuántas formas puede asignar el profesor esos asientos?
+
+
+Answerlist
+----------
+
+*  de `r rescorr` formas posibles
+*  de `r incorr1` formas posibles
+*  de `r incorr2` formas posibles
+*  de `r incorr3` formas posibles
+
+Solution
+========
+
+\
+Para llegar a la respuesta correcta debemos hacernos una serie de preguntas, siguiendo la ruta que nos mmuextra el siguiente árbol de decisión:
+
+\
+```{r imagepsr02, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(imagepsr02, name = "imagepsr02", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",                                    "calc","3d"),packages=c("tikz","booktabs","pgfplots",                                                                "tkz-euclide"), width = "11.5cm")
+```
+
+\
+
+* ¿Están todos los elementos? No. La población (`r poblaxiom`) no es igual a la muestra (`r mmuextra`).
+* ¿Importa el orden? Sí. Hay un beneficio por ocupar un lugar específico.
+* ¿Hay repetición? No. Un estudiante no puede ocupar más de un puesto a la vez
+* Entonces, estamos ante un caso de Variación Sin Repetición (Opción 5):
+
+
+```{r image02psr02b, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image02psr02b, name = "image02psr02b", markup = "markdown",format = typ, library = c("3d", "babel", "positioning"), packages=c("tikz","xcolor"),width = "11.5cm")
+```
+
+
+Sabiendo que $n=`r poblaxiom`$ (población) y que $k=`r mmuextra`$ (muestra), reemplazamos en la fórmula:
+
+```{r image03vsr01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03vsr01, name = "image03vsr01", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"), 
+             width = "13.5cm")
+```
+
+\
+Por tanto, el profesor puede acomodar a los `r poblaxiom` estudiantes en los `r mmuextra` asientos de la primera fila de `r rescorr` formas.
+
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

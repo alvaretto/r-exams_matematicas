@@ -1,0 +1,123 @@
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+typ <- match_exams_device()
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+##########################
+clientes <- sample(c(200, 300, 400),1)
+```
+
+```{r scatterplot, echo = FALSE, results = "asis",fig.path = "", fig.cap = ""}
+
+i <- 0
+while(i==0){
+porc <- seq(10, 100, 5) # Números de 5 en 5 hasta 100
+porcentaje <- sample(porc,4,replace=T) # 4 de esos números
+sumaporce <- sum(porcentaje) # La suma de esos 4 números
+sumaporce
+
+if(sumaporce==100){  # Si la suma de esos 4 números es igual a 100, continúe
+  i <- i+1
+}
+else
+  i <- i
+}
+
+porc4 <- porcentaje[4]/100
+porc3 <- porcentaje[3]/100
+porc2 <- porcentaje[2]/100
+porc1 <- porcentaje[1]/100
+
+exce <- clientes*porc4
+bueno <- clientes*porc3-10
+bueno2 <- clientes*porc3
+regular <- clientes*porc2-20
+regular2 <- clientes*porc2
+malo <- clientes*porc1
+bue_exce <- exce+bueno-25
+kol <- sample(c("Set1","Set2","Set3","Accent","Dark2","Paired","Pastel1",
+                "Pastel2","BrBG", "PiYG", "PRGn", "PuOr", "RdBu", "RdGy",
+                "RdYlBu", "RdYlGn", "Spectral","Blues", "BuGn", "BuPu", "GnBu",
+                "Greens", "Greys", "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd",
+                "Purples", "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr","YlOrRd"),
+              1)
+colores <- brewer.pal(length(porcentaje),kol)
+```
+
+
+Question
+========
+\
+Se realizó una encuesta a `r clientes` clientes de una empresa de telecomunicaciones para saber cómo califican la calidad del servicio que reciben. La siguiente gráfica muestra los porcentajes de las calificaciones dadas por los clientes:
+\
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+cv=(r.malo, r.regular2, r.bueno2, r.exce)
+etiquetas=["malo","regular","bueno","excelente"]
+#colores=["#EE6055","#60D394","#AAF683","#FFD97D","#FF9B85"]
+extraccion=0,0,0,0
+
+fig, ax=plt.subplots(figsize=(8,4))
+plt.pie(cv,
+        #labels=cv,
+        pctdistance=1.17,
+        autopct="%1.0f %%",
+        colors=r.colores,
+        explode=extraccion,
+        startangle=90,
+        counterclock=False,
+        shadow=True)
+ax.set_title("Porcentajes\n", fontsize=12, fontweight="bold")
+plt.rcParams.update({'font.size': 9, 'font.weight' : 'bold'}) 
+
+ax.legend(etiquetas,bbox_to_anchor =(1, 1), ncol = 1,shadow= True)
+plt.text(1.3,-0.9,"malo/regular = insatisfechos\nbueno/excelente = satisfechos")
+plt.show()
+```
+
+\
+\justifying
+La afirmación verdadera acerca de los resultados de la encuesta es:
+
+
+Answerlist
+----------
+
+- Más de `r exce` clientes consideran que la calidad del servicio que ofrece la empresa es excelente.
+<br/> 
+
+- Menos de `r regular` clientes consideran que la calidad del servicio que ofrece la empresa es regular.
+<br/> 
+
+- Menos de `r bue_exce` clientes están satisfechos con el servicio que ofrece la empresa.
+<br/> 
+
+- Más de `r bueno` clientes consideran que la calidad del servicio que ofrece la empresa es buena.
+<br/> 
+
+
+Solution
+========
+\
+Dado que la encuesta se realizó a `r clientes` clientes, y el `r porcentaje[3]` % de los encuestados calificó como “bueno” el servicio, entonces $\frac{`r porcentaje[3]`}{100}$ × `r clientes` clientes = `r bueno2` clientes calificaron como “bueno” el servicio. Por tanto, es verdadero que más de `r bueno` clientes consideran que la calidad del servicio que ofrece la empresa es buena.
+\
+
+Meta-information
+================
+
+exname: Tortas(single-choice)
+extype: schoice
+exsolution: 0001
+exshuffle: TRUE

@@ -1,0 +1,54 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+typ <- match_exams_device()
+
+
+
+questions<-solutions<-explanations<-NULL
+questions[1]<-paste("incorrecta, pues en el nuevo dado cada cara tiene probabilidad
+de 1/8 y dado que anteriormente la probabilidad era 1/7, es mejor mantener el dado original.")
+solutions[1]<-TRUE
+explanations[1]<-"."
+
+questions[2]<-paste("correcta, pues en el nuevo dado hay 8 caras y, como 8 es mayor que 7, la probabilidad ahora es mayor.")
+solutions[2]<-FALSE
+explanations[2]<-"."
+
+questions[3]<-paste("incorrecta, pues sin importar cuántas caras tenga un dado, la probabilidad de obtener 8 siempre será la misma.")
+solutions[3]<-FALSE
+explanations[3]<-"."
+
+questions[4]<-paste("correcta, pues si se aumenta el número de caras, entonces la probabilidad de obtener 8 al lanzar el nuevo dado será mayor.")
+solutions[4]<-FALSE
+explanations[4]<-"."
+
+orden<-sample(1:4)
+questions<-questions[orden]
+solutions<-solutions[orden]
+explanations<-explanations[orden]
+}
+```
+
+Question
+========
+En cierto juego de mesa se usa un dado especial, de forma que, al lanzarlo, se obtiene el número 8 con una probabilidad de 1/7. Un grupo de amigos busca modificar el dado, de manera que la probabilidad de obtener el número 8 aumente.
+/
+Ellos proponen utilizar un dado de 8 caras, numeradas del 1 al 8, donde cada cara tenga igual probabilidad de salir, pues afirman que esto incrementaría la probabilidad de obtener el número 8. La solución dada por el número de amigos es
+
+```{r questionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(questions, markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(ifelse(solutions, "Verdadero", "Falso"), markup = "markdown")
+```
+
+Meta-information
+================
+exname: MonedasAhorro(single-choice)
+extype: schoice
+exsolution: `r mchoice2string(solutions)`

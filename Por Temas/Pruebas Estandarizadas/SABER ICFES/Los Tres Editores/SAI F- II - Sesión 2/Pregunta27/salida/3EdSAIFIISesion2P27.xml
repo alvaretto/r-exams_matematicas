@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/3EdSAIFIISesion2P27/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R01 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Licuadora profesional</th>
+    <th class="tg-7btt">$ 420.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Freidora de aire</td>
+    <td class="tg-7btt">$ 370.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Computador portátil</td>
+    <td class="tg-7btt">$ 2.900.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 8 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Ximena lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{370000 + 420000}{8}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Freidora de aire y Licuadora profesional a 8 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Licuadora profesional.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Freidora de aire y Licuadora profesional a 8 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Freidora de aire y Licuadora profesional.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota anual si compra Freidora de aire y Licuadora profesional a 8 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R02 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Equipo de sonido</th>
+    <th class="tg-7btt">$ 1.000.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Lavadora 14 kg.</td>
+    <td class="tg-7btt">$ 3.200.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Lavavajillas</td>
+    <td class="tg-7btt">$ 4.900.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 8 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>María Antonia lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{1000000 + 4900000}{8}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Equipo de sonido y Lavavajillas a 8 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Lavavajillas.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Equipo de sonido y Lavavajillas.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Lavavajillas a 8 meses.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Equipo de sonido y Lavavajillas a 8 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R03 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Lavavajillas</th>
+    <th class="tg-7btt">$ 4.900.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Lavadora 24 Lb</td>
+    <td class="tg-7btt">$ 1.200.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Hidrolavadora</td>
+    <td class="tg-7btt">$ 440.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 12 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Consuelo lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{440000 + 1200000}{12}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Hidrolavadora y Lavadora 24 Lb a 12 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Lavadora 24 Lb.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Hidrolavadora y Lavadora 24 Lb a 12 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Hidrolavadora y Lavadora 24 Lb.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota semanal si compra Hidrolavadora y Lavadora 24 Lb a 12 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R04 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Televisor 4K 32"</th>
+    <th class="tg-7btt">$ 1.800.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Nevera 368 lts</td>
+    <td class="tg-7btt">$ 2.400.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Horno microondas</td>
+    <td class="tg-7btt">$ 400.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 11 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Dilma lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{400000 + 2400000}{11}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Horno microondas y Nevera 368 lts a 11 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Horno microondas y Nevera 368 lts.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota anual si compra Horno microondas y Nevera 368 lts a 11 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Nevera 368 lts.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Horno microondas y Nevera 368 lts a 11 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R05 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Lavavajillas</th>
+    <th class="tg-7btt">$ 4.900.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Hidrolavadora</td>
+    <td class="tg-7btt">$ 440.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Nevecón 530 lts</td>
+    <td class="tg-7btt">$ 4.600.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 8 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Julia lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{4900000 + 440000}{8}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Lavavajillas y Hidrolavadora a 8 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Hidrolavadora.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Lavavajillas y Hidrolavadora.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota semanal si compra Lavavajillas y Hidrolavadora a 8 meses.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Lavavajillas y Hidrolavadora a 8 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R06 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Televisor 4K 32"</th>
+    <th class="tg-7btt">$ 1.800.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Nevera 368 lts</td>
+    <td class="tg-7btt">$ 2.400.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Estufa de piso</td>
+    <td class="tg-7btt">$ 1.500.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 12 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Violeta lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{1500000 + 1800000}{12}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Estufa de piso y Televisor 4K 32” a 12 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Televisor 4K 32”.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Estufa de piso y Televisor 4K 32” a 12 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota semanal si compra Estufa de piso y Televisor 4K 32” a 12 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Estufa de piso y Televisor 4K 32”.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R07 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Hidrolavadora</th>
+    <th class="tg-7btt">$ 440.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Estufa de piso</td>
+    <td class="tg-7btt">$ 1.500.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Congelador 198 lts</td>
+    <td class="tg-7btt">$ 1.250.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 9 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Ximena lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{440000 + 1250000}{9}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Hidrolavadora y Congelador 198 lts a 9 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Hidrolavadora y Congelador 198 lts a 9 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Hidrolavadora y Congelador 198 lts.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Congelador 198 lts.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota semanal si compra Hidrolavadora y Congelador 198 lts a 9 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R08 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Nevecón 530 lts</th>
+    <th class="tg-7btt">$ 4.600.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Congelador 198 lts</td>
+    <td class="tg-7btt">$ 1.250.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Nevera 368 lts</td>
+    <td class="tg-7btt">$ 2.400.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 9 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Julia lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{2400000 + 1250000}{9}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Nevera 368 lts y Congelador 198 lts a 9 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota anual si compra Nevera 368 lts y Congelador 198 lts a 9 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Nevera 368 lts y Congelador 198 lts.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Congelador 198 lts.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Nevera 368 lts y Congelador 198 lts a 9 meses.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R09 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Lavadora 24 Lb</th>
+    <th class="tg-7btt">$ 1.200.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Lavadora 14 kg.</td>
+    <td class="tg-7btt">$ 3.200.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Horno microondas</td>
+    <td class="tg-7btt">$ 400.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 7 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>María Antonia lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{3200000 + 1200000}{7}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Lavadora 14 kg. y Lavadora 24 Lb a 7 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Lavadora 14 kg. y Lavadora 24 Lb a 7 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Lavadora 24 Lb a 7 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Lavadora 24 Lb.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Lavadora 14 kg. y Lavadora 24 Lb.
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R10 Q1 : 3EdSAIFIISesion2P27 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una tienda de electrodomésticos fija el siguiente anuncio publicitario</p>
+<p align="center">
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Nevecón 530 lts</th>
+    <th class="tg-7btt">$ 4.600.000</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-7btt">Hidrolavadora</td>
+    <td class="tg-7btt">$ 440.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt">Computador portátil</td>
+    <td class="tg-7btt">$ 2.900.000</td>
+  </tr>
+  <tr>
+    <td class="tg-7btt" colspan="2">Pague sus productos hasta en 10 cuotas mensuales<br>sin intereses.</td>
+  </tr>
+</tbody>
+</table>
+</p>
+<p>Consuelo lee el anuncio y hace la siguiente operación:<br />
+</p>
+<p><span class="math inline">\(\frac{4600000 + 2900000}{10}\)</span><br />
+</p>
+<p>Con esta operación ella halla</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+La opción correcta es:<br />
+“la cuota mensual, si compra Nevecón 530 lts y Computador portátil a 10 meses”.</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Computador portátil a 10 meses.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio de comprar Computador portátil.
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+el costo promedio si compra Nevecón 530 lts y Computador portátil.
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+la cuota mensual, si compra Nevecón 530 lts y Computador portátil a 10 meses.
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

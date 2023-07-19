@@ -1,0 +1,82 @@
+\\begin{center}
+  \\pgfplotsset{compat=newest}
+	\\begin{tikzpicture}[		level 1/.style={sibling distance=7.5cm, level distance=1.5cm},		level 2/.style={sibling distance=2cm, level distance=1cm},		level 3/.style={sibling distance=3.5cm, level distance=1cm},		level 4/.style={sibling distance=2.5cm, level distance=1cm},		level 5/.style={sibling distance=2cm, level distance=1cm},		level 6/.style={sibling distance=1.5cm, level distance=1cm},		arestas/.style={rectangle,rounded corners=4pt,fill=orange!30,draw=black,font=\\large},		berdex/.style={rectangle,rounded corners=3pt,fill=green!30,draw=black,font=\\large}	]
+	\\node[berdex]{¿Están todos los elementos?}
+	child{
+		node{SÍ}
+	    child{
+	    	node{Permutación}
+	        child{
+	        	node[berdex]{¿Hay repetición?}
+	            child{
+	            	node{SÍ}
+	                child{
+				        node[arestas]{1}
+				    }
+	            }
+	            child{
+	            	node{NO}
+	                child{
+				        node[arestas]{2}
+	                }
+				        child{
+				        node[berdex]{¿Circular?}
+				            child{
+				            node[arestas]{3}
+				            }
+	                }   
+	            }
+	        }
+	    }
+	}
+	child{
+		node{NO}
+	    child{
+	    	node[berdex]{¿Importa el orden?}
+	        child{
+	        	node{SÍ}
+	            child{
+	            	node{Variación}
+	                child{
+	                	node[berdex]{¿Repetición?}
+	                    child{
+	                    	node{SÍ}
+	                        child{
+						        node[arestas]{4}
+						    }
+	                    }
+	                    child{
+	                    	node{NO}
+	                        child{
+						        node[arestas]{5}
+						    }
+	                    }
+	                }
+	            }
+	        }
+	        child{
+	        	node{NO}
+	            child{
+	            	node{Combinación}
+	                child{
+	                	node[berdex]{¿Repetición?}
+	                    child{
+	                    	node{SÍ}
+	                        child{
+						        node[arestas]{6}
+						    }
+	                    }
+	                    child{
+	                    	node{NO}
+	                        child{
+						        node[arestas]{7}
+						    }
+	                    }
+	                }
+	            }
+	        }
+	    }    
+	};
+	\\end{tikzpicture}   
+\\end{center}
+

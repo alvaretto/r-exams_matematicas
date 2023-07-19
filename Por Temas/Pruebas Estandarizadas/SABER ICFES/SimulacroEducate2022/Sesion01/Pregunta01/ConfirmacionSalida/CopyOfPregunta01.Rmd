@@ -1,0 +1,174 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r data generation, echo = FALSE, results = "hide", caption=" "}
+library(exams)
+require(stats)
+library(ggplot2)
+library(xtable)
+library(knitr)
+library(reticulate)
+library(dplyr)
+library(RColorBrewer)
+
+options(xtable.floating = TRUE)
+options(xtable.timestamp = "")
+options(xtable.comment = FALSE)
+options(xtable.align = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(collapse = TRUE, warning = FALSE, message = FALSE)
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+
+filaz <- c(sample(5:15,1)) # Rango filas que tendrá la tabla, p.e. entre 5 y 15 filas
+filaz
+rangodatos <- c(1:filaz) # Rango de datos.
+rangodatos
+
+# frecuencias <- sample(1:30 ,filaz) # Cuántas veces se repite cada dato
+# frecuencias
+############# While
+i <- 0
+
+while(i==0){
+totalle <- filaz-3
+totalle
+rango1 <- c(sample(1:totalle,1))
+rango1
+
+rango2 <- c(sample(1:totalle,1))
+
+rango2
+rango3 <- c(sample(1:totalle,1))
+porcmedio <- round(rango1/filaz*100,0)
+rango3
+rango4 <- c(sample(1:totalle,1))
+porcalto <- round(rango1/filaz*100,0)
+rango4
+
+muybajo <- rep(c("Muy Bajo"), rango1)
+muybajo
+bajo <- rep(c("Bajo"), rango2)
+bajo
+medio <- rep(c("Medio"), rango3)
+medio
+alto <- rep(c("Alto"), rango4)
+alto
+
+rendimiento <- c(muybajo, bajo, medio, alto)
+rendileng <- length(rendimiento)
+rendileng
+
+porcmbajo <- round(length(muybajo)/filaz*100,0)
+porcbajo <- round(length(bajo)/filaz*100,0)
+porcmedio <- round(length(medio)/filaz*100,0)
+porcalto <- round(length(alto)/filaz*100,0)
+
+if(rendileng == filaz){
+  i <- i+1
+}else{
+  i <- 0
+}
+}
+########
+tabla <- data.frame(rangodatos,rendimiento)
+colnames(tabla) <- c(" Ensayos" ,"Clasificación")
+tabla
+```
+
+```{r torta, echo = FALSE, results = "asis",fig.path = "", fig.cap = ""}
+kol <- sample(c("Set1","Set2","Set3","Accent","Dark2","Paired","Pastel1",
+                "Pastel2","BrBG", "PiYG", "PRGn", "PuOr", "RdBu", "RdGy",
+                "RdYlBu", "RdYlGn", "Spectral","Blues", "BuGn", "BuPu", "GnBu",
+                "Greens", "Greys", "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd",
+                "Purples", "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr","YlOrRd"),
+              1)
+colores <- brewer.pal(4,kol)
+```
+
+
+Question
+========
+
+La tabla muestra las mediciones del rendimiento deportivo tomadas a un deportista durante `r filaz` ensayos, las cuales se categorizaron en: Muy bajo, Bajo, Medio y Alto. 
+
+```{r, eval=TRUE,echo=FALSE,results='asis',warning=FALSE,message=FALSE,error=FALSE}
+library(xtable)
+
+type <- if(match_exams_call() %in% c("exams2pdf", "exams2nops")) "latex" else "html"
+
+
+print(xtable(tabla, 
+             caption.placement = "top",
+             caption = 'Rendimiento Deportivo', 
+             align = c("c|", "|r|", "|r|")), 
+      type = type, 
+      html.table.attributes = 'align="center", 
+                               rules="all",
+                               width=15%, 
+                               frame="below"',
+      latex.environments = "center",  
+      include.rownames = FALSE)
+```
+\
+Se elaboró la gráfica con información de la tabla:
+\
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import matplotlib.pyplot as plt
+
+cv=(r.porcmbajo, r.porcbajo, r.porcmedio, r.porcalto)
+etiquetas=["Muy bajo","Bajo","Medio","Alto"]
+#colores=["#EE6055","#60D394","#AAF683","#FFD97D","#FF9B85"]
+extraccion=0,0,0,0
+
+fig, ax=plt.subplots(figsize=(8,4))
+plt.pie(cv,
+        #labels=cv,
+        pctdistance=1.17,
+        autopct="%1.0f %%",
+        colors=r.colores,
+        explode=extraccion,
+        startangle=90,
+        counterclock=False,
+        shadow=True)
+ax.set_title("Rendimiento deportivo\n", fontsize=12, fontweight="bold")
+plt.rcParams.update({'font.size': 9, 'font.weight' : 'bold'}) 
+
+ax.legend(etiquetas,bbox_to_anchor =(1, 1), ncol = 1,shadow= True)
+# plt.text(1.3,-0.9,"malo/regular = clientes insatisfechos\nbueno/excelente = clientes satisfechos")
+plt.show()
+```
+
+\
+De estas dos representaciones de los datos, se puede afirmar correctamente que
+
+Answerlist
+----------
+
+*  la tabla y la gráfica contienen exactamente la misma información.
+*  la tabla posee más información que la gráfica.
+*  la gráfica posee más información que la tabla.
+*  no es posible comparar la información de la gráfica y la tabla.
+
+Solution
+========
+
+La respuesta es "la gráfica posee más información que la tabla". Es evidente que la gráfica agrega el dato correspondiente a los porcentajes del rendimiento según el número de ensayos, mientras que la tabla sólo muestra los ensayos y su rendimiento individual.
+
+Answerlist
+----------
+* Falso
+* Falso
+* Verdadero
+* Falso
+
+Meta-information
+================
+exname:Tabla_y_Torta(single-choice)
+extype:schoice
+exsolution: 0010
+exshuffle: TRUE

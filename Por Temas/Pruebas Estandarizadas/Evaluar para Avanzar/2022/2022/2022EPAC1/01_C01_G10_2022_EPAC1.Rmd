@@ -1,0 +1,237 @@
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+#options(tinytex.verbose = TRUE)
+typ <- match_exams_device()
+options(scipen=999)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+min <- sample(5:10,1)
+max <- sample(60:80,1)
+data <- sample(seq(min, max, 1),1000, replace=T)
+pts <- c(.1,.2,.25,.35,.45,.5,.6,.7,.75,.85,.95,1)
+pts1 <- pts *100
+pts1
+p <- quantile(data, pts)
+p
+p[1]
+p[1] <- round(p[1],0)
+p[1]
+
+perc <- sample(c(4:10),1)
+
+##########################
+image01 <- '
+\\begin{tikzpicture}
+  \\node{
+   \\begin{tabular}{|l|c|c|c|}
+\\hline
+\\textbf{Cuartil} & 1 & 2 & 3 \\\\ \\hline
+\\textbf{Edad}    & %s  & %s  & %s  \\\\ \\hline
+\\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image01 <-sprintf(image01,p[3],p[6],p[9])
+##########################
+
+image02 <- '
+\\begin{tikzpicture}
+  \\node{
+   \\begin{tabular}{|l|c|c|c|}
+\\hline
+\\textbf{Cuartil} & 1 & 2 & 3 \\\\ \\hline
+\\textbf{Edad}    & %s  & %s  & %s  \\\\ \\hline
+\\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image02 <-sprintf(image02,p[3],p[6],p[8])
+##########################
+
+image03 <- '
+\\begin{tikzpicture}
+  \\node{
+   \\begin{tabular}{|l|c|c|c|}
+\\hline
+\\textbf{Cuartil} & 25 & 50 & 75 \\\\ \\hline
+\\textbf{Edad}    & %s  & %s  & %s  \\\\ \\hline
+\\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image03 <-sprintf(image03,p[3],p[6],p[8])
+##########################
+
+image04 <- '
+\\begin{tikzpicture}
+  \\node{
+   \\begin{tabular}{|l|c|c|c|}
+\\hline
+\\textbf{Cuartil} & 25 & 50 & 75 \\\\ \\hline
+\\textbf{Edad}    & %s  & %s  & %s  \\\\ \\hline
+\\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image04 <-sprintf(image04,p[3],p[6],p[9])
+
+
+```
+
+
+Question
+========
+
+Los estudiantes de un colegio recolectaron la información correspondiente a la edad de un grupo de habitantes. La tabla recoge algunos de los percentiles de las edades de los encuestados.\
+
+```{=tex}
+\begin{tikzpicture}[node distance=5cm, auto,>=latex', thick, scale = 0.5]
+  \node{
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|c|c|c|c|c|@{}}
+\toprule
+\textbf{Percentil} & 10 & 20 & 25 & 35 & 45 & 50 & 60 & 70 & 75 & 85 & 95 & 100 \\ \midrule
+\textbf{Edad}      & `r p[1]` & `r p[2]` & `r p[3]` & `r p[4]` & `r p[5]` & `r p[6]` & `r p[7]` & `r p[8]` & `r p[9]` & `r p[10]` & `r p[11]` & `r p[12]` \\ \bottomrule
+\end{tabular}
+  };
+\end{tikzpicture}
+```
+
+```{=html}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7btt">Percentil</th>
+    <th class="tg-7btt">10</th>
+    <th class="tg-7btt">20</th>
+    <th class="tg-7btt">25</th>
+    <th class="tg-7btt">35</th>
+    <th class="tg-7btt">45</th>
+    <th class="tg-7btt">50</th>
+    <th class="tg-7btt">60</th>
+    <th class="tg-7btt">70</th>
+    <th class="tg-7btt">75</th>
+    <th class="tg-7btt">85</th>
+    <th class="tg-7btt">95</th>
+    <th class="tg-7btt">100</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-fymr">Edad</td>
+    <td class="tg-0pky">`r p[2]`</td>
+    <td class="tg-0pky">`r p[2]`</td>
+    <td class="tg-0pky">`r p[3]`</td>
+    <td class="tg-0pky">`r p[4]`</td>
+    <td class="tg-0pky">`r p[5]`</td>
+    <td class="tg-0pky">`r p[6]`</td>
+    <td class="tg-0pky">`r p[7]`</td>
+    <td class="tg-0pky">`r p[8]`</td>
+    <td class="tg-0pky">`r p[9]`</td>
+    <td class="tg-0pky">`r p[10]`</td>
+    <td class="tg-0pky">`r p[11]`</td>
+    <td class="tg-0pky">`r p[12]`</td>
+  </tr>
+</tbody>
+</table>
+```
+
+Por ejemplo, el percentil `r pts1[perc]` refleja que el `r pts1[perc]`% de los encuestados tiene menos de `r p[perc]` años. ¿Cuál de las siguientes gráficas representa de manera correcta los cuartiles de los datos?
+
+
+Answerlist
+----------
+
+- 
+<br/>
+```{r image01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01, name = "image01", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+- 
+<br/>
+```{r image02, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image02, name = "image02", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+- 
+<br/>
+```{r image03, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03, name = "image03", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+- 
+<br/>
+```{r image04, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image04, name = "image04", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+Solution
+========
+
+El cuartil 1 corresponde al percentil 25 que, de acuerdo con los datos de la tabla, establece que el 25 % de los encuestados tiene `r p[3]` años de edad o menos. El cuartil 2 corresponde al percentil 50, que establece que el 50 % de los encuestados tiene `r p[6]` años de edad o menos. Finalmente, el cuartil 3 corresponde al percentil 75, que establece que el 75 % de los encuestados tiene `r p[9]` años de edad o menos. Estos datos se encuentran representados en la opción:
+
+```{=html}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;}}</style>
+<div class="tg-wrap"><table class="tg">
+<thead>
+  <tr>
+    <th class="tg-fymr">Cuartil</th>
+    <th class="tg-c3ow">1</th>
+    <th class="tg-c3ow">2</th>
+    <th class="tg-c3ow">3</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-fymr">Edad</td>
+    <td class="tg-c3ow">`r p[3]`</td>
+    <td class="tg-c3ow">`r p[6]`</td>
+    <td class="tg-c3ow">`r p[9]`</td>
+  </tr>
+</tbody>
+</table></div>
+```
+
+\
+```{=tex}
+\begin{tikzpicture}[node distance=5cm, auto,>=latex', thick, scale = 0.5]
+  \node{
+\begin{tabular}{@{}|l|c|c|c|c|c|c|c|c|c|c|c|c|@{}}
+\toprule
+\textbf{Cuartil} & 1 & 2 & 3 \\ \midrule
+\textbf{Edad}      & `r p[3]` & `r p[6]` & `r p[9]` \\ \bottomrule
+\end{tabular}
+  };
+\end{tikzpicture}
+```
+
+Meta-information
+================
+
+exname: MMMEdadesTkZ(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: TRUE

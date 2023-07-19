@@ -1,0 +1,243 @@
+```{r generacion_datos, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(knitr)
+
+# Instala y carga el paquete 'purrr' si aún no está instalado
+if (!require(purrr)) {
+  install.packages('purrr')
+}
+
+options(pdflatex = "/usr/bin/pdflatex")
+Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", Sys.getenv("PATH"), sep = ":"))
+typ <- match_exams_device()
+use_python("/usr/bin/python3")
+options(scipen = 999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+########
+algod_dur<- sample(seq(100, 150, 10), 1)
+mixto_dur <- sample(seq(60, 90, 10), 1)
+vest_dur <- sample(seq(60, 100, 10), 1)
+sint_dur <- sample(seq(60, 90, 10), 1)
+delic_dur <- sample(seq(35, 50, 5), 1)
+lana_dur <- sample(seq(35, 50, 5), 1)
+express_dur <- sample(seq(15, 25, 5), 1)
+tend_dur <- sample(seq(60, 90, 10), 1)
+
+algod_ag<- sample(seq(50, 80, 10), 1)
+mixto_ag <- sample(seq(40, 60, 10), 1)
+vest_ag <- sample(seq(30, 50, 10), 1)
+sint_ag <- sample(seq(40, 60, 10), 1)
+delic_ag <- sample(seq(50, 80, 10), 1)
+lana_ag <- sample(seq(15, 30, 5), 1)
+express_ag <- sample(seq(25, 40, 5), 1)
+tend_ag <- sample(seq(50, 80, 10), 1)
+
+# algod_det<- sample(seq(50, 80, 5), 1)
+# mixto_det <- sample(seq(60, 80, 5), 1)
+# vest_det <- sample(seq(40, 60, 5), 1)
+# sint_det <- sample(seq(40, 60, 5), 1)
+# delic_det <- sample(seq(50, 80, 5), 1)
+# lana_det <- sample(seq(15, 30, 5), 1)
+# express_det <- sample(seq(25, 40, 5), 1)
+# tend_det <- sample(seq(50, 80, 5), 1)
+
+
+# Create a vector of all possible numbers
+all_numbers <- seq(15, 80, 5)
+
+# Sample without replacement to ensure all numbers are unique
+sampled_numbers <- sample(all_numbers, 8)
+
+# Assign each sampled number to a variable
+algod_det <- sampled_numbers[1]
+mixto_det <- sampled_numbers[2]
+vest_det <- sampled_numbers[3]
+sint_det <- sampled_numbers[4]
+delic_det <- sampled_numbers[5]
+lana_det <- sampled_numbers[6]
+express_det <- sampled_numbers[7]
+tend_det <- sampled_numbers[8]
+
+
+toalla_man<- sample(seq(0.2, 0.6, 0.1), 1)
+toalla_ba <- sample(seq(0.2, 0.6, 0.1), 1)
+sab_sen <- sample(seq(1, 1.6, 0.2), 1)
+sab_dob <- sample(seq(1.6, 2.6, 0.2), 1)
+cob <- sample(seq(1.6, 2.6, 0.2), 1)
+panu <- sample(seq(0.1, 0.4, 0.1), 1)
+mant <- sample(seq(0.2, 0.6, 0.1), 1)
+peso_maxc <- sample(seq(2, 4, 1), 1)
+########
+```
+
+Question
+========
+
+Una lavadora incluye 8 programas distintos de lavado para un peso máximo de `r peso_maxc` kg por carga. La
+tabla 1 presenta la información de cada programa y la tabla 2, los pesos de varios objetos.
+
+```{r Tabla01,warning=FALSE,echo = FALSE, results = "asis"}
+# Cargar las bibliotecas necesarias
+library(knitr)
+library(kableExtra)
+
+# Crear el data frame
+tabla1 <- data.frame(
+  Programa = c("1", "2", "3", "4", "5", "6", "7", "8"),
+  `Una carga de ropa` = c("Algodones", "Mixto", "Vestidos", "Sintéticos", "Delicados", "De lana", "Express", "Tendidos"),
+   Duracion <- c(paste(algod_dur, "min"),
+              paste(mixto_dur, "min"),
+              paste(vest_dur, "min"),
+              paste(sint_dur, "min"),
+              paste(delic_dur, "min"),
+              paste(lana_dur, "min"),
+              paste(express_dur, "min"),
+              paste(tend_dur, "min")),
+  `Agua (L)` = c(algod_ag, mixto_ag, vest_ag, sint_ag, delic_ag, lana_ag, express_ag, tend_ag),
+  `Detergente (g)` = c(algod_det, mixto_det, vest_det, sint_det, delic_det, lana_det, express_det, tend_det)
+)
+
+ropa1 <- c("Algodones", "Mixto", "Vestidos", "Sintéticos", "Delicados", "De lana", "Express", "Tendidos")
+carga_ropa1 <- sample(ropa1, 1)
+
+ropa2 <- ropa1[ropa1 != carga_ropa1]
+carga_ropa2 <- sample(ropa2, 1)
+
+ropa3 <- ropa2[ropa2 != carga_ropa2]
+carga_ropa3 <- sample(ropa3, 1) 
+
+ropa4 <- ropa3[ropa3 != carga_ropa3]
+carga_ropa4 <- sample(ropa4, 1) 
+
+ropa5 <- ropa4[ropa4 != carga_ropa4]
+carga_ropa5 <- sample(ropa5, 1) 
+
+ropa6 <- ropa5[ropa5 != carga_ropa5]
+carga_ropa6 <- sample(ropa6, 1) 
+
+ropa7 <- ropa6[ropa6 != carga_ropa6]
+carga_ropa7 <- sample(ropa7, 1) 
+
+# Crear la tabla con kable y kableExtra
+tabla1 %>%
+  kable("html", escape = F, align = c("c", "l", "l", "c", "c"), col.names = c("Programa", "Una carga de ropa", "Duración", "Agua (L)", "Detergente (g)")) %>%
+  kable_styling("striped", full_width = F, position = "center") %>%
+  add_header_above(c("Tabla 1" = 5), background = "orange", align = "c") %>%
+  row_spec(0, bold = T, color = "white", background = "orange", align = "c") %>%
+  column_spec(1, width = "5em") %>%
+  column_spec(2, width = "11em") %>%
+  column_spec(3, width = "5em") %>%
+  column_spec(4, width = "5em") %>%
+  column_spec(5, width = "6em")
+```
+\
+\
+\
+```{r Tabla02,warning=FALSE,echo = FALSE, results = "asis"}
+# Crear el nuevo data frame
+tabla2 <- data.frame(
+  Objeto = c("Toalla de manos", "Toalla de baño", "Sábana sencilla", "Sábana doble", "Cobija", "Pañuelo", "Mantel", "Peso máximo por carga:"),
+  `Peso (kg)` = c(toalla_man, toalla_ba, sab_sen, sab_dob, cob, panu, mant, peso_maxc)
+)
+
+toalla_man<- sample(seq(0.2, 0.6, 0.1), 1)
+toalla_ba <- sample(seq(0.2, 0.6, 0.1), 1)
+sab_sen <- sample(seq(1, 1.6, 0.2), 1)
+sab_dob <- sample(seq(1.6, 2.6, 0.2), 1)
+cob <- sample(seq(1.6, 2.6, 0.2), 1)
+panu <- sample(seq(0.1, 0.4, 0.1), 1)
+mant <- sample(seq(0.2, 0.6, 0.1), 1)
+peso_maxc <- sample(seq(2, 4, 1), 1)
+
+# Crear la tabla con kable y kableExtra
+tabla2 %>%
+  kable("html", escape = F, align = c("l", "c"), col.names = c("Objeto", "Peso (kg)")) %>%
+  kable_styling("striped", full_width = F, position = "center") %>%
+  add_header_above(c("Tabla 2" = 2), background = "orange", align = "c") %>%
+  row_spec(0, bold = T, color = "white", background = "orange") %>%
+  row_spec(8, bold = T)  %>% # Hacer la última fila en negrita
+  column_spec(1, width = "10em") %>%
+  column_spec(2, width = "5em")
+
+carga1 <- sample(c(1:3),1)
+carga2 <- sample(c(1:2),1)
+cargaz <- carga1 + carga2
+cargaz2 <- carga1 + carga2 + carga1
+
+if (carga_ropa1 == "Algodones") {
+  resultado <- carga1 * algod_det
+} else if (carga_ropa1 == "Mixto") {
+  resultado <- carga1 * mixto_det
+} else if (carga_ropa1 == "Vestidos") {
+  resultado <- carga1 * vest_det
+} else if (carga_ropa1 == "Sintéticos") {
+  resultado <- carga1 * sint_det
+} else if (carga_ropa1 == "Delicados") {
+  resultado <- carga1 * delic_det
+} else if (carga_ropa1 == "De lana") {
+  resultado <- carga1 * lana_det
+} else if (carga_ropa1 == "Express") {
+  resultado <- carga1 * express_det
+} else if (carga_ropa1 == "Tendidos") {
+  resultado <- carga1 * tend_det
+} else {
+  resultado <- 0  # Valor por defecto si carga_ropa1 no coincide con ninguna opción
+}
+
+if (carga_ropa2 == "Algodones") {
+  resultado2 <- carga2 * algod_det
+} else if (carga_ropa2 == "Mixto") {
+  resultado2 <- carga2 * mixto_det
+} else if (carga_ropa2 == "Vestidos") {
+  resultado2 <- carga2 * vest_det
+} else if (carga_ropa2 == "Sintéticos") {
+  resultado2 <- carga2 * sint_det
+} else if (carga_ropa2 == "Delicados") {
+  resultado2 <- carga2 * delic_det
+} else if (carga_ropa2 == "De lana") {
+  resultado2 <- carga2 * lana_det
+} else if (carga_ropa2 == "Express") {
+  resultado2 <- carga2 * express_det
+} else if (carga_ropa2 == "Tendidos") {
+  resultado2 <- carga2 * tend_det
+} else {
+  resultado2 <- 0  # Valor por defecto si carga_ropa2 no coincide con ninguna opción
+}
+
+tot_gramos <- resultado + resultado2
+```
+
+\
+A partir de la información del manual, una persona determina que se necesitan exactamente `r tot_gramos` gramos de detergente para lavar `r cargaz` cargas de ropa. Esto es correcto, si se lavan:
+
+Answerlist
+----------
+
+- `r carga1` carga(s) en el programa `r carga_ropa1` y `r carga2` carga(s) en el programa `r carga_ropa2`.
+<br/> 
+
+- `r carga1` carga(s) en el programa `r carga_ropa3` y `r carga2` carga(s) en el programa `r carga_ropa4`.
+<br/> 
+
+- `r carga2` carga(s) en el programa `r carga_ropa5` y `r carga1` carga(s) en el programa `r carga_ropa6`.
+<br/> 
+
+- `r carga1` carga(s) en el programa `r carga_ropa6` y `r carga2` carga(s) en el programa `r carga_ropa7`.
+<br/> 
+
+Solution
+========
+
+`r carga1` carga(s) en el programa `r carga_ropa1` y `r carga2` carga(s) en el programa `r carga_ropa2`.
+
+Meta-information
+================
+
+exname: Lavanderia(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: TRUE

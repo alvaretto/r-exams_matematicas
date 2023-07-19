@@ -1,0 +1,254 @@
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+#options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+##########################
+clientes <- sample(seq(300, 1000, 100),1)
+karro <- ("solo carro")
+aptto <- ("solo apartamento")
+kazza <- ("solo casa")
+karrokazza <- ("carro y casa")
+karroaptto <- ("carro y apartamento")
+halgunna <- sample(c(karro, aptto, kazza, karrokazza, karroaptto),1)
+```
+
+```{r scatterplot, echo = FALSE, results = "asis",fig.path = "", fig.cap = ""}
+i <- 0
+j <- 0
+#### Otro while mas grande, desde aquí
+  
+while(i == 0) {
+# Números de 10 en 10,desde 50 hasta el número de clientes
+porc <- seq(50, clientes, 10)
+porc
+# 5 de esos números
+uzuarioz <- sample(porc,5,replace = F) 
+uzuarioz
+# La suma de esos 5 números
+sumaporce <- sum(uzuarioz) 
+sumaporce
+
+# Si la suma de esos 5 números es igual al número de clientes, continúe
+if(sumaporce == clientes) { 
+  i <- i + 1
+}
+# De lo contrario, continúe el bucle (while)
+else
+  i <- i
+}
+
+zolokarro <- uzuarioz[5]
+zoloapto <- uzuarioz[4]
+zolokaza <- uzuarioz[3]
+karroykaza <- uzuarioz[2]
+karroyapto <- uzuarioz[1]
+
+
+ # Con if desde aquí
+ # 
+ # nhum/dnm
+ # dnm/nhum
+ # zolokarro/zolokaza
+ # karroykaza/zolokaza
+ # 
+ # comparar hasta que sean diferentes entre sí, y poder continuar
+
+
+
+kol <- sample(c("Set1","Set2","Set3","Accent","Dark2","Paired","Pastel1",
+                "Pastel2","BrBG", "PiYG", "PRGn", "PuOr", "RdBu", "RdGy",
+                "RdYlBu", "RdYlGn", "Spectral","Blues", "BuGn", "BuPu", "GnBu",
+                "Greens", "Greys", "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd",
+                "Purples", "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr","YlOrRd"),
+              1)
+colores <- brewer.pal(length(uzuarioz),kol)
+```
+
+
+Question
+========
+\
+Se realizó una encuesta a un grupo de `r clientes` personas sobre el tipo de bienes que poseen. Los resultados se presentan en la gráfica.
+\
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+#importa la librería matplotlib
+import matplotlib.pyplot as plt
+
+#crea una figura y un eje
+fig, ax=plt.subplots(figsize=(8,4))
+
+#crea una tupla con los valores a representar en el gráfico circular (torta)
+values = (r.zolokarro, r.zoloapto, r.zolokaza, r.karroykaza, r.karroyapto)
+
+#crea una tupla con las etiquetas para cada parte del gráfico circular
+etiquetas=["Solo carro", "Solo apartamento", "Solo casa", "Carro y casa", "Carro y apartamento"]
+
+#crea una tupla con los valores para la separación de cada parte del gráfico circular
+extraccion=0,0,0,0,0
+
+#crea una función para sumar los valores de cada parte del gráfico circular
+def make_autopct(values):
+    def my_autopct(pct):
+        total = sum(values)
+        val = int(round(pct*total/100.0))
+        #return '{p:.2f}%  ({v:d})'.format(p=pct,v=val)
+        return '{v:d}'.format(p=pct,v=val)
+    return my_autopct
+
+#crea el gráfico circular
+plt.pie(values, 
+        autopct=make_autopct(values),
+        pctdistance=1.17,
+        colors=r.colores,
+        explode=extraccion,
+        startangle=90,
+        counterclock=False,
+        shadow=True)
+
+#agrega un título al gráfico circular
+ax.set_title("Personas\n", fontsize=11, fontweight="light")
+
+#cambia el tamaño de fuente y el peso del título
+plt.rcParams.update({'font.size': 10, 'font.weight' : 'normal'}) 
+
+#añade una leyenda al gráfico circular
+ax.legend(etiquetas,bbox_to_anchor =(1, 1), ncol = 1,shadow= True)
+
+#muestra el gráfico circular
+plt.show();
+```
+
+\
+Si se escoge una persona del grupo al azar, ¿cuál es la probabilidad de que tenga `r halgunna`?
+
+```{r decision, echo = FALSE, results = "hide"}
+if(halgunna == karro){
+  nhum <- zolokarro
+  dnm <- clientes
+  nhum2 <- clientes
+  dnm2 <- zolokarro
+  nhum3 <- zolokarro
+  dnm3 <- zolokaza
+  nhum4 <- karroykaza
+  dnm4 <- zolokaza
+}else if(halgunna == aptto){
+   nhum <- zoloapto
+   dnm <- clientes
+   nhum2 <- clientes
+  dnm2 <- zoloapto
+  nhum3 <- zolokarro
+  dnm3 <- zolokaza
+  nhum4 <- karroykaza
+  dnm4 <- zolokaza
+}else if(halgunna == kazza){
+   nhum <- zolokaza
+   dnm <- clientes
+   nhum2 <- clientes
+  dnm2 <- zolokaza
+  nhum3 <- zolokarro
+  dnm3 <- zolokaza
+  nhum4 <- karroykaza
+  dnm4 <- zolokaza
+}else if(halgunna == karrokazza){
+   nhum <- karroykaza
+   dnm <- clientes
+   nhum2 <- clientes
+  dnm2 <- karroykaza
+  nhum3 <- zolokarro
+  dnm3 <- zolokaza
+  nhum4 <- karroykaza
+  dnm4 <- zolokaza
+}else{
+   nhum <- karroyapto
+   dnm <- clientes
+   nhum2 <- clientes
+  dnm2 <- karroyapto
+  nhum3 <- zolokarro
+  dnm3 <- zolokaza
+  nhum4 <- karroykaza
+  dnm4 <- zolokaza
+}
+# nhum <- as.numeric(nhum)
+# dnm <- as.numeric(dnm)
+```
+
+Answerlist
+----------
+
+- 
+```{python clave, echo = FALSE, results = "asis"}
+nhum = int(r.nhum)
+dnm = int(r.dnm)
+from fractions import Fraction
+#from decimal import Decimal
+
+print(Fraction(nhum, dnm))
+```
+<br/> 
+
+- 
+```{python incorr1, echo = FALSE, results = "asis"}
+nhum3 = int(r.nhum3)
+dnm3 = int(r.dnm3)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(dnm3, nhum3))
+```
+<br/> 
+
+- 
+```{python incorr2, echo = FALSE, results = "asis"}
+nhum3 = int(r.nhum3)
+dnm3 = int(r.dnm3)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(nhum3, dnm3))
+```
+<br/> 
+
+- 
+```{python incorr3, echo = FALSE, results = "asis"}
+nhum = int(r.nhum)
+dnm = int(r.dnm)
+from fractions import Fraction
+#from decimal import Decimal
+
+print(Fraction(dnm, nhum))
+```
+<br/> 
+
+Solution
+========
+\
+La respuesta correcta es
+```{python retro, echo = FALSE, results = "asis"}
+nhum = int(r.nhum)
+dnm = int(r.dnm)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(nhum, dnm))
+```
+<br/> 
+\
+
+Meta-information
+================
+
+exname: Tortas2(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: TRUE

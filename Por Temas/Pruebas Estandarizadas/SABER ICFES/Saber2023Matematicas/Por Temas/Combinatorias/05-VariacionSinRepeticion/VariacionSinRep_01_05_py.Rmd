@@ -1,0 +1,308 @@
+```{r configuración inicial, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+#options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import math
+
+def variacion_sin_repeticion(n, k):
+    if n < k:
+        return 0
+    else:
+        return int(math.factorial(n) / math.factorial(n-k))
+```
+
+```{python}
+import random
+
+numero_aleatorio1 = random.randint(10, 30)
+n = numero_aleatorio1
+print(n)
+
+numero_aleatorio2 = random.randint(2, 6)
+k = numero_aleatorio2
+print(k)
+
+# Usando la función creada
+vsr_res = variacion_sin_repeticion(n, k)
+print(vsr_res)
+```
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+def variacion_con_repeticion(p, s):
+    """
+    Esta función calcula la variación con repetición de p elementos tomados 
+    de s en s.
+    
+    :param p: El número total de elementos
+    :param s: El número de elementos a seleccionar
+    :return: El número de variaciones con repetición de p elementos tomados 
+    de s en s
+    """
+    return p ** s
+```
+
+```{python}
+vcr2 = variacion_con_repeticion(n, k)
+print(vcr2)
+```
+
+
+```{r, echo = FALSE, results = "hide"}
+library(tinytex)
+library(magick)
+# Renombramos las variables, desde Python hacia R
+n <- py$n
+k <- py$k
+vsr1 <- py$vsr_res
+vsr2 <- py$vcr2
+vsr3a <- sample(c(vsr1 - 100, vsr1 + 100),1)
+vsr3b <- sample(c(vsr2 - 100, vsr2 + 100),1)
+vsr3 <- sample(c(vsr3a, vsr3b),1)
+vsr4 <- sample(c(vsr1 /2, vsr1 * 2),1)
+
+
+lostres <- c(1:n)
+             
+pobmu <- n - k
+pobmu
+finalt <- pobmu+1
+finalt
+
+glue_collapse(glue("{n:1}"), width = n+1)
+faktorialpob <- glue_collapse(n:1,"*", last = "*")
+faktorialpob
+
+glue_collapse(glue("{pobmu:1}"), width = pobmu+1)
+faktorialmu <- glue_collapse(pobmu:1,"*", last = "*")
+faktorialmu
+
+glue_collapse(glue("{n:pobmu}"), width = n+1)
+fakpobsimp <- glue_collapse(n:pobmu,"*", last = "*")
+fakpobsimp
+
+glue_collapse(glue("{n:finalt}"), width = n+1)
+finalt<- glue_collapse(n:finalt,"*", last = "*")
+finalt
+
+vsr01_05a <-'
+  \\begin{center}
+  \\pgfplotsset{compat=1.18}
+	\\begin{tikzpicture}
+\\tikzstyle{level 1} = [sibling distance=7.5cm, level distance=1.5cm]
+\\tikzstyle{level 2} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 3} = [sibling distance=3.5cm, level distance=1cm]
+\\tikzstyle{level 4} = [sibling distance=2.5cm, level distance=1cm]
+\\tikzstyle{level 5} = [sibling distance=2cm, level distance=1cm]
+\\tikzstyle{level 6} = [sibling distance=1.5cm, level distance=1cm]
+\\tikzstyle{arestas}=[rectangle,rounded corners=4pt,fill=orange!30,draw=black,font=\\large]
+\\tikzstyle{berdex}=[rectangle,rounded corners=3pt,fill=green!30,draw=black,font=\\large]
+\\node[berdex]{¿Están todos los elementos?}
+child{
+node{SÍ}
+    child{
+    node{Permutación}
+        child{
+        node[berdex]{¿Hay repetición?}
+            child{
+            node{SÍ}
+                child{
+				        node[arestas]{1}
+				        }
+            }
+            child{
+            node{NO}
+                child{
+				        node[arestas]{2}
+                }
+				        child{
+				        node[berdex]{¿Circular?}
+				            child{
+				            node[arestas]{3}
+				            }
+                }   
+            }
+        }
+    }
+}
+child{
+node{NO}
+    child{
+    node[berdex]{¿Importa el orden?}
+        child{
+        node{SÍ}
+            child{
+            node{Variación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{4}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{5}
+				                }
+                    }
+                }
+            }
+        }
+        child{
+        node{NO}
+            child{
+            node{Combinación}
+                child{
+                node[berdex]{¿Repetición?}
+                    child{
+                    node{SÍ}
+                        child{
+				                node[arestas]{6}
+				                }
+                    }
+                    child{
+                    node{NO}
+                        child{
+				                node[arestas]{7}
+				                }
+                    }
+                }
+            }
+        }
+    }    
+};
+\\end{tikzpicture}   
+\\end{center}
+'
+
+vsr01_05b <-'
+\\centering
+	\\begin{tikzpicture}
+	\\node{
+    \\centering
+    \\begin{tabular}{|c|c|c|}
+    \\hline
+        Opción & Descripción & Fórmula \\\\ \\hline
+        1 & Permutación con repetición & $\\mathrm{P}_{a;b;c;...}^{n}=\\frac{n!}{a!\\cdot b!\\cdot c!\\cdot ...}$ \\\\ \\hline
+        2 & Permutación sin repetición & $\\mathrm{P}_{n}=n!$ \\\\ \\hline
+        3 & Permutación circular & $\\mathrm{PC}_{n}^{}=(n-1)!$ \\\\ \\hline
+        4 & Variación con repetición & $\\mathrm{VR}_{k}^{n}=n^{k}$ \\\\ \\hline
+        5 & Variación sin repetición & $\\mathrm{V}_{k}^{n}=\\frac{n!}{(n-k)!}$ \\\\ \\hline
+        6 & Combinación con repetición & $\\mathrm{CR}_{k}^{n}=\\frac{(k+n-1)!}{(n-1)! \\cdot k!}$ \\\\ \\hline
+        7 & Combinación sin repetición & $\\mathrm{C}_{k}^{n}=\\frac{n!}{(n - k)!\\cdot k!}$ \\\\ \\hline
+    \\end{tabular}
+	};
+\\end{tikzpicture} 
+'
+
+vsr01_05c <-'
+\\begin{center}
+\\begin{tikzpicture}
+\\node {
+  $\\begin{aligned}
+
+{V}_{k}^{n}&=\\frac{n!}{(n-k)!} \\\\
+{V}_{%s}^{%s}&=\\frac{%s!}{(%s-%s)!} \\\\
+&=\\frac{%s!}{%s!} \\\\
+&=\\frac{%s}{%s} \\\\
+&=\\frac{%s* %s!}{%s!} \\\\
+&=\\frac{%s* \\color{red} \\cancelto{1}{%s!}}{\\color{red} \\cancelto{1}{%s!}} \\\\
+&=\\frac{%s*1}{1} \\\\
+&=\\frac{%s}{1} \\\\
+{V}_{%s}^{%s}&=%s
+
+  \\end{aligned}$
+  };
+\\end{tikzpicture}
+\\end{center}
+'
+
+vsr01_05c <- sprintf(vsr01_05c,k,n,n,n,
+                        k,n,pobmu,faktorialpob,faktorialmu,finalt,
+                        pobmu,pobmu,finalt,pobmu,pobmu,finalt,vsr1,n,
+                        k,vsr1)
+```
+
+Question
+========
+
+\
+De los `r n` estudiantes de un salón debo seleccionar `r k` para llevarlos a un almuerzo. El primer elegido obtendrá un obsequio adicional. ¿De cuántas formas diferentes puedo seleccionar a los `r k` estudiantes?
+
+
+Answerlist
+----------
+
+*  de `r vsr1` formas posibles
+*  de `r vsr2` formas posibles
+*  de `r vsr3` formas posibles
+*  de `r vsr4` formas posibles
+
+Solution
+========
+
+\
+Para llegar a la respuesta correcta debemos hacernos una serie de preguntas, siguiendo la ruta que nos muestra el siguiente árbol de decisión:
+
+\
+```{r vsr01_05a, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(vsr01_05a, name = "vsr01_05a", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",                                    "calc","3d"),packages=c("tikz","booktabs","pgfplots",                                                                "tkz-euclide"), width = "11.5cm")
+```
+
+\
+
+* ¿Están todos los elementos? No. La población (`r n`) no es igual a la muestra (`r k`).
+* ¿Importa el orden? Sí. Se obtienen mejores beneficios siendo el primer elegido.
+* ¿Hay repetición? No. Un mismo estudiante NO puede ser seleccionado más de una vez.
+* Entonces, estamos ante un caso de Variación Sin Repetición (Opción 5):
+
+\
+
+```{r vsr01_05b, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(vsr01_05b, name = "vsr01_05b", markup = "markdown",format = typ, library = c("3d", "babel", "positioning"), packages=c("tikz","xcolor"),width = "11.5cm")
+```
+
+
+Sabiendo que $n=`r n`$ (población) y que $k=`r k`$ (muestra), reemplazamos en la fórmula:
+
+```{r vsr01_05c, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(vsr01_05c, name = "vsr01_05c", markup = "markdown",
+             format = typ,library=c("arrows","perspective","datavisualization",
+                                    "calc","3d"),packages=c("tikz","booktabs",
+                                                            "pgfplots", "color",
+                                                            "cancel","amsmath",
+                                                            "tkz-euclide",
+                                                            "physics"), 
+             width = "13.5cm")
+```
+
+\
+Por tanto, el profesor puede seleccionar `r k` estudiantes de `r vsr1` formas diferentes.
+
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:VariacionSinRep_01_05_py(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

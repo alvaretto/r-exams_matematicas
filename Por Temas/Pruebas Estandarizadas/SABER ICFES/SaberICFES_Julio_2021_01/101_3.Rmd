@@ -1,0 +1,152 @@
+```{r data generation, echo = FALSE, results = "hide", caption=" "}
+library(exams)
+require(stats)
+library(ggplot2)
+typ <- match_exams_device()
+
+
+plan <- sample(seq(150,250,10),1)
+plan
+familia <- sample(c("Ángel","Molina","González","Ramírez","Sánchez","Céspedes","Yepes"),1)
+minutos <- sample(50:400,7,replace=F)
+minutos
+
+minutos[7] <- sample(seq(plan+61,plan+150,1),1)
+
+
+minutos[7]
+
+kik <- minutos[7]-plan
+kik
+
+enterohoras <- (minutos[7]-plan)/60
+enterohoras
+enterohorasd <- trunc((minutos[7]-plan)/60)
+enterohorasd
+enterominutos <- enterohoras-enterohorasd
+enterominutos <- round(enterominutos*60,0)
+enterominutos
+
+if(enterominutos>0 & enterominutos<30){
+  deltta <- sample(1:19,1)
+deltta
+errminutos2 <- c(enterominutos+deltta)
+errminutos2
+}
+
+
+if(enterominutos>29 & enterominutos<60){
+  deltta <- sample(1:19,1)
+deltta
+errminutos2 <- c(enterominutos-deltta)
+errminutos2
+}
+
+if(enterohorasd<=1){ 
+  piq <- sample(1:2,1)
+errhoras2 <- enterohorasd+piq  
+}
+
+if(enterohorasd>1){ 
+errhoras2 <- enterohorasd-1  
+}
+
+colorbarr<-sample(c("aquamarine","amber","airforceblue","amaranth","antiquefuchsia","asparagus","arylideyellow","stildegrainyellow","salmon"),1)
+
+colorbarr
+
+questions<-solutions<-explanations<-NULL
+questions[1]<-paste("",enterohorasd," hora(s) y ",enterominutos," minuto(s).")
+solutions[1]<-TRUE
+explanations[1]<-"."
+
+questions[2]<-paste("",enterohorasd," hora(s) y ",errminutos2," minuto(s).")
+solutions[2]<-FALSE
+explanations[2]<-"."
+
+questions[3]<-paste("",errhoras2," hora(s) y ",enterominutos," minuto(s).")
+solutions[3]<-FALSE
+explanations[3]<-"."
+
+questions[4]<-paste("",errhoras2," hora(s) y ",errminutos2," minuto(s).")
+solutions[4]<-FALSE
+explanations[4]<-"."
+
+orden<-sample(1:4)
+questions<-questions[orden]
+solutions<-solutions[orden]
+explanations<-explanations[orden]
+
+dibujo01 <- '
+\\definecolor{salmon}{rgb}{1.0, 0.55, 0.41}
+\\definecolor{stildegrainyellow}{rgb}{0.98, 0.85, 0.37}
+\\definecolor{arylideyellow}{rgb}{0.91, 0.84, 0.42}
+\\definecolor{asparagus}{rgb}{0.53, 0.66, 0.42}
+\\definecolor{antiquefuchsia}{rgb}{0.57, 0.36, 0.51}
+\\definecolor{amaranth}{rgb}{0.9, 0.17, 0.31}
+\\definecolor{airforceblue}{rgb}{0.36, 0.54, 0.66}
+\\definecolor{amber}{rgb}{1.0, 0.75, 0.0}
+\\definecolor{aquamarine}{rgb}{0.5, 1.0, 0.83}
+\\pgfplotsset{width=7cm,compat=1.17}
+	\\begin{tikzpicture}
+		\\begin{axis}[
+			ybar,
+			ymajorgrids,
+			enlargelimits=0.15,
+			width=10cm,
+			legend style={at={(0.5,1.2)},
+				anchor=north,legend columns=-1},
+			ylabel={\\ \\textbf{Minutos consumidos}},
+			xlabel={\\ \\textbf{Últimos consumos de voz}},
+			symbolic x coords={Jul.,Ago.,Sep.,Oct.,Nov.,Dic.,Ene.},
+			xtick=data,
+			bar width=0.5cm,
+			nodes near coords,
+			nodes near coords align={vertical},
+			x tick label style={rotate=0,anchor=north},
+			]
+			\\addplot [black,fill=%s] coordinates {(Jul.,%s) (Ago.,%s) (Sep.,%s) (Oct.,%s) (Nov.,%s) (Dic.,%s) (Ene.,%s)};
+			\\legend{\\textbf{Diagrama de barras de los últimos consumos de voz}}
+		\\end{axis}
+	\\end{tikzpicture}
+'
+dibujo01 <- sprintf(dibujo01,colorbarr,minutos[1],minutos[2],minutos[3],minutos[4],
+                    minutos[5],minutos[6],minutos[7])
+```
+
+Question
+========
+La gráfica muestra parte de la información que recibe la familia `r familia` en su factura telefónica del mes de enero:
+
+\
+
+```{r dibujo01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(dibujo01, name = "1oAgo21nm01", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("pgfplots","tikz","xcolor"),width = "7.5cm")
+```
+\
+
+"Su plan local actual es de `r plan` minutos"
+
+\
+El tiempo adicional consumido por la familia `r familia` en enero fue:
+
+```{r questionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(questions, markup = "markdown")
+```
+
+
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(ifelse(solutions, "Verdadero", "Falso"), markup = "markdown")
+```
+
+Meta-information
+================
+exname: LetrasNombresMediana(single-choice)
+extype: schoice
+exsolution: `r mchoice2string(solutions)`

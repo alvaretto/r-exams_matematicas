@@ -1,0 +1,2311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/P12_02e_/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R01 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 204 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+84 minutos mismo operador, 161 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+90 minutos mismo operador, 79 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+197 minutos diferente operador, 100 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+195 minutos diferente operador, 139 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R02 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 216 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+128 minutos mismo operador, 177 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+94 minutos diferente operador, 105 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+92 minutos diferente operador, 148 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+113 minutos mismo operador, 97 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R03 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 233 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+180 minutos diferente operador, 129 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+192 minutos diferente operador, 144 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+99 minutos mismo operador, 53 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+138 minutos mismo operador, 66 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R04 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 211 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+133 minutos mismo operador, 154 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+179 minutos diferente operador, 147 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+134 minutos mismo operador, 82 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+144 minutos mismo operador, 125 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R05 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 217 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+123 minutos mismo operador, 70 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+90 minutos diferente operador, 60 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+123 minutos mismo operador, 220 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+77 minutos mismo operador, 51 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R06 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 240 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+71 minutos diferente operador, 88 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+51 minutos mismo operador, 173 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+142 minutos mismo operador, 209 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+129 minutos mismo operador, 136 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R07 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 217 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+25 minutos diferente operador, 102 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+79 minutos mismo operador, 36 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+150 minutos mismo operador, 162 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+91 minutos mismo operador, 33 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R08 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 208 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+210 minutos diferente operador, 148 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+64 minutos mismo operador, 142 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+95 minutos mismo operador, 126 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+58 minutos mismo operador, 123 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R09 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 201 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+83 minutos mismo operador, 34 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+195 minutos diferente operador, 111 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+205 minutos diferente operador, 57 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+75 minutos mismo operador, 167 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R10 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 236 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+99 minutos mismo operador, 73 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+70 minutos mismo operador, 47 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+218 minutos diferente operador, 149 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+92 minutos mismo operador, 164 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R11 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 226 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+106 minutos mismo operador, 139 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+71 minutos mismo operador, 167 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+122 minutos mismo operador, 209 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+28 minutos diferente operador, 124 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R12 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 236 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+144 minutos mismo operador, 182 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+103 minutos diferente operador, 91 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+185 minutos diferente operador, 147 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+187 minutos diferente operador, 93 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R13 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 223 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+143 minutos mismo operador, 205 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+202 minutos diferente operador, 57 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+205 minutos diferente operador, 118 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+80 minutos mismo operador, 66 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R14 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 209 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+126 minutos diferente operador, 147 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+70 minutos mismo operador, 70 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+97 minutos mismo operador, 188 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+116 minutos mismo operador, 72 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R15 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 221 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+192 minutos diferente operador, 77 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+195 minutos diferente operador, 134 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+121 minutos diferente operador, 62 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+75 minutos mismo operador, 33 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R16 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 206 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+138 minutos mismo operador, 76 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+78 minutos diferente operador, 144 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+174 minutos diferente operador, 122 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+151 minutos diferente operador, 102 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R17 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 218 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+80 minutos diferente operador, 88 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+25 minutos diferente operador, 125 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+143 minutos mismo operador, 189 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+85 minutos mismo operador, 81 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R18 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 207 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+56 minutos diferente operador, 68 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+127 minutos diferente operador, 139 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+184 minutos diferente operador, 118 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+57 minutos mismo operador, 168 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R19 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 226 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+87 minutos diferente operador, 56 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+85 minutos mismo operador, 204 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+85 minutos mismo operador, 207 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+130 minutos mismo operador, 198 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R20 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 225 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+37 minutos diferente operador, 136 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+146 minutos mismo operador, 112 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+212 minutos diferente operador, 124 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+157 minutos diferente operador, 131 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R21 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 219 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+124 minutos mismo operador, 195 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+154 minutos diferente operador, 60 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+107 minutos diferente operador, 64 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+61 minutos mismo operador, 174 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R22 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 206 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+64 minutos mismo operador, 138 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+79 minutos diferente operador, 125 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+138 minutos diferente operador, 51 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+165 minutos diferente operador, 132 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R23 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 212 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+115 minutos mismo operador, 196 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+109 minutos mismo operador, 33 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+145 minutos mismo operador, 125 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+67 minutos mismo operador, 117 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R24 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 203 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+115 minutos diferente operador, 97 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+208 minutos diferente operador, 113 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+64 minutos mismo operador, 58 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+68 minutos mismo operador, 52 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R25 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 230 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+60 minutos diferente operador, 83 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+123 minutos diferente operador, 111 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+142 minutos mismo operador, 91 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+185 minutos diferente operador, 138 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R26 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 204 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+83 minutos mismo operador, 50 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+81 minutos mismo operador, 161 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+120 minutos mismo operador, 179 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+115 minutos diferente operador, 91 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R27 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 238 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+102 minutos diferente operador, 83 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+112 minutos diferente operador, 132 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+204 minutos diferente operador, 149 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+198 minutos diferente operador, 87 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R28 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 225 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+60 minutos mismo operador, 172 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+71 minutos diferente operador, 68 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+135 minutos mismo operador, 199 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+201 minutos diferente operador, 92 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R29 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 203 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+216 minutos diferente operador, 103 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+58 minutos mismo operador, 122 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+79 minutos diferente operador, 61 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+99 minutos diferente operador, 91 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R30 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 200 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+36 minutos diferente operador, 94 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+193 minutos diferente operador, 143 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+181 minutos diferente operador, 51 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+52 minutos mismo operador, 89 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R31 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 215 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+139 minutos diferente operador, 147 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+54 minutos mismo operador, 114 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+47 minutos diferente operador, 61 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+216 minutos diferente operador, 69 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R32 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 230 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+127 minutos mismo operador, 213 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+115 minutos diferente operador, 54 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+71 minutos mismo operador, 217 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+50 minutos mismo operador, 60 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R33 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 218 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+94 minutos mismo operador, 220 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+156 minutos diferente operador, 101 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+141 minutos mismo operador, 210 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+52 minutos mismo operador, 62 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R34 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 212 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+55 minutos mismo operador, 144 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+20 minutos diferente operador, 81 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+129 minutos mismo operador, 168 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+89 minutos mismo operador, 158 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R35 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 228 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+148 minutos diferente operador, 54 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+173 minutos diferente operador, 146 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+122 minutos mismo operador, 109 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+148 minutos diferente operador, 74 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R36 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 208 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+147 minutos mismo operador, 154 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+153 minutos diferente operador, 79 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+97 minutos mismo operador, 35 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+113 minutos diferente operador, 123 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R37 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 233 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+134 minutos diferente operador, 122 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+137 minutos mismo operador, 213 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+82 minutos mismo operador, 197 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+188 minutos diferente operador, 69 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R38 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 229 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+144 minutos mismo operador, 181 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+129 minutos mismo operador, 125 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+28 minutos diferente operador, 79 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+195 minutos diferente operador, 76 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R39 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 215 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+209 minutos diferente operador, 100 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+206 minutos diferente operador, 135 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+72 minutos mismo operador, 97 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+139 minutos mismo operador, 143 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R40 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 200 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+109 minutos mismo operador, 174 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+76 minutos mismo operador, 30 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+80 minutos mismo operador, 193 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+172 minutos diferente operador, 120 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R41 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 222 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+97 minutos mismo operador, 196 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+129 minutos mismo operador, 43 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+100 minutos mismo operador, 112 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+148 minutos mismo operador, 171 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R42 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 244 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+113 minutos diferente operador, 144 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+108 minutos mismo operador, 195 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+211 minutos diferente operador, 148 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+27 minutos diferente operador, 132 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R43 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 240 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+127 minutos mismo operador, 191 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+137 minutos mismo operador, 218 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+117 minutos mismo operador, 206 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+54 minutos mismo operador, 133 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R44 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 200 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+109 minutos mismo operador, 53 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+20 minutos diferente operador, 127 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+78 minutos mismo operador, 211 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+138 minutos diferente operador, 133 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R45 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 218 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+81 minutos diferente operador, 112 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+111 minutos mismo operador, 69 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+111 minutos mismo operador, 220 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+212 minutos diferente operador, 68 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R46 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 211 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+207 minutos diferente operador, 52 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+198 minutos diferente operador, 101 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+186 minutos diferente operador, 129 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+77 minutos mismo operador, 187 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R47 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 235 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+112 minutos mismo operador, 174 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+217 minutos diferente operador, 144 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+84 minutos mismo operador, 41 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+39 minutos diferente operador, 112 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R48 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 204 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+110 minutos diferente operador, 141 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+116 minutos mismo operador, 144 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+217 minutos diferente operador, 120 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+62 minutos mismo operador, 23 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R49 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 222 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+55 minutos mismo operador, 80 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+81 minutos mismo operador, 101 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+81 minutos mismo operador, 75 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+149 minutos mismo operador, 205 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> R50 Q1 : P12_02e </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una persona adquirió un teléfono con un plan que ofrece 209 minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán la mitad de minutos del plan por cada minuto utilizado.</p>
+<p>¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?<br />
+</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p><br />
+</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+93 minutos mismo operador, 132 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+21 minutos diferente operador, 95 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+204 minutos diferente operador, 141 minutos mismo operador. <br/>
+</p>]]></text>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+108 minutos mismo operador, 106 minutos diferente operador. <br/>
+</p>]]></text>
+</answer>
+</question>
+
+</quiz>

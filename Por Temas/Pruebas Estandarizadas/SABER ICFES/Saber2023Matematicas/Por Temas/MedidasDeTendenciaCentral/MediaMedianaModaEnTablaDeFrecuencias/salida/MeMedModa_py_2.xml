@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/MeMedModa_py_2/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q1 : Lab_MeMedModa_py2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p><br />
+La tabla muestra las edades (en años) de personas que habitan un conjunto residencial.</p>
+<br />
+
+<p><br />
+Según esa información,</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>La media de los datos es 72.41; la mediana es 75 y la moda es 70.</p>
+<ol type = "a">
+<li> Falso </li>
+<li> Verdadero </li>
+<li> Falso </li>
+<li> Falso </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+<answernumbering>ABCD</answernumbering>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+La media de los datos es 72.41; la mediana es 66 y la moda es 16.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Falso
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+La media de los datos es 72.41; la mediana es 75 y la moda es 70.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Verdadero
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+La media de los datos es 22.16; la mediana es 58 y la moda es 70.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Falso
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="0" format="html">
+<text><![CDATA[<p>
+La media de los datos es 82.13; la mediana es 79 y la moda es 71.
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Falso
+</p>]]></text>
+</feedback>
+</answer>
+</question>
+
+</quiz>

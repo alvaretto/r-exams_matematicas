@@ -1,0 +1,112 @@
+<style>
+img[src*="chunk"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
+```{r}
+options(pdflatex = "/usr/bin/pdflatex")
+Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", Sys.getenv("PATH"), sep = ":"))
+```
+
+
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+typ <- match_exams_device()
+use_python("/usr/bin/python3")
+options(scipen = 999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+##################
+```
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import random
+
+def minutos_usados(mismo_operador, diferente_operador):
+    return mismo_operador + 3*diferente_operador
+
+def generar_opciones(rango_mismo_operador, rango_diferente_operador, rango_plan):
+    for _ in range(1000):  # Limitar el número de iteraciones
+        total_plan = random.randint(*rango_plan)
+        opciones = {
+            'A': (random.randint(*rango_mismo_operador), random.randint(*rango_diferente_operador)),
+            'B': (random.randint(*rango_mismo_operador), random.randint(*rango_diferente_operador)),
+            'C': (random.randint(*rango_mismo_operador), random.randint(*rango_diferente_operador)),
+            'D': (random.randint(*rango_mismo_operador), random.randint(*rango_diferente_operador))
+        }
+        incorrectas = sum(minutos_usados(mismo_operador, diferente_operador) > total_plan
+                          for mismo_operador, diferente_operador in opciones.values())
+        if incorrectas == 1:
+            return total_plan, opciones
+    raise ValueError("No se pudo generar opciones con exactamente una incorrecta")
+
+rango_mismo_operador = (50, 150)
+rango_diferente_operador = (20, 220)
+rango_plan = (200, 500)
+
+total_plan, opciones = generar_opciones(rango_mismo_operador, rango_diferente_operador, rango_plan)
+
+salidas = {}
+for opcion, (mismo_operador, diferente_operador) in opciones.items():
+    if random.choice([True, False]):
+        salidas[opcion] = f"{mismo_operador} minutos mismo operador, {diferente_operador} minutos diferente operador"
+    else:
+        salidas[opcion] = f"{diferente_operador} minutos diferente operador, {mismo_operador} minutos mismo operador"
+
+opciones_rescorr = {'A': '1000', 'B': '0100', 'C': '0010', 'D': '0001'}
+
+for opcion, (mismo_operador, diferente_operador) in opciones.items():
+    if minutos_usados(mismo_operador, diferente_operador) > total_plan:
+        rescorr = opciones_rescorr[opcion]
+        break
+
+salidasa = salidas['A']
+salidasb = salidas['B']
+salidasc = salidas['C']
+salidasd = salidas['D']
+opcioncorr = opcion
+rescorre = rescorr
+```
+Question
+========
+
+Una persona adquirió un teléfono con un plan que ofrece `r py$total_plan` minutos para llamar a otros números de su mismo operador. En caso de que la llamada sea a otro operador se descontarán tres minutos del plan por cada minuto utilizado. 
+
+¿Cuál de las siguientes combinaciones de minutos de llamadas excede la cantidad de minutos adquiridos en el plan?\
+
+Answerlist
+----------
+
+- `r py$salidasa`.
+<br/> 
+
+- `r py$salidasb`.
+<br/> 
+
+- `r py$salidasc`.
+<br/> 
+
+- `r py$salidasd`.
+<br/> 
+
+
+Solution
+========
+
+\
+
+Meta-information
+================
+
+exname: Contraseñas(single-choice)
+extype: schoice
+exsolution: `r py$rescorre`
+exshuffle: TRUE

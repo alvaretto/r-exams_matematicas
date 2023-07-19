@@ -1,0 +1,9 @@
+---
+title: "test"
+output: html_document
+---
+```{r setup}
+DT::datatable(mtcars, class = 'cell-border stripe', options = list(pageLength = nrow(mtcars)))
+```
+
+\input{filename}

@@ -1,0 +1,108 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+typ <- match_exams_device()
+
+ahorrador<-sample(c("José Álvaro","Aquilino","Alexander","Luis Fernando","Juan Manuel","Santiago","Emiliano"),1)
+ahorrador
+
+diaini<-c("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado")
+diaini
+
+diafin<-c("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado")
+diafin
+
+# diafin<-c("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado")
+# diafin
+# 
+# pepo<-sample(c("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"),1)
+# pepo
+# 
+# tete<-diaini[grep(pepo, diafin)]
+# tete
+# https://www.it-swarm-es.com/es/r/probar-si-un-vector-contiene-un-elemento-dado/967392780/
+
+numdiaini<-1:7 
+numdiaini 
+
+numdiafin<-1:7
+numdiafin
+
+numfin<-sample(2:7,1)
+numfin
+menosuno<-numfin-1
+menosuno
+numini<-sample(1:menosuno,1)
+numini
+
+tabla<-data.frame(numdiafin,diafin,diaini,numdiaini)
+tabla
+
+diafin2<-diafin[numfin]
+diafin2
+
+diaini2<-diaini[numini]
+diaini2
+
+monedas<-sample(c(64,128,256,512,1024,2048,4096),1)
+monedas
+
+diasdif<-numfin-numini
+diasdif
+
+ahorroini<-(monedas/(2^diasdif))
+ahorroini
+ahorroini2<-sample(c(monedas/(2^(diasdif+1))),(monedas/(3^(diasdif-1))),1)
+ahorroini2
+ahorroini3<-sample(c((monedas/(2^(diasdif+2))),monedas-10),1)
+ahorroini3
+ahorroini4<-sample(c((monedas/(2^(diasdif-1))),(monedas/(2^(diasdif+4)))),1)
+
+if(ahorroini!=ahorroini2 & ahorroini2!=ahorroini3 & ahorroini3!=ahorroini4)
+  {
+
+questions<-solutions<-explanations<-NULL
+questions[1]<-paste(ahorroini)
+solutions[1]<-TRUE
+explanations[1]<-"."
+
+questions[2]<-paste(ahorroini2)
+solutions[2]<-FALSE
+explanations[2]<-"."
+
+questions[3]<-paste(ahorroini3)
+solutions[3]<-FALSE
+explanations[3]<-"."
+
+questions[4]<-paste(ahorroini4)
+solutions[4]<-FALSE
+explanations[4]<-"."
+
+orden<-sample(1:4)
+questions<-questions[orden]
+solutions<-solutions[orden]
+explanations<-explanations[orden]
+}
+```
+
+Question
+========
+Por cada moneda que `r ahorrador` introduce en su alcancía en un día, al siguiente introduce el doble. El `r diafin2`, `r ahorrador` insertó `r monedas` monedas. ¿Cuántas monedas introdujo en su alcancía el `r diaini2` de esa misma semana?
+
+
+```{r questionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(questions, markup = "markdown")
+```
+
+Solution
+========
+```{r solutionlist, echo = FALSE, results = "asis"}
+library(exams)
+answerlist(ifelse(solutions, "Verdadero", "Falso"), markup = "markdown")
+```
+
+Meta-information
+================
+exname: MonedasAhorro2(single-choice)
+extype: schoice
+exsolution: `r mchoice2string(solutions)`

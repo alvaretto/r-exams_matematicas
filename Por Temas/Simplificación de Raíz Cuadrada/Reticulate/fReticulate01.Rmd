@@ -1,0 +1,108 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+# use_python('/usr/bin/python3', required = TRUE)
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+```
+
+```{python, include=FALSE}
+from sympy import *   
+init_printing()     ##### Facilita la impresión en un formato legible
+```
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand1 = random.randint(-200, 200)
+sol = sympy.cbrt(nrand1)
+pp = print('$' + sympy.printing.latex(sol) + '$')
+```
+
+
+
+Question
+========
+
+Simplifique: 
+
+$$\sqrt[3]{`r py$nrand1`}$$
+
+
+Answerlist
+----------
+
+*   
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+print('$' + sympy.printing.latex(sol) + '$')
+```
+p1
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+# Libraries
+import pandas as pd
+
+# read the data (on the web)
+data = pd.read_csv('https://raw.githubusercontent.com/holtzy/The-Python-Graph-Gallery/master/static/data/gapminderData.csv')
+
+# Check the first 2 rows
+data.head(10)
+```
+p2
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import pandas
+def read_flights(file):
+  flights = pandas.read_csv('https://raw.githubusercontent.com/holtzy/The-Python-Graph-Gallery/master/static/data/gapminderData.csv')
+  flights = flights[flights['continent'] == "Asia"]
+  flights = flights[['country', 'year', 'pop']]
+  flights = flights.dropna()
+  return flights
+```
+p3
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.tri as mtri
+
+xy = [[0.3,0.5],
+      [0.6,0.8],
+      [0.5,0.1],
+      [0.1,0.2]]
+xy = np.array(xy)
+
+triangles = [[0,2,1],
+             [2,0,3]]
+
+triang = mtri.Triangulation(xy[:,0], xy[:,1], triangles=triangles)
+plt.triplot(triang, marker="o")
+
+plt.show()
+```
+p4
+
+Solution
+========
+
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+pp = print('$' + sympy.printing.latex(sol) + '$')
+``` 
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

@@ -1,0 +1,86 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+#!/usr/bin/env python
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(gtools)
+library(glue)
+library(reticulate)
+
+# use_python('/usr/bin/python3', required = TRUE)
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+```
+```{python, include=FALSE}
+from sympy import *
+init_printing()
+```
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand1 = random.randint(1, 100)
+qw = sympy.sqrt(nrand1)
+pp = print('$' + sympy.printing.latex(qw) + '$')
+```
+
+```{r}
+ppt <- py$pp
+```
+
+
+`r ppt`
+
+Question
+========
+
+Simplifique: 
+
+`r ppt`
+
+$$\sqrt{`r py$nrand1`}$$
+
+
+Answerlist
+----------
+
+*  de 
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+pp = print('$' + sympy.printing.latex(qw) + '$')
+```
+formas posibles .
+*  de  formas posibles
+*  de  formas posibles
+*  de  formas posibles
+
+Solution
+========
+
+Por tanto, se pueden obtener 
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+pp = print('$' + sympy.printing.latex(qw) + '$')
+``` 
+resultados posibles.
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

@@ -1,0 +1,63 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+# use_python('/usr/bin/python3', required = TRUE)
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+
+a <- sample(1:10,1)
+b <- sample(2:20,1)
+a
+b
+```
+```{r,echo = FALSE,messages=FALSE,results = "asis"}
+source_python('add.py')
+qsp <- poy(a, b)
+```
+
+Question
+========
+
+yyy: 
+
+`r a`
+
+`r b`
+
+`r qsp`
+
+Answerlist
+----------
+
+*
+p1
+*  
+
+p2
+*  
+
+p3
+*  
+
+p4
+
+Solution
+========
+
+dgergh
+
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

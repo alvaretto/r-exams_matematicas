@@ -1,0 +1,101 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+# use_python('/usr/bin/python3', required = TRUE)
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+```
+
+```{python, include=FALSE}
+from sympy import *   
+init_printing()     ##### Facilita la impresión en un formato legible
+```
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand1 = random.randint(3, 200)
+```
+
+Question
+========
+
+Simplifique: 
+
+$$\sqrt{`r py$nrand1`}$$
+
+
+Answerlist
+----------
+
+*   
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+sol = sympy.sqrt(nrand1)
+pp1 = print('$' + sympy.printing.latex(sol) + '$')
+```
+p1
+
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import math
+import sympy
+import random 
+nrand2 = random.randint(1, 200)
+nrand2
+if (nrand2 != nrand1) & (nrand2<nrand1):
+  inc2b = sympy.root(nrand2,2)
+  inc2b
+  inc2 = sympy.sqrt(nrand2)
+  inc2
+  inc =random.sample((inc2,inc2b),1)
+  inc = inc[0]
+print('$' + sympy.printing.latex(inc) + '$')
+```
+p2
+
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand3 = random.randint(1, 200)
+if (nrand3 != nrand1) & (nrand3 != nrand2) & (nrand3<nrand1):
+  inc3 = sympy.sqrt(nrand3)
+pp3 = print('$' + sympy.printing.latex(inc3) + '$')
+```
+p3
+
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand4 = random.randint(1, 200)
+if (nrand4 != nrand1) & (nrand4 != nrand2) & (nrand4 != nrand3) & (nrand4<nrand1):
+  inc4 = sympy.sqrt(nrand4)
+pp4 = print('$' + sympy.printing.latex(inc4) + '$')
+```
+p4
+
+Solution
+========
+
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+pp = print('$' + sympy.printing.latex(sol) + '$')
+``` 
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

@@ -1,0 +1,50 @@
+output:
+    html_document:
+    toc: false
+    toc_depth: 1
+---
+
+```{r, loadPython, echo=F}
+library(reticulate)
+library(tidyverse)
+library(DT)
+
+```
+
+
+```{python, echo=T}
+import pandas as ts
+# working with pandas df objects continues from other work
+predictions = ts.make_predictions(model,
+                               series + ' SARIMAX',
+                               start=len(train),
+                               end= len(train) + len(oos_exog)-1,
+                               exog_data=oos_exog)
+
+# make the OOS intervals
+intervals = ts.get_oos_conf_interval(model=model,
+                                     steps_ahead=short_horizon,
+                                     exog_data = oos_exog)
+# this is raw output                                     
+print(intervals)
+```
+
+
+```{r, echo=T}
+# convert the pandas df object to R DF
+r_df <- reticulate::py$intervals
+
+
+# make a function to make fancy tables in R Markdown using DT package
+makeTable <- function(df, end_col){
+    datatable(df, extensions = 'Buttons',
+              options = list(dom = 'Bfrtip',
+                                 buttons = list("excel", "csv")
+    )) %>% 
+        formatRound(columns = c(1:end_col), digits = 0) 
+}
+r_df
+
+# output the table
+makeTable(r_df, end_col=4)
+```

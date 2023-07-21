@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/moodlequiz/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="multichoice">
+<name>
+<text> Q1 : _tmp_RtmpyKVCKW_SinRad+6222DA03+1E6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[<p>
+<p><br />
+Simplifique la siguiente expresión:</p>
+<p><span class="math display">\[\sqrt{14}\]</span></p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ol type = "a">
+<li> Verdadero </li>
+<li> Falso </li>
+<li> Falso </li>
+<li> Falso </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<shuffleanswers>false</shuffleanswers>
+<single>true</single>
+<answernumbering>abc</answernumbering>
+<answer fraction="100" format="html">
+<text><![CDATA[<p>
+1
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Verdadero
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{1}\)</span>
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Falso
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+2
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Falso
+</p>]]></text>
+</feedback>
+</answer>
+<answer fraction="-33.33333" format="html">
+<text><![CDATA[<p>
+<span class="math inline">\(\sqrt{14}\)</span>
+</p>]]></text>
+<feedback format="html">
+<text><![CDATA[<p>
+Falso
+</p>]]></text>
+</feedback>
+</answer>
+</question>
+
+</quiz>

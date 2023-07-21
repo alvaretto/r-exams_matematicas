@@ -1,0 +1,77 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+# use_python('/usr/bin/python3', required = TRUE)
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+typ <- match_exams_device()
+#--------------------------------------------------------
+```
+
+```{python, include=FALSE}
+from sympy import *   
+init_printing()     ##### Facilita la impresión en un formato legible
+```
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand1 = random.randint(2, 200)
+nram = nrand1*2
+sol = sympy.sqrt(nrand1)
+pp = print('$' + sympy.printing.latex(sol) + '$')
+```
+
+
+
+Question
+========
+
+Simplifique: 
+
+$$\sqrt{`r py$nrand1`}$$
+
+
+Answerlist
+----------
+
+*   
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+print('$' + sympy.printing.latex(sol) + '$')
+```
+p1
+*  `r py$nrand1` p2
+*  
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+import random
+nrand2 = random.randint(2, 200)
+if nrand2 < nrand1:
+  inc2 = sympy.sqrt(nrand2)
+pp = print('$' + sympy.printing.latex(inc2) + '$')
+```
+p3
+*  $\sqrt{`r py$nram`}$ p4
+
+Solution
+========
+
+
+```{python, eval = TRUE, echo = FALSE,results='asis'}
+import sympy
+pp = print('$' + sympy.printing.latex(sol) + '$')
+``` 
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

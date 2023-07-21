@@ -1,0 +1,96 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(gmp)
+library(ggplot2)
+library(dplyr)
+library(plyr)
+library(latex2exp)
+typ <- match_exams_device()
+#--------------------------------------------------------
+dat <- c(4,9,16,25,36,49,64,81,100,121,144,169,196,225)
+nume<-sample(dat ,1,replace=F)
+nume
+
+pipadf <- count(as.numeric(factorize(nume)))
+pipadf
+pipadf <- pipadf[order(pipadf$freq), ]
+pipadf
+pipa <- as.numeric(factorize(nume))
+pipa
+kuantos <- length(pipa)
+kuantos <- kuantos + 1
+kuantos
+pases <- length(pipadf$freq)
+pases
+x <- 1
+nuevovektor <- vector()
+
+while(x <= pases){
+  unovek <- rep(pipadf[x,1],pipadf[x,2])
+  nuevovektor <- c(nuevovektor,unovek)
+  x <- x+1
+}
+
+nuevovektor <- c(nuevovektor,1)
+nuevovektor
+
+i <- 1
+fderaiz <- vector()
+dderaiz <- vector()
+
+while(i <= kuantos-1){
+  
+  if(nuevovektor[i]==nuevovektor[i+1]){
+    x <- nuevovektor[i]
+    fderaiz <- c(fderaiz, x)
+    i <- i+2
+  }else {
+    x <- nuevovektor[i]
+    dderaiz <- c(dderaiz, x)
+    i <- i+1
+  }
+}
+
+fderaiz
+dderaiz
+
+sinrad <- prod(fderaiz)
+sinrad
+
+conrad <- prod(dderaiz)
+conrad
+
+resf <- sample(c(sinrad+1,sinrad-1),1)
+```
+
+Question
+========
+\
+Simplifique la siguiente expresión:
+
+$$\sqrt{`r nume`}$$
+Answerlist
+----------
+
+*  `r sinrad`
+*  $\sqrt{`r sinrad`}$
+*  $\sqrt{`r nume`}$
+*  `r resf`
+
+
+Solution
+========
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

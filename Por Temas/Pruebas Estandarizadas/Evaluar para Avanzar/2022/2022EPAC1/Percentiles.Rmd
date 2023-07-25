@@ -1,0 +1,66 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+
+use_python('/usr/bin/python3', required = TRUE)
+#use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+typ <- match_exams_device()
+#--------------------------------------------------------
+data <- sample(seq(5, 71, 1),1000, replace=T)
+p <- quantile(data, c(.1,.2,.25,.35,.45,.5,.6,.7,.75,.85,.95,1))
+p
+p[1] <- round(p[1],0)
+p[1]
+```
+
+
+
+Question
+========
+
+Los estudiantes de un colegio recolectaron la información correspondiente a la edad de un grupo de habitantes. La tabla recoge algunos de los percentiles de las edades de los encuestados.
+
+```{python}
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+# hide axes
+fig.patch.set_visible(False)
+ax.axis('off')
+ax.axis('tight')
+df = pd.DataFrame(np.random.randn(10, 4), columns=list('ABCD'))
+ax.table(cellText=df.values, colLabels=df.columns, loc='center')
+fig.tight_layout()
+plt.show()
+```
+
+
+<!-- ```{r imagepsr02, warning=FALSE,echo = FALSE, results = "asis"} -->
+<!-- options(tinytex.verbose = TRUE) -->
+<!-- knitr::opts_chunk$set(warning = FALSE, message = FALSE)  -->
+<!-- knitr::kable(py$clients, booktabs = TRUE, longtable = TRUE) -->
+<!--      # kableExtra::kable_styling(full_width = TRUE) -->
+<!-- ``` -->
+
+
+Answerlist
+----------
+
+*   1
+*   2
+*   3
+*   4
+
+Solution
+========
+
+dddddd
+
+Meta-information
+================
+exname:RadicalPrimo(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

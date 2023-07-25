@@ -1,0 +1,8 @@
+```{r, echo=FALSE, engine='tikz', out.width='90%', fig.ext=if (knitr:::is_latex_output()) 'pdf' else 'png', fig.cap='Some caption.'}
+\begin{tikzpicture}[scale=.7]
+\draw [fill=gray!30,very thick] (0,-1) rectangle (5,1);
+\draw [very thick] (5, 0) -- (13,0);
+\node [below] at (2,-1) {\large Hello};
+\node [below, align=center] at (0,-1) {\large Two\\ lines};
+\end{tikzpicture}
+```

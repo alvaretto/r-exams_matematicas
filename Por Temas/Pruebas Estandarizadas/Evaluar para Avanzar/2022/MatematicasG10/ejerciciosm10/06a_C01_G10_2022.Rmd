@@ -1,0 +1,100 @@
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+library(reticulate)
+options(tinytex.verbose = TRUE)
+typ <- match_exams_device()
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+##########################
+i <- 1
+while(i==1){
+chicas <- sample(c(6:20),1)
+chicos <- sample(c(6:20),1)
+gtr <- chicos*2
+salon <- chicos+chicas
+
+ninosf <- chicos*2/3
+
+ninosff <- sample(c((chicos*2/3)+1, (chicos*2/3)-1),1)
+
+ninasf <- chicas*3/4
+
+fute <-ninasf+ninosf
+futef <-ninasf+ninosff
+
+if(fute%%1==0){
+ i <- i+1 
+}
+else i <i
+}
+##########################
+fute
+```
+
+
+Question
+========
+\
+Un estudiante desea calcular la fracción de sus compañeros de salón a los que les gusta jugar fútbol. Para ello, dispone de la siguiente información:\
+\
+En su salón hay `r chicos` niños y `r chicas` niñas.
+\
+\
+A $\frac{2}{3}$ de los niños de su salón les gusta jugar fútbol.
+\
+\
+A $\frac{3}{4}$ de las niñas de su salón les gusta jugar fútbol.
+\
+\
+Luego, el estudiante realiza el siguiente procedimiento:
+\
+\
+**Paso 1.** Halla la cantidad de compañeros de salón, sumando la cantidad de niños y niñas: `r chicos` + `r chicas` = `r salon`
+\
+**Paso 2.** Halla la cantidad de niños a los que les gusta jugar fútbol: `r chicos` * $\left( \frac{2}{3} \right)$ = `r ninosff`
+\
+**Paso 3.** Halla la cantidad de niñas a las que les gusta jugar fútbol: `r chicas` * $\left( \frac{3}{4} \right)$ = `r ninasf`
+\
+**Paso 4.** Suma la cantidad de niños y niñas a los que les gusta jugar fútbol: `r ninosff` + `r ninasf` = `r futef`
+\
+**Paso 5.** Divide el resultado del paso anterior entre la cantidad total de estudiantes: $\frac{`r futef`}{`r salon`}$
+\
+\
+Al finalizar el procedimiento, el estudiante afirma que la razón de compañeros de salón a los que les gusta jugar fútbol es $\frac{`r futef`}{`r salon`}$. Sin embargo, su maestra le dice que cometió un error en el procedimiento.
+\
+\
+¿En qué paso cometió el error el estudiante?
+
+
+Answerlist
+----------
+
+- En el paso 4, ya que es incorrecto sumar la cantidad de niños y niñas a los que les gusta jugar fútbol.
+<br/> 
+
+- En el paso 2, ya que `r ninosff` corresponde a la cantidad de niñas a las que les gusta jugar fútbol.
+<br/> 
+
+- En el paso 4, ya que la cantidad de niños y niñas a los que les gusta jugar fútbol es `r fute`.
+<br/> 
+
+- En el paso 2, ya que la cantidad de niños a los que les gusta jugar fútbol es `r ninosf`.
+<br/> 
+
+
+Solution
+========
+\
+Al realizar el paso 2, se obtiene $\frac{2}{3}$ * `r chicos` =  $\frac{`r gtr`}{3}$  = `r ninosf`. Por tanto, el estudiante cometió el error en el paso 2, ya que la cantidad de niños a los que les gusta jugar fútbol es `r ninosf`.
+
+
+Meta-information
+================
+
+exname: Triangulos(single-choice)
+extype: schoice
+exsolution: 0001
+exshuffle: TRUE

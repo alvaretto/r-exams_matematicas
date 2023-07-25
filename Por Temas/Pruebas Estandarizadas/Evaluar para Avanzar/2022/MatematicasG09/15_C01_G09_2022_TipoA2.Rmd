@@ -1,0 +1,178 @@
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+library(reticulate)
+library(ggplot2)
+library(dplyr)
+library(RColorBrewer)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+##########################
+karro <- ("solo carro")
+aptto <- ("solo apartamento")
+kazza <- ("solo casa")
+karrokazza <- ("carro y casa")
+karroaptto <- ("carro y apartamento")
+halgunna <- sample(c(karro, aptto, kazza, karrokazza, karroaptto),1)
+```
+
+```{r scatterplot, echo = FALSE, results = "asis",fig.path = "", fig.cap = ""}
+porc <- seq(50, 1000, 5) # Números de 5 en 5 hasta 1000
+uzuarioz <- sample(porc, 5, replace=FALSE) # Selecciona 5 números únicos
+clientes <- sum(uzuarioz) # Define `clientes` como la suma de estos números
+
+zolokarro <- uzuarioz[5]
+zoloapto <- uzuarioz[4]
+zolokaza <- uzuarioz[3]
+karroykaza<- uzuarioz[2]
+karroyapto <- uzuarioz[1]
+
+kol <- sample(c("Set1","Set2","Set3","Accent","Dark2","Paired","Pastel1",
+                "Pastel2","BrBG", "PiYG", "PRGn", "PuOr", "RdBu", "RdGy",
+                "RdYlBu", "RdYlGn", "Spectral","Blues", "BuGn", "BuPu", "GnBu",
+                "Greens", "Greys", "Oranges", "OrRd", "PuBu", "PuBuGn", "PuRd",
+                "Purples", "RdPu", "Reds", "YlGn", "YlGnBu", "YlOrBr","YlOrRd"),
+              1)
+colores <- brewer.pal(length(uzuarioz),kol)
+```
+
+
+Question
+========
+\
+Se realizó una encuesta a un grupo de `r clientes` personas sobre el tipo de bienes que poseen. Los resultados se presentan en la gráfica.
+\
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+#import seaborn as sns
+import matplotlib.pyplot as plt
+
+fig, ax=plt.subplots(figsize=(8,4))
+values = (r.zolokarro, r.zoloapto, r.zolokaza, r.karroykaza, r.karroyapto)
+etiquetas=["Solo carro", "Solo apartamento", "Solo casa", "Carro y casa", "Carro y apartamento"]
+extraccion=0,0,0,0,0
+
+def make_autopct(values):
+    def my_autopct(pct):
+        total = sum(values)
+        val = int(round(pct*total/100.0))
+        #return '{p:.2f}%  ({v:d})'.format(p=pct,v=val)
+        return '{v:d}'.format(p=pct,v=val)
+    return my_autopct
+
+plt.pie(values, 
+        autopct=make_autopct(values),
+        pctdistance=1.17,
+        colors=r.colores,
+        explode=extraccion,
+        startangle=90,
+        counterclock=False,
+        shadow=True)
+        
+ax.set_title("Personas\n", fontsize=11, fontweight="light")
+plt.rcParams.update({'font.size': 10, 'font.weight' : 'normal'}) 
+
+ax.legend(etiquetas,bbox_to_anchor =(1, 1), ncol = 1,shadow= True)
+plt.show()
+```
+
+\
+Si se escoge una persona del grupo al azar, ¿cuál es la probabilidad de que tenga `r halgunna`?
+
+```{r decision, echo = FALSE, results = "hide"}
+if(halgunna==karro){
+  nhum <- zolokarro
+  dnm <- clientes
+}else if(halgunna==aptto){
+   nhum <- zoloapto
+   dnm <- clientes
+}else if(halgunna==kazza){
+   nhum <- zolokaza
+   dnm <- clientes
+}else if(halgunna==karrokazza){
+   nhum <- karroykaza
+   dnm <- clientes
+}else{
+   nhum <- karroyapto
+   dnm <- clientes
+}
+# nhum <- as.numeric(nhum)
+# dnm <- as.numeric(dnm)
+nhum
+dnm
+```
+
+Answerlist
+----------
+
+- 
+```{python clave, echo = FALSE, results = "asis"}
+nhum = int(r.nhum)
+dnm = int(r.dnm)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(nhum, dnm))
+```
+<br/> 
+
+- 
+```{python incorr1, echo = FALSE, results = "asis"}
+nhum = int(r.nhum + r.dnm)
+dnm = int(r.dnm)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(dnm, nhum))
+```
+<br/> 
+
+- 
+```{python incorr2, echo = FALSE, results = "asis"}
+nhum = int(r.zolokarro)
+dnm = int(r.zolokaza)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(nhum, dnm))
+```
+<br/> 
+
+- 
+```{python incorr3, echo = FALSE, results = "asis"}
+nhum = int(r.karroykaza)
+dnm = int(r.zolokaza)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(nhum, dnm))
+```
+<br/> 
+
+Solution
+========
+\
+La respuesta correcta es
+```{python retro, echo = FALSE, results = "asis"}
+nhum = int(r.nhum)
+dnm = int(r.dnm)
+from fractions import Fraction
+from decimal import Decimal
+
+print(Fraction(nhum, dnm))
+```
+<br/> 
+\
+
+Meta-information
+================
+
+exname: 15_C01_G09_2022_TipoA(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: TRUE

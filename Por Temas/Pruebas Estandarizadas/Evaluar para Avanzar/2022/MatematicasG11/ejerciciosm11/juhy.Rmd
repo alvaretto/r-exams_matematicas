@@ -1,0 +1,109 @@
+---
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    fig_caption: yes
+papersize: legal
+header-includes:
+  
+- \usepackage{scalerel}
+- \usepackage{pict2e}
+- \usepackage{tkz-euclide}
+- \usetikzlibrary{calc}
+- \usepackage{mathtools}
+- \usepackage{amsmath}
+- \usepackage{amssymb}
+- \usepackage{amsfonts}
+- \usepackage{hhline}
+- \usepackage{ragged2e}
+- \usepackage{makecell}
+- \usepackage{rotating}
+- \usepackage{multirow}
+- \usepackage{colortbl}
+- \usepackage{booktabs}
+- \usepackage{float}
+- \usepackage{tikz}
+- \usepackage{xcolor}
+- \usepackage{pgfplots}
+- \usepackage{fancyhdr}
+- \usepackage{tabularray}
+- \pagestyle{fancy}
+- \fancyhead[CE,CO]{}
+- \pgfplotsset{width=12cm,compat=1.17}
+---
+
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+library(reticulate)
+options(tinytex.verbose = TRUE)
+typ <- match_exams_device()
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+min <- sample(5:10,1)
+max <- sample(60:80,1)
+data <- sample(seq(min, max, 1),1000, replace=T)
+pts <- c(.1,.2,.25,.35,.45,.5,.6,.7,.75,.85,.95,1)
+pts1 <- pts *100
+pts1
+p <- quantile(data, pts)
+p
+p[1]
+p[1] <- round(p[1],0)
+p[1]
+
+perc <- sample(c(4:10),1)
+
+##########################
+
+image01t <- '
+\\begin{tikzpicture}
+% \\draw[lightgray] (-1,-1) grid (10,5);
+
+\\coordinate[label=left:$A$] (A) at (0,0);
+\\coordinate[label=above:$B$] (B) at (0,4);
+\\coordinate[label=right:$C$] (C) at (6,0);
+
+\\draw[ultra thick] (A)--(B)--(C)--cycle;
+
+\\tkzLabelSegment[below=3pt](A,C){$b$}
+\\tkzLabelSegment[left=3pt](A,B){$c$}
+\\tkzLabelSegment[above=3pt](B,C){$\\bm\\alpha$}
+
+% \\tkzMarkAngle[size=0.8, mark=||](B,C,A)
+\\tkzMarkAngle[size=0.8](B,C,A)
+\\tkzLabelAngle[pos=1.0](B,C,A){$\\bm\\theta$}
+
+\\coordinate[label=left:$A^{\\prime}$](A2)at(6,2);
+\\coordinate[label=above:$B^{\\prime}$](B2)at(6,4);
+\\coordinate[label=right:$C^{\\prime}$](C2)at(9,2);
+
+\\draw[ultra thick] (A2)--(B2)--(C2)--cycle;
+
+\\tkzLabelSegment[below=3pt](A2,C2){$b^{\\prime}$}
+\\tkzLabelSegment[left=3pt](A2,B2){$c^{\\prime}$}
+\\tkzLabelSegment[above=3pt](B2,C2){$\\bm\\alpha^{\\prime}$}
+
+\\tkzMarkAngle[size=0.8](B2,C2,A2)
+\\tkzLabelAngle[pos=1.0](B2,C2,A2){$\\bm\\beta$}
+\\end{tikzpicture}
+'
+```
+
+\
+Los triángulos $ABC$ y $A'B'C'$ en la figura satisfacen
+
+$$\frac{c}{c'}=\frac{\alpha}{\alpha'}=\frac{b}{b'}=2$$ 
+Es decir, la constante de proporcionalidad entre los lados correspondientes es 2.\
+\
+
+<p align="center">
+\centering
+```{r image01t, warning=FALSE,echo = FALSE, results = "asis",fig.align="center"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE,fig.align="center") 
+include_tikz(image01t, name = "image01t", markup = "markdown",format = typ,packages = c("venndiagram","tkz-euclide","bm"),width = "10cm")
+```

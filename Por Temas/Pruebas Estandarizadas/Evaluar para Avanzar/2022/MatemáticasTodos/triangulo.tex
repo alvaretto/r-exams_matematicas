@@ -1,0 +1,62 @@
+\\documentclass{standalone}
+
+%maths
+\\usepackage{mathtools}
+\\usepackage{amsmath}
+\\usepackage{amssymb}
+\\usepackage{amsfonts}
+
+%tikzpicture
+\\usepackage{tikz}
+\\usepackage{scalerel}
+\\usepackage{pict2e}
+\\usepackage{tkz-euclide}
+\\usetikzlibrary{calc}
+\\usetikzlibrary{patterns,arrows.meta}
+\\usetikzlibrary{shadows}
+\\usetikzlibrary{external}
+
+%pgfplots
+\\usepackage{pgfplots}
+\\pgfplotsset{compat=newest}
+\\usepgfplotslibrary{statistics}
+\\usepgfplotslibrary{fillbetween}
+
+%colours
+\\usepackage{xcolor}
+
+\\begin{document}
+
+\\begin{tikzpicture}
+% \\draw[lightgray] (-1,-1) grid (10,5);
+
+\\coordinate[label=left:$A$] (A) at (0,0);
+\\coordinate[label=above:$B$] (B) at (0,4);
+\\coordinate[label=right:$C$] (C) at (6,0);
+
+\\draw[ultra thick] (A)--(B)--(C)--cycle;
+
+\\tkzLabelSegment[below=3pt](A,C){$b$}
+\\tkzLabelSegment[left=3pt](A,B){$c$}
+\\tkzLabelSegment[above=3pt](B,C){$\\alpha$}
+
+% \\tkzMarkAngle[size=0.8, mark=||](B,C,A)
+\\tkzMarkAngle[size=0.8](B,C,A)
+\\tkzLabelAngle[pos=1.0](B,C,A){$\\theta$}
+
+\\coordinate[label=left:$A\\prime$](A2)at(6,2);
+\\coordinate[label=above:$B\\prime$](B2)at(6,4);
+\\coordinate[label=right:$C\\prime$](C2)at(9,2);
+
+\\draw[ultra thick] (A2)--(B2)--(C2)--cycle;
+
+\\tkzLabelSegment[below=3pt](A2,C2){$b\\prime$}
+\\tkzLabelSegment[left=3pt](A2,B2){$c\\prime$}
+\\tkzLabelSegment[above=3pt](B2,C2){$\\alpha\\prime$}
+
+\\tkzMarkAngle[size=0.8](B2,C2,A2)
+\\tkzLabelAngle[pos=1.0](B2,C2,A2){$\\beta$}
+
+\\end{tikzpicture}
+
+\\end{document}

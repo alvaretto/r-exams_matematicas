@@ -1,0 +1,239 @@
+---
+output:
+  html_document:
+    df_print: paged
+  pdf_document:
+    fig_caption: yes
+papersize: legal
+header-includes:
+- \usepackage{hhline}
+- \usepackage{ragged2e}
+- \usepackage{makecell}
+- \usepackage{rotating}
+- \usepackage{multirow}
+- \usepackage{colortbl}
+- \usepackage{booktabs}
+- \usepackage{float}
+- \usepackage{tikz}
+- \usepackage{xcolor}
+- \usepackage{pgfplots}
+- \usepackage{fancyhdr}
+- \usepackage{tabularray}
+- \pagestyle{fancy}
+- \fancyhead[CE,CO]{}
+- \pgfplotsset{width=12cm,compat=1.17}
+- \renewcommand*\contentsname{Tabla de contenido}
+- \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+- \newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+---
+
+```{r data generation, echo = FALSE, results = "hide"}
+### Para salidas PDF debe reducirse el tamaño en width = "Xcm"
+library(exams)
+library(tidyverse)
+library(datasets)
+library(readxl)
+library(data.table)
+
+options(tinytex.verbose = TRUE)
+typ <- match_exams_device()
+use_python('/home/rstudio/.local/share/r-miniconda/envs/r-reticulate/bin/python', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+##########################
+i <- 0
+
+while(i==0){
+opc1 <- sample(seq(100,180,by=10), 5, replace=T)
+opc1
+prom1 <- mean(opc1)
+prom1
+suma <- sum(opc1)
+suma
+
+opc2 <- sample(seq(100,180,by=10), 5, replace=T)
+opc2
+prom2 <- mean(opc2)
+prom2
+
+opc3 <- sample(seq(100,180,by=10), 5, replace=T)
+opc3
+fwq <- c(opc3[1],opc3[2],prom1,opc3[4],opc3[5])
+aytr <- sample(c(opc3,fwq),1)
+prom3 <- mean(aytr)
+prom3
+
+opc4 <- sample(seq(100,180,by=10), 5, replace=T)
+opc4
+prom4 <- mean(opc4)
+prom4
+
+if((prom1 != prom2)&(prom1 != prom3)&(prom1 != prom4)&(prom2 != prom3)&(prom2 != prom4)&(prom3 != prom4)){
+  i <- i+1
+} else
+  i < i
+}
+##########################
+
+papa <- read_excel("hombres.xlsx")
+papa <- data.frame(papa)
+papa
+
+bob <- sample(papa[,1],1)
+bob
+
+papa[2,1]
+
+mama <- read_excel("mujeres.xlsx")
+mama <- data.frame(mama)
+mama
+
+ellas <- sample(mama[,1],1)
+ellas
+
+crios <- read_excel("hijos.xlsx")
+crios <- data.frame(crios)
+crios
+
+hijos <- sample(crios[,1],5)
+hijos
+
+yuyo <- sample(c(opc3[3], prom1),1)
+
+image01 <- '
+\\begin{tikzpicture}
+  \\node{
+    \\begin{tabular}{|c|c|}
+    \\hline
+    \\textbf{Nombre} & \\textbf{Estatura (cm)} \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    \\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image01 <-sprintf(image01, hijos[1], opc1[1], hijos[2], opc1[2], hijos[3], opc1[3],
+                  hijos[4], opc1[4], hijos[5], opc1[5])
+##########################
+
+image02 <- '
+\\begin{tikzpicture}
+  \\node{
+    \\begin{tabular}{|c|c|}
+    \\hline
+    \\textbf{Nombre} & \\textbf{Estatura (cm)} \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    \\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image02 <-sprintf(image02, hijos[1], opc2[1], hijos[2], opc2[2], hijos[3], opc2[3],
+                  hijos[4], opc2[4], hijos[5], opc2[5])
+##########################
+
+image03 <- '
+\\begin{tikzpicture}
+  \\node{
+    \\begin{tabular}{|c|c|}
+    \\hline
+    \\textbf{Nombre} & \\textbf{Estatura (cm)} \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    \\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image03 <-sprintf(image03, hijos[1], opc3[1], hijos[2], opc3[2], hijos[3], yuyo,
+                  hijos[4], opc3[4], hijos[5], opc3[5])
+##########################
+
+image04 <- '
+\\begin{tikzpicture}
+  \\node{
+    \\begin{tabular}{|c|c|}
+    \\hline
+    \\textbf{Nombre} & \\textbf{Estatura (cm)} \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    %s          & %s                    \\\\ \\hline
+    \\end{tabular}
+  };
+\\end{tikzpicture}
+'
+image04 <-sprintf(image04, hijos[1], opc4[1], hijos[2], opc4[2], hijos[3], opc4[3],
+                  hijos[4], opc4[4], hijos[5], opc4[5])
+
+```
+
+
+Question
+========
+\
+ El promedio de estatura de los 5 hijos de `r ellas` y `r bob` es de `r prom1` cm. ¿Cuál de las siguientes opciones muestra las posibles estaturas de los hijos de `r ellas` y `r bob`?\
+
+Answerlist
+----------
+
+- 
+<br/> 
+```{r image01eva12022, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01, name = "image01eva12022", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+- 
+<br/> 
+```{r image02eva12022, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image02, name = "image02eva12022", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+- 
+<br/> 
+```{r image03eva12022, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image03, name = "image03eva12022", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+- 
+<br/> 
+```{r image04eva12022, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image04, name = "image04eva12022", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+Solution
+========
+\
+El promedio de este conjunto de datos es:\
+
+$\frac{`r opc1[1]`+`r opc1[2]`+`r opc1[3]`+`r opc1[4]`+`r opc1[5]`}{5}=\frac{`r suma`}{5}=`r prom1`$\
+\
+Por tanto la opción correcta es\
+\
+```{r imagesol, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+include_tikz(image01, name = "image01soleva", markup = "markdown",format = typ, library = c("3d", "babel"), packages=c("tikz","xcolor"),width = "4.5cm")
+```
+
+Meta-information
+================
+
+exname: Media(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: TRUE

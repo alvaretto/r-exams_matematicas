@@ -13,13 +13,16 @@ output <- knitr::opts_knit$get("rmarkdown.pandoc.to")
 ##library(magick)
 typ <- match_exams_device()
 
-dh_ca <- sample(1:15,1)
-ca_r <- sample(1:15,1)
-dh_r <- sample(1:15,1)
-dh_ca_r <- sample(1:15,1)
-solodh <- sample(1:15,1)
-soloca <- sample(1:15,1)
-solor <- sample(1:15,1)
+numeroz <- seq(1, 50, 1) # Números de 1 en 1, desde 1 hasta 100
+partezkarro <- sample(numeroz, 7, replace=FALSE) # Selecciona 7 números únicos
+
+dh_ca <- partezkarro[1]
+ca_r <- partezkarro[2]
+dh_r <- partezkarro[3]
+dh_ca_r <- partezkarro[4]
+solodh <- partezkarro[5]
+soloca <- partezkarro[6]
+solor <- partezkarro[7]
 todosdh <- (dh_ca+dh_ca_r+dh_r+solodh)
 todosca <- (dh_ca+dh_ca_r+ca_r+soloca)
 todosr <- (dh_r+dh_ca_r+ca_r+solor)

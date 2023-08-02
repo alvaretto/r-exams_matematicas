@@ -1,8 +1,8 @@
 ## exams ----------------------------------------------------------------------------
-setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/SaberICFES_Marzo_2022/P100")
+setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/SaberICFES_Marzo_2022/P18")
 library(exams)
-library(ggplot2)
-library(ggrepel)
+#library(ggplot2)
+#library(ggrepel)
 
 ## exam with a simple vector of exercises in R/Markdown (.Rmd) format
 ## -> alternatively try a list of vectors of more exercises
@@ -12,7 +12,7 @@ library(ggrepel)
 #                  "11c_C01_G11_2021.Rmd","11d_C01_G11_2021.Rmd"),1)
 
 copias <- 1
-qqq <- rep("DVenn_01_TipoB.Rmd",1)
+qqq <- rep("P18_01.Rmd",10)
 #qqq <- rep("15_C01_G09_2022.Rmd",1)
 
 examen01 <- qqq
@@ -27,15 +27,15 @@ set.seed(semilla)
 ##set.seed(11001) 
 
 ###############################
-set.seed(semilla)
-exams2html(examen01,svg=TRUE)
+# set.seed(semilla)
+# exams2html(examen01,svg=TRUE)
 # ###############################
 # set.seed(semilla)
 # exams2pdf(examen01,name="Torta_",encoding="UTF-8",n=copias,
 #           template=("nuevotaller"),dir="salida",edir="ejercicios")
 # ####################################################################
 set.seed(semilla)
-exams2pdf(examen01,name="DVenn_01_TipoB_", encoding="UTF-8",n=copias,
+exams2pdf(examen01,name="P18_01_", encoding="UTF-8",n=copias,
           template=("solution"),dir="salida",edir="ejercicios")
 ##########################################################################
 # set.seed(semilla)
@@ -56,12 +56,12 @@ exams2pdf(examen01,name="DVenn_01_TipoB_", encoding="UTF-8",n=copias,
 #                                                   rule = "none")),
 #              converter = "pandoc-mathjax")
 ################################################################################
-# set.seed(semilla)
-# exams2moodle(examen01,n=copias,svg=TRUE,name="DVenn_01_TipoA",encoding="UTF-8",
-#              dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
-#                                                             answernumbering = "ABCD",
-#                                                             eval = list(partial = TRUE,
-#                                                                         rule = "none")))
+set.seed(semilla)
+exams2moodle(examen01,n=copias,svg=TRUE,name="DVenn_01_TipoA",encoding="UTF-8",
+             dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
+                                                            answernumbering = "ABCD",
+                                                            eval = list(partial = TRUE,
+                                                                        rule = "none")))
 ################################################################################
 
 ## hint: to quickly check (prior to Moodle export) whether each exercise can be

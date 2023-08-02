@@ -95,8 +95,8 @@ salidasc = salidas['C']
 salidasd = salidas['D']
 opcioncorr = opcion
 rescorre = rescorr
-
 ```
+
 Question
 ========
 

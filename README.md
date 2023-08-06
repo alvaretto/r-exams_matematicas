@@ -1,7 +1,7 @@
 # r-exams_matematicas
 Repositorio de ejercicios de Matemáticas de nivel secundaria, con enfoque a preguntas de selección múltiple con única respuesta, tipo SABER ICFES (Colombia) y tipo Olimpíadas.
 
-¿Quieres saber más xobre el proyecto r-exams?
+¿Quieres saber más sobre el proyecto r-exams?
 
 El proyecto r-exams está alojado en el sitio web [R/exams](https://www.R-exams.org/) y se centra en la generación y evaluación automáticas de exámenes. Utiliza el paquete de código abierto 'exams' de R para proporcionar un enfoque unificado para la creación de exámenes. Basándose en plantillas de ejercicios, se pueden crear grandes cantidades de exámenes personalizados para diversos sistemas: PDFs para exámenes escritos clásicos (con evaluación automática), importaciones para sistemas de gestión de aprendizaje (como Moodle, Canvas, OpenOlat o Blackboard), votación en vivo (a través de ARSnova o Particify), y salida personalizada en PDF, HTML, Docx, etc.
 

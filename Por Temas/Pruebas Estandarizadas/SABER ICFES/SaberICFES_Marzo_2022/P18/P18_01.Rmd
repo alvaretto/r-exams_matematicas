@@ -5,41 +5,6 @@ img[src*="chunk"] {
 }
 </style>
 
-```{r}
-options(pdflatex = "/usr/bin/pdflatex")
-Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", Sys.getenv("PATH"), sep = ":"))
-```
-
-```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
-import random
-
-# Generando valores para los diferentes perímetros
-def generar_numeros_pares(cantidad, minimo, maximo):
-    numeros_pares = []
-    while len(numeros_pares) < cantidad:
-        numero = random.randint(minimo, maximo)
-        if numero % 2 == 0:
-            numeros_pares.append(numero)
-    return numeros_pares
-
-# Generar 5 números aleatorios pares entre 5 y 50
-p = generar_numeros_pares(5, 5, 51)
-
-pp = p[0]
-p1 = p[1]
-p2 = p[2]
-p3 = p[3]
-p4 = p[4]
-```
-
-```{r}
-p_de_r <- py$pp
-p1_de_r <- py$p1
-p2_de_r <- py$p2
-p3_de_r <- py$p3
-p4_de_r <- py$p4
-```
-
 ```{r data generation, echo = FALSE, results = "hide"}
 library(exams)
 library(reticulate)
@@ -55,6 +20,51 @@ knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ##################
 ```
 
+```{r}
+options(pdflatex = "/usr/bin/pdflatex")
+Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", Sys.getenv("PATH"), sep = ":"))
+```
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import random
+
+# Generando valores para los diferentes perímetros
+def generar_numeros_pares(cantidad, minimo, maximo):
+    # Creando una lista de todos los números pares en el rango
+    todos_los_pares = [i for i in range(minimo, maximo+1) if i % 2 == 0]
+    # Asegurándose de que hay suficientes números pares para cumplir con la solicitud
+    if len(todos_los_pares) < cantidad:
+        return "No hay suficientes números pares en el rango dado para generar la cantidad solicitada."
+    numeros_pares = []
+    while len(numeros_pares) < cantidad:
+        numero = random.choice(todos_los_pares)
+        todos_los_pares.remove(numero)
+        numeros_pares.append(numero)
+    return numeros_pares
+
+# Generar 5 números aleatorios pares entre 5 y 50
+p = generar_numeros_pares(5, 5, 51)
+
+pp = p[0]
+p1 = p[1]
+p2 = p[2]
+p3 = p[3]
+p4 = p[4]
+```
+
+```{r}
+p_de_r <- py$pp
+p_de_r 
+p1_de_r <- py$p1
+p1_de_r
+p2_de_r <- py$p2
+p2_de_r
+p3_de_r <- py$p3
+p3_de_r
+p4_de_r <- py$p4
+p4_de_r
+```
+
 Question
 ========
 
@@ -67,9 +77,11 @@ import numpy as np
 # Constantes
 P = pp
 
+
 # Función para calcular el área en función de la longitud
 def area(l):
     return l * (P - 2*l) / 2
+
 
 # Generar valores de longitud
 l_values = np.linspace(0, P/2, 100)
@@ -103,9 +115,12 @@ import random
 # Constantes
 P = p1
 
-# Función para calcular el área en función de la longitud
+
+# Function to calculate the area in function of the length with slight perturbation
 def area(l):
-    return l * (P - 2*l) / 2
+    alpha = random.uniform(-0.05, 0.05)  # small perturbation coefficient
+    return l * (P - 2*l) / 2 + alpha * l**2
+
 
 # Generar valores de longitud
 l_values = np.linspace(0, P/2, 100)
@@ -133,9 +148,12 @@ import numpy as np
 # Constantes
 P = p2
 
-# Función para calcular el área en función de la longitud
+
+# Function to calculate the area in function of the length with slight perturbation
 def area(l):
-    return l * (P - 2*l) / 2
+    alpha = random.uniform(-0.05, 0.05)  # small perturbation coefficient
+    return l * (P - 2*l) / 2 + alpha * l**2
+
 
 # Generar valores de longitud
 l_values = np.linspace(0, P/2, 100)
@@ -163,9 +181,12 @@ import numpy as np
 # Constantes
 P = p3
 
-# Función para calcular el área en función de la longitud
+
+# Function to calculate the area in function of the length with slight perturbation
 def area(l):
-    return l * (P - 2*l) / 2
+    alpha = random.uniform(-0.05, 0.05)  # small perturbation coefficient
+    return l * (P - 2*l) / 2 + alpha * l**2
+
 
 # Generar valores de longitud
 l_values = np.linspace(0, P/2, 100)
@@ -193,9 +214,12 @@ import numpy as np
 # Constantes
 P = p4
 
-# Función para calcular el área en función de la longitud
+
+# Function to calculate the area in function of the length with slight perturbation
 def area(l):
-    return l * (P - 2*l) / 2
+    alpha = random.uniform(-0.05, 0.05)  # small perturbation coefficient
+    return l * (P - 2*l) / 2 + alpha * l**2
+
 
 # Generar valores de longitud
 l_values = np.linspace(0, P/2, 100)
@@ -229,7 +253,7 @@ Answerlist
 
 Meta-information
 ================
-exname:DVenn_01(single-choice)
+exname:P18_01(single-choice)
 extype:schoice
 exsolution: 1000
 exshuffle: TRUE

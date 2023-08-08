@@ -8,9 +8,6 @@ img[src*="chunk"] {
 ```{r data generation, echo = FALSE, results = "hide"}
 library(exams)
 library(reticulate)
-library(ggplot2)
-library(dplyr)
-library(RColorBrewer)
 
 typ <- match_exams_device()
 use_python("/usr/bin/python3")
@@ -53,6 +50,7 @@ p4 = p[4]
 ```
 
 ```{r}
+# Invocando variables de Python en R
 p_de_r <- py$pp
 p_de_r 
 p1_de_r <- py$p1

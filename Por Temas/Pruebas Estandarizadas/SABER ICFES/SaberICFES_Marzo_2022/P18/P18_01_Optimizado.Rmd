@@ -1,0 +1,138 @@
+
+## Código R para configuración y preparación
+## ----------------------------------------
+
+# Configuración general
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+
+typ <- match_exams_device()
+use_python("/usr/bin/python3")
+options(scipen = 999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+# Configuración de LaTeX
+```{r}
+options(pdflatex = "/usr/bin/pdflatex")
+Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", Sys.getenv("PATH"), sep = ":"))
+```
+
+# Generación de datos en Python
+```{python, echo = FALSE, results = "hide"}
+import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Función para generar números pares
+def generar_numeros_pares(cantidad, minimo, maximo):
+    if (maximo - minimo) // 2 < cantidad:
+        return "No hay suficientes números pares en el rango dado para generar la cantidad solicitada."
+    return random.sample([i for i in range(minimo, maximo+1) if i % 2 == 0], cantidad)
+
+# Generar 5 números aleatorios pares entre 5 y 50
+p = generar_numeros_pares(5, 5, 51)
+
+pp, p1, p2, p3, p4 = p
+```
+
+# Transferencia de datos de Python a R
+```{r}
+p_de_r <- py$pp
+p1_de_r <- py$p1
+p2_de_r <- py$p2
+p3_de_r <- py$p3
+p4_de_r <- py$p4
+```
+
+Question
+========
+
+La gráfica representa el área y de un rectángulo de perímetro `r p_de_r`, en función de la longitud x de uno de sus lados.
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+# Función para calcular el área en función de la longitud
+def area(P, l):
+    return l * (P - 2*l) / 2
+
+# Generar valores de longitud y área
+l_values = np.linspace(0, pp/2, 100)
+area_values = area(pp, l_values)
+
+# Crear la gráfica
+plt.figure(figsize=(8, 6))
+plt.plot(l_values, area_values, label="Área del rectángulo")
+plt.xlabel("Longitud (l)")
+plt.ylabel("Área")
+plt.title("Área de un rectángulo en función de la longitud")
+plt.legend()
+plt.grid(True)
+plt.show()
+```
+
+Al modificar el perímetro por `r p1_de_r`, la gráfica correspondiente es:
+
+Answerlist
+----------
+
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+# Crear una función para graficar con una perturbación
+def plot_with_perturbation(P):
+    def perturbed_area(l):
+        alpha = random.uniform(-0.05, 0.05)  # small perturbation coefficient
+        return area(P, l) + alpha * l**2
+
+    l_values = np.linspace(0, P/2, 100)
+    area_values = perturbed_area(l_values)
+    plt.figure(figsize=(8, 6))
+    plt.plot(l_values, area_values, label="Área del rectángulo")
+    plt.xlabel("Longitud (l)")
+    plt.ylabel("Área")
+    plt.title("Área de un rectángulo en función de la longitud")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+# Graficar para los diferentes perímetros
+plot_with_perturbation(p1)
+```
+<br/> 
+
+- 
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+plot_with_perturbation(p2)
+```
+<br/> 
+
+- 
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+plot_with_perturbation(p3)
+```
+<br/> 
+
+- 
+```{python, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+plot_with_perturbation(p4)
+```
+<br/> 
+
+Solution
+========
+
+\
+
+Answerlist
+----------
+* Verdadero
+* Falso
+* Falso
+* Falso
+
+Meta-information
+================
+exname:P18_01(single-choice)
+extype:schoice
+exsolution: 1000
+exshuffle: TRUE

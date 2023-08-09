@@ -12,7 +12,7 @@ library(exams)
 #                  "11c_C01_G11_2021.Rmd","11d_C01_G11_2021.Rmd"),1)
 
 copias <- 1
-qqq <- rep("Autos.Rmd",10)
+qqq <- rep("Autos_01_TipoB.Rmd",10)
 #qqq <- rep("15_C01_G09_2022.Rmd",1)
 
 examen01 <- qqq
@@ -35,7 +35,7 @@ set.seed(semilla)
 #           template=("nuevotaller"),dir="salida",edir="ejercicios")
 # ####################################################################
 set.seed(semilla)
-exams2pdf(examen01,name="Autos_", encoding="UTF-8",n=copias,
+exams2pdf(examen01,name="Autos_01_TipoB_", encoding="UTF-8",n=copias,
           template=("solution"),dir="salida",edir="ejercicios")
 ##########################################################################
 # set.seed(semilla)
@@ -57,7 +57,7 @@ exams2pdf(examen01,name="Autos_", encoding="UTF-8",n=copias,
 #              converter = "pandoc-mathjax")
 ################################################################################
 set.seed(semilla)
-exams2moodle(examen01,n=copias,svg=TRUE,name="Autos_",encoding="UTF-8",
+exams2moodle(examen01,n=copias,svg=TRUE,name="Autos_01_TipoB_",encoding="UTF-8",
              dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
                                                             answernumbering = "ABCD",
                                                             eval = list(partial = TRUE,

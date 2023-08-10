@@ -1,8 +1,6 @@
 ## exams ----------------------------------------------------------------------------
 setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/SaberICFES_Marzo_2022/P99")
 library(exams)
-#library(ggplot2)
-#library(ggrepel)
 
 ## exam with a simple vector of exercises in R/Markdown (.Rmd) format
 ## -> alternatively try a list of vectors of more exercises
@@ -12,7 +10,7 @@ library(exams)
 #                  "11c_C01_G11_2021.Rmd","11d_C01_G11_2021.Rmd"),1)
 
 copias <- 1
-qqq <- rep("Autos_01_TipoB.Rmd",10)
+qqq <- rep("Autos_01_TipoA.Rmd",3)
 #qqq <- rep("15_C01_G09_2022.Rmd",1)
 
 examen01 <- qqq
@@ -35,7 +33,7 @@ set.seed(semilla)
 #           template=("nuevotaller"),dir="salida",edir="ejercicios")
 # ####################################################################
 set.seed(semilla)
-exams2pdf(examen01,name="Autos_01_TipoB_", encoding="UTF-8",n=copias,
+exams2pdf(examen01,name="Lab_", encoding="UTF-8",n=copias,
           template=("solution"),dir="salida",edir="ejercicios")
 ##########################################################################
 # set.seed(semilla)
@@ -45,9 +43,8 @@ exams2pdf(examen01,name="Autos_01_TipoB_", encoding="UTF-8",n=copias,
 # exams2pandoc(examen01, n=1, dir="salida", type="odt")
 #########################################################################
 # set.seed(semilla)
-# exams2pandoc(examen01, name="pandoc",template = "plain.tex",n=1, dir="salida",
-#              type="markdown")
-
+# exams2pandoc(examen01, name="pandoc",template = "plain.tex",n=copias, dir="salida",
+#              type="doc")
 ################################################################################
 # set.seed(semilla)
 # exams2moodle(examen01,n=1,svg=TRUE,name="Kombinatorias",encoding="UTF-8",
@@ -56,12 +53,12 @@ exams2pdf(examen01,name="Autos_01_TipoB_", encoding="UTF-8",n=copias,
 #                                                   rule = "none")),
 #              converter = "pandoc-mathjax")
 ################################################################################
-set.seed(semilla)
-exams2moodle(examen01,n=copias,svg=TRUE,name="Autos_01_TipoB_",encoding="UTF-8",
-             dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
-                                                            answernumbering = "ABCD",
-                                                            eval = list(partial = TRUE,
-                                                                        rule = "none")))
+# set.seed(semilla)
+# exams2moodle(examen01,n=copias,svg=TRUE,name="Autos_01_TipoB_",encoding="UTF-8",
+#              dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
+#                                                             answernumbering = "ABCD",
+#                                                             eval = list(partial = TRUE,
+#                                                                         rule = "none")))
 ################################################################################
 
 ## hint: to quickly check (prior to Moodle export) whether each exercise can be

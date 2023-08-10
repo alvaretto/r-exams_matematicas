@@ -28,37 +28,26 @@ mayor<-ordenado[5,2]
 mayorv<-ordenado[5,1]
 mayorv
 resto<-100-mayorv
-x<-(mayorv*menorv)/100
-y<-(tercerov*resto)/100
 
-sol<-x+y
-sol2<-sample(c(sol+5,sol-5),1)
-sol3<-sample(c(sol+10,sol-2),1)
-sol4<-sample(c(sol*1.5),1)
+sc <- NULL
+while(is.null(sc)) {
+  # Definición de las variables x e y según tus necesidades
+  x<-(mayorv*menorv)/100
+  y<-(tercerov*resto)/100
 
-cienmenos<-
+  sol1 <- (x + y)  # Solución correcta
+  sol2 <- sample(c(sol1 + 5, sol1 - 5), 1)
+  sol3 <- sample(c(sol1 + 10, sol1 - 2), 1)
+  sol4 <- sample(c(sol1 * 1.5), 1)
 
-questions<-solutions<-explanations<-NULL
-questions[1]<-paste("",sol,"%")
-solutions[1]<-TRUE
-explanations[1]<-"."
+  err <- c(sol2, sol3, sol4) # Opciones incorrectas
 
-questions[2]<-paste("",sol2,"%")
-solutions[2]<-FALSE
-explanations[1]<-"."
-
-questions[3]<-paste("",sol3,"%")
-solutions[3]<-FALSE
-explanations[1]<-"."
-
-questions[4]<-paste("",sol4,"%")
-
-solutions[4]<-FALSE
-explanations[1]<-"."
-orden<-sample(1:4)
-questions<-questions[orden]
-solutions<-solutions[orden]
-explanations<-explanations[orden]
+  # Asegurarse de que hay exactamente tres respuestas incorrectas distintas de la correcta
+  if(length(err[abs(err - sol1) > 0.3]) == 3) {
+    # Uso de 'num_to_schoice' para crear la pregunta de opción múltiple
+    sc <- num_to_schoice(sol1, wrong = err, range = c(0.1, 10), delta = 0.3, digits = 2)
+  }
+}
 
 dibujo23 <- '
 \\pgfplotsset{width=7cm,compat=1.17}
@@ -108,19 +97,17 @@ El 40% de los automóviles vendidos por una compañía automotriz es de color `r
 Si otra compañía produce solo carros de color `r menor` y de color `r tercero` y, se vende `r mayorv`% de color `r menor` y `r resto`% de color `r tercero`, ¿cuál es el porcentaje de carros accidentados de esta compañía?
 
 ```{r questionlist, echo = FALSE, results = "asis"}
-library(exams)
-answerlist(questions, markup = "markdown")
+answerlist(sc$questions, markup = "markdown")
 ```
 
 Solution
 ========
 ```{r solutionlist, echo = FALSE, results = "asis"}
-library(exams)
-answerlist(ifelse(solutions, "Verdadero", "Falso"), markup = "markdown")
+answerlist(ifelse(sc$solutions, "Verdadero", "Falso"), markup = "markdown")
 ```
 
 Meta-information
 ================
 exname: AccidentesAutomoviles(single-choice)
 extype: schoice
-exsolution: `r mchoice2string(solutions)`
+exsolution: `r mchoice2string(sc$solutions)`

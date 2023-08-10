@@ -1,7 +1,13 @@
+---
+output:
+  word_document: default
+  html_document: default
+---
 ```{r data generation, echo = FALSE, results = "hide", caption=" "}
 library(exams)
 require(stats)
 library(ggplot2)
+#library(magick)
 typ <- match_exams_device()
 
 colores <-sample(c("plata","rojo","azul","blanco","negro","verde","gris","rosa","cian","violeta"),5,replace=F)

@@ -36,7 +36,7 @@ set.seed(semilla)
 # ####################################################################
 set.seed(semilla)
 exams2pdf(examen01,name="Fruit2_", encoding="UTF-8",n=copias,
-          template=("solution"),dir="salida",edir="ejercicios")
+          template=("solpcielo"),dir="salida",edir="ejercicios")
 ##########################################################################
 # set.seed(semilla)
 # exams2html(examen01,svg=TRUE,converter = "pandoc-mathjax", mathjax = TRUE)

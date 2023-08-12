@@ -108,6 +108,6 @@ answerlist(ifelse(sc$solutions, "Verdadero", "Falso"), markup = "markdown")
 
 Meta-information
 ================
-exname: AccidentesAutomoviles(single-choice)
+exname: AccidentesAutomoviles1(single-choice)
 extype: schoice
 exsolution: `r mchoice2string(sc$solutions)`

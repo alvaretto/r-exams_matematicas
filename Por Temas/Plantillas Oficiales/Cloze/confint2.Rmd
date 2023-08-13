@@ -1,0 +1,51 @@
+```{r data generation, echo = FALSE, results = "hide"}
+## DATA GENERATION
+n <- sample(50:150, 1)
+y <- rnorm(n, runif(1, 100, 200), runif(1, 10, 15))
+
+## QUESTION/ANSWER GENERATION
+Mean <- round(mean(y), digits = 1)
+Var <- round(var(y), digits = 1)
+sd <- sqrt(Var/n)
+LB <- round(Mean - 1.96*sd, 3)
+UB <- round(Mean + 1.96*sd, 3)
+```
+
+Question
+========
+
+Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a $`r n`$ turistas. Esto muestra que los turistas gastan en promedio $`r Mean`$ USD (Dólar Estados Unidos). La varianza muestral $s^2_{n-1}$ es igual a $`r Var`$.
+
+Determine un intervalo de confianza del $95\%$ para el gasto diario promedio (en USD) de un turista.
+
+Answerlist
+----------
+* ¿Cuál es el límite inferior del intervalo de confianza?
+* ¿Cuál es el límite superior del intervalo de confianza?
+
+Solution
+========
+
+El intervalo de confianza del $95\%$ para los gastos promedio $\mu$ está dado por:
+$$
+\begin{aligned}
+&   & \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+& = & \left[ `r Mean` \, - \, 1.96\sqrt{\frac{`r Var`}{`r n`}}, \;
+             `r Mean` \, + \, 1.96\sqrt{\frac{`r Var`}{`r n`}}\right] \\
+& = & \left[`r LB`, \, `r UB`\right].
+\end{aligned}
+$$
+
+Answerlist
+----------
+* El límite inferior del intervalo de confianza es $`r LB`$.
+* El límite superior del intervalo de confianza es $`r UB`$.
+
+Meta-information
+============
+extype: cloze
+exclozetype: num|num
+exsolution: `r LB`|`r UB`
+exname: Intervalo de confianza
+extol: 0.01

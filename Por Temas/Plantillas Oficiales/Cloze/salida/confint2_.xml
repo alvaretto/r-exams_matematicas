@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 01</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q01 : confint2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(118\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(162.9\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(100.7\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=161.089:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=164.711:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 162.9 \, - \, 1.96\sqrt{\frac{100.7}{118}}, \;
+             162.9 \, + \, 1.96\sqrt{\frac{100.7}{118}}\right] \\
+&amp; = &amp; \left[161.089, \, 164.711\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(161.089\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(164.711\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 02</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q02 : confint2_1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(64\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(151.3\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(147.5\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=148.324:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=154.276:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 151.3 \, - \, 1.96\sqrt{\frac{147.5}{64}}, \;
+             151.3 \, + \, 1.96\sqrt{\frac{147.5}{64}}\right] \\
+&amp; = &amp; \left[148.324, \, 154.276\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(148.324\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(154.276\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 03</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q03 : confint2_2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(116\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(133.8\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(114.3\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=131.854:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=135.746:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 133.8 \, - \, 1.96\sqrt{\frac{114.3}{116}}, \;
+             133.8 \, + \, 1.96\sqrt{\frac{114.3}{116}}\right] \\
+&amp; = &amp; \left[131.854, \, 135.746\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(131.854\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(135.746\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 04</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q04 : confint2_3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(62\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(154.1\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(246.4\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=150.193:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=158.007:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 154.1 \, - \, 1.96\sqrt{\frac{246.4}{62}}, \;
+             154.1 \, + \, 1.96\sqrt{\frac{246.4}{62}}\right] \\
+&amp; = &amp; \left[150.193, \, 158.007\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(150.193\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(158.007\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 05</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q05 : confint2_4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(120\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(192.5\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(126.8\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=190.485:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=194.515:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 192.5 \, - \, 1.96\sqrt{\frac{126.8}{120}}, \;
+             192.5 \, + \, 1.96\sqrt{\frac{126.8}{120}}\right] \\
+&amp; = &amp; \left[190.485, \, 194.515\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(190.485\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(194.515\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 06</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q06 : confint2_5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(97\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(197.7\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(163.3\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=195.157:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=200.243:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 197.7 \, - \, 1.96\sqrt{\frac{163.3}{97}}, \;
+             197.7 \, + \, 1.96\sqrt{\frac{163.3}{97}}\right] \\
+&amp; = &amp; \left[195.157, \, 200.243\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(195.157\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(200.243\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 07</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q07 : confint2_6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(63\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(131.2\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(188.5\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=127.81:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=134.59:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 131.2 \, - \, 1.96\sqrt{\frac{188.5}{63}}, \;
+             131.2 \, + \, 1.96\sqrt{\frac{188.5}{63}}\right] \\
+&amp; = &amp; \left[127.81, \, 134.59\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(127.81\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(134.59\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 08</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q08 : confint2_7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(57\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(133.5\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(91.8\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=131.013:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=135.987:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 133.5 \, - \, 1.96\sqrt{\frac{91.8}{57}}, \;
+             133.5 \, + \, 1.96\sqrt{\frac{91.8}{57}}\right] \\
+&amp; = &amp; \left[131.013, \, 135.987\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(131.013\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(135.987\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 09</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q09 : confint2_8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(52\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(155.1\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(142.5\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=151.855:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=158.345:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 155.1 \, - \, 1.96\sqrt{\frac{142.5}{52}}, \;
+             155.1 \, + \, 1.96\sqrt{\frac{142.5}{52}}\right] \\
+&amp; = &amp; \left[151.855, \, 158.345\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(151.855\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(158.345\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/confint2_/Exercise 10</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q10 : confint2_9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Se analizan los gastos diarios de los turistas durante un año en Colombia. Se realiza una encuesta a <span class="math inline">\(150\)</span> turistas. Esto muestra que los turistas gastan en promedio <span class="math inline">\(193.5\)</span> USD (Dólar Estados Unidos). La varianza muestral <span class="math inline">\(s^2_{n-1}\)</span> es igual a <span class="math inline">\(224.9\)</span>.</p>
+<p>Determine un intervalo de confianza del <span class="math inline">\(95\%\)</span> para el gasto diario promedio (en USD) de un turista.</p>
+<ol type = "a">
+<li> ¿Cuál es el límite inferior del intervalo de confianza? {1:NUMERICAL:=191.1:0.01} </li>
+<li> ¿Cuál es el límite superior del intervalo de confianza? {1:NUMERICAL:=195.9:0.01} </li>
+</ol>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>El intervalo de confianza del <span class="math inline">\(95\%\)</span> para los gastos promedio <span class="math inline">\(\mu\)</span> está dado por:
+<span class="math display">\[
+\begin{aligned}
+&amp;   &amp; \left[\bar{y} \, - \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}, \; 
+  \bar{y} \, + \, 1.96\sqrt{\frac{s_{n-1}^2}{n}}\right] \\
+&amp; = &amp; \left[ 193.5 \, - \, 1.96\sqrt{\frac{224.9}{150}}, \;
+             193.5 \, + \, 1.96\sqrt{\frac{224.9}{150}}\right] \\
+&amp; = &amp; \left[191.1, \, 195.9\right].
+\end{aligned}
+\]</span></p>
+<ol type = "a">
+<li> El límite inferior del intervalo de confianza es <span class="math inline">\(191.1\)</span>. </li>
+<li> El límite superior del intervalo de confianza es <span class="math inline">\(195.9\)</span>. </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+</quiz>

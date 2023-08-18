@@ -11,7 +11,7 @@ library(exams)
 # qqq <- sample(c("11a_C01_G11_2021.Rmd","11b_C01_G11_2021.Rmd",
 #                  "11c_C01_G11_2021.Rmd","11d_C01_G11_2021.Rmd"),1)
 
-copias <- 1
+copias <- 100
 qqq <- rep("Fruit2.Rmd",1)
 #qqq <- rep("15_C01_G09_2022.Rmd",1)
 
@@ -34,9 +34,9 @@ set.seed(semilla)
 # exams2pdf(examen01,name="Torta_",encoding="UTF-8",n=copias,
 #           template=("nuevotaller"),dir="salida",edir="ejercicios")
 # ####################################################################
-set.seed(semilla)
-exams2pdf(examen01,name="Fruit2_", encoding="UTF-8",n=copias,
-          template=("solpcielo"),dir="salida",edir="ejercicios")
+# set.seed(semilla)
+# exams2pdf(examen01,name="Fruit2_", encoding="UTF-8",n=copias,
+#           template=("solpcielo"),dir="salida",edir="ejercicios")
 ##########################################################################
 # set.seed(semilla)
 # exams2html(examen01,svg=TRUE,converter = "pandoc-mathjax", mathjax = TRUE)
@@ -56,12 +56,12 @@ exams2pdf(examen01,name="Fruit2_", encoding="UTF-8",n=copias,
 #                                                   rule = "none")),
 #              converter = "pandoc-mathjax")
 ################################################################################
-# set.seed(semilla)
-# exams2moodle(examen01,n=copias,svg=TRUE,name="Fruit2",encoding="UTF-8",
-#              dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
-#                                                             answernumbering = "ABCD",
-#                                                             eval = list(partial = TRUE,
-#                                                                         rule = "none")))
+set.seed(semilla)
+exams2moodle(examen01,n=copias,svg=TRUE,name="Fruit11A",encoding="UTF-8",
+             dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
+                                                            answernumbering = "ABCD",
+                                                            eval = list(partial = TRUE,
+                                                                        rule = "none")))
 ################################################################################
 
 ## hint: to quickly check (prior to Moodle export) whether each exercise can be

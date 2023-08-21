@@ -1,0 +1,83 @@
+```{r data generation, echo = FALSE, results = "hide"}
+ok <- FALSE
+while(!ok) {
+  pe <- round(runif(1, 0.05, 0.15), digits = 2)
+  per <- round(runif(1, 0.6, 0.8), digits = 2)
+  pnenr <- round(runif(1, 0.6, 0.8), digits = 2)
+
+  prob1 <- pe * per
+  prob2 <- pe * (1 - per)
+  prob3 <- (1 - pe) * (1 - pnenr)
+  prob4 <- (1 - pe) * pnenr
+
+  tab <- cbind(c(prob1, prob3), c(prob2, prob4))
+
+  sol <- c(tab[1, 1] / sum(tab[, 1]), tab[1, 1] / sum(tab[1, ]),
+    tab[2, 1] / sum(tab[2, ]), tab[1, 2] / sum(tab[1, ]))
+
+  ok <- sum(tab) == 1 & all(tab > 0) & all(tab < 1)
+}
+
+tab2 <- cbind(rbind(tab, colSums(tab)), c(rowSums(tab), 1))
+tab2 <- format(tab2 * 100, digits = 2, nsmall = 2)
+tab2 <- gsub(" ", "", tab2, fixed = TRUE)
+
+sol <- round(100 * c(tab, colSums(tab), rowSums(tab), sum(tab)), digits = 2)
+lab <- c("E \\cap R", "\\overline{E} \\cap R", "E \\cap \\overline{R}", "\\overline{E} \\cap \\overline{R}",
+  "R", "\\overline{R}", "E", "\\overline{E}", "\\Omega")
+```
+
+
+Question
+========
+
+Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento $E$), un $`r per * 100`\%$ obtiene una recomendación positiva (evento $R$). Sin embargo, de esos candidatos que no son elegibles, $`r pnenr * 100`\%$ obtiene una recomendación negativa. En general, se sabe que solo $`r pe * 100`\%$ de todos los solicitantes de empleo son realmente elegibles.
+
+¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).
+
+|               | $R$           | $\overline{R}$ | sum           |
+|:-------------:|:-------------:|:--------------:|:-------------:|
+|$E$            | ##ANSWER1##\% | ##ANSWER3##\%  | ##ANSWER7##\% |
+|$\overline{E}$ | ##ANSWER2##\% | ##ANSWER4##\%  | ##ANSWER8##\% |
+|sum            | ##ANSWER5##\% | ##ANSWER6##\%  | ##ANSWER9##\% |
+
+```{r questionlist, echo = FALSE, results = "asis"}
+answerlist(rep("", length(sol)), markup = "markdown")
+```
+
+
+Solution
+========
+
+Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+$$
+\begin{aligned}
+  P(E \cap R) & =
+    P(R | E) \cdot P(E) = `r per` \cdot `r pe` = `r prob1` = `r 100 * prob1`\%\\
+  P(\overline{E} \cap \overline{R}) & =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = `r pnenr` \cdot `r 1 - pe` = `r prob4` = `r 100 * prob4`\%.
+\end{aligned}
+$$
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:
+
+|               | $R$                | $\overline{R}$     | suma                |
+|:-------------:|:------------------:|:------------------:|:------------------:|
+|$E$            | **`r tab2[1, 1]`** |  _`r tab2[1, 2]`_  | **`r tab2[1, 3]`** |
+|$\overline{E}$ |  _`r tab2[2, 1]`_  | **`r tab2[2, 2]`** |  _`r tab2[2, 3]`_  |
+|suma           |  _`r tab2[3, 1]`_  |  _`r tab2[3, 2]`_  | **`r tab2[3, 3]`** |
+
+
+```{r solutionlist, echo = FALSE, results = "asis"}
+answerlist(paste("$P(", lab, ") = ", format(sol), "\\%$", sep = ""), markup = "markdown")
+```
+
+
+Meta-information
+================
+extype: cloze
+exsolution: `r paste(sol, collapse = "|")`
+exclozetype: num|num|num|num|num|num|num|num|num
+exname: fourfold2
+extol: 0.05
+exextra[numwidth,logical]: TRUE

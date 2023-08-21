@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 01</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q01 : fourfold2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(75\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(63\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(13\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=9.75:0.05~%0%372190:0}%</td>
+<td align="center"> {1:NUMERICAL:=3.25:0.05~%0%372190:0}%</td>
+<td align="center"> {1:NUMERICAL:=13:0.05~%0%372190:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=32.19:0.05~%0%372190:0}%</td>
+<td align="center"> {1:NUMERICAL:=54.81:0.05~%0%372190:0}%</td>
+<td align="center"> {1:NUMERICAL:=87:0.05~%0%372190:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=41.94:0.05~%0%372190:0}%</td>
+<td align="center"> {1:NUMERICAL:=58.06:0.05~%0%372190:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%372190:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.75 \cdot 0.13 = 0.0975 = 9.75\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.63 \cdot 0.87 = 0.5481 = 54.81\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>9.75</strong></td>
+<td align="center"><em>3.25</em></td>
+<td align="center"><strong>13.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>32.19</em></td>
+<td align="center"><strong>54.81</strong></td>
+<td align="center"><em>87.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>41.94</em></td>
+<td align="center"><em>58.06</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 9.75\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 32.19\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 3.25\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 54.81\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 41.94\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 58.06\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 13.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 87.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 02</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q02 : fourfold2_1 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(68\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(75\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(12\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=8.16:0.05~%0%652118:0}%</td>
+<td align="center"> {1:NUMERICAL:=3.84:0.05~%0%652118:0}%</td>
+<td align="center"> {1:NUMERICAL:=12:0.05~%0%652118:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=22:0.05~%0%652118:0}%</td>
+<td align="center"> {1:NUMERICAL:=66:0.05~%0%652118:0}%</td>
+<td align="center"> {1:NUMERICAL:=88:0.05~%0%652118:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=30.16:0.05~%0%652118:0}%</td>
+<td align="center"> {1:NUMERICAL:=69.84:0.05~%0%652118:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%652118:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.68 \cdot 0.12 = 0.0816 = 8.16\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.75 \cdot 0.88 = 0.66 = 66\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>8.16</strong></td>
+<td align="center"><em>3.84</em></td>
+<td align="center"><strong>12.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>22.00</em></td>
+<td align="center"><strong>66.00</strong></td>
+<td align="center"><em>88.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>30.16</em></td>
+<td align="center"><em>69.84</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 8.16\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 22.00\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 3.84\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 66.00\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 30.16\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 69.84\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 12.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 88.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 03</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q03 : fourfold2_2 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(65\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(63\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(14\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=9.1:0.05~%0%925212:0}%</td>
+<td align="center"> {1:NUMERICAL:=4.9:0.05~%0%925212:0}%</td>
+<td align="center"> {1:NUMERICAL:=14:0.05~%0%925212:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=31.82:0.05~%0%925212:0}%</td>
+<td align="center"> {1:NUMERICAL:=54.18:0.05~%0%925212:0}%</td>
+<td align="center"> {1:NUMERICAL:=86:0.05~%0%925212:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=40.92:0.05~%0%925212:0}%</td>
+<td align="center"> {1:NUMERICAL:=59.08:0.05~%0%925212:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%925212:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.65 \cdot 0.14 = 0.091 = 9.1\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.63 \cdot 0.86 = 0.5418 = 54.18\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>9.10</strong></td>
+<td align="center"><em>4.90</em></td>
+<td align="center"><strong>14.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>31.82</em></td>
+<td align="center"><strong>54.18</strong></td>
+<td align="center"><em>86.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>40.92</em></td>
+<td align="center"><em>59.08</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 9.10\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 31.82\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 4.90\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 54.18\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 40.92\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 59.08\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 14.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 86.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 04</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q04 : fourfold2_3 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(70\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(68\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(6\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=4.2:0.05~%0%676958:0}%</td>
+<td align="center"> {1:NUMERICAL:=1.8:0.05~%0%676958:0}%</td>
+<td align="center"> {1:NUMERICAL:=6:0.05~%0%676958:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=30.08:0.05~%0%676958:0}%</td>
+<td align="center"> {1:NUMERICAL:=63.92:0.05~%0%676958:0}%</td>
+<td align="center"> {1:NUMERICAL:=94:0.05~%0%676958:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=34.28:0.05~%0%676958:0}%</td>
+<td align="center"> {1:NUMERICAL:=65.72:0.05~%0%676958:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%676958:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.7 \cdot 0.06 = 0.042 = 4.2\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.68 \cdot 0.94 = 0.6392 = 63.92\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>4.20</strong></td>
+<td align="center"><em>1.80</em></td>
+<td align="center"><strong>6.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>30.08</em></td>
+<td align="center"><strong>63.92</strong></td>
+<td align="center"><em>94.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>34.28</em></td>
+<td align="center"><em>65.72</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 4.20\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 30.08\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 1.80\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 63.92\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 34.28\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 65.72\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 6.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 94.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 05</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q05 : fourfold2_4 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(79\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(77\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(9\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=7.11:0.05~%0%255496:0}%</td>
+<td align="center"> {1:NUMERICAL:=1.89:0.05~%0%255496:0}%</td>
+<td align="center"> {1:NUMERICAL:=9:0.05~%0%255496:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=20.93:0.05~%0%255496:0}%</td>
+<td align="center"> {1:NUMERICAL:=70.07:0.05~%0%255496:0}%</td>
+<td align="center"> {1:NUMERICAL:=91:0.05~%0%255496:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=28.04:0.05~%0%255496:0}%</td>
+<td align="center"> {1:NUMERICAL:=71.96:0.05~%0%255496:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%255496:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.79 \cdot 0.09 = 0.0711 = 7.11\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.77 \cdot 0.91 = 0.7007 = 70.07\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>7.11</strong></td>
+<td align="center"><em>1.89</em></td>
+<td align="center"><strong>9.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>20.93</em></td>
+<td align="center"><strong>70.07</strong></td>
+<td align="center"><em>91.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>28.04</em></td>
+<td align="center"><em>71.96</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 7.11\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 20.93\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 1.89\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 70.07\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 28.04\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 71.96\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 9.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 91.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 06</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q06 : fourfold2_5 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(63\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(73\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(6\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=3.78:0.05~%0%525536:0}%</td>
+<td align="center"> {1:NUMERICAL:=2.22:0.05~%0%525536:0}%</td>
+<td align="center"> {1:NUMERICAL:=6:0.05~%0%525536:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=25.38:0.05~%0%525536:0}%</td>
+<td align="center"> {1:NUMERICAL:=68.62:0.05~%0%525536:0}%</td>
+<td align="center"> {1:NUMERICAL:=94:0.05~%0%525536:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=29.16:0.05~%0%525536:0}%</td>
+<td align="center"> {1:NUMERICAL:=70.84:0.05~%0%525536:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%525536:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.63 \cdot 0.06 = 0.0378 = 3.78\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.73 \cdot 0.94 = 0.6862 = 68.62\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>3.78</strong></td>
+<td align="center"><em>2.22</em></td>
+<td align="center"><strong>6.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>25.38</em></td>
+<td align="center"><strong>68.62</strong></td>
+<td align="center"><em>94.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>29.16</em></td>
+<td align="center"><em>70.84</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 3.78\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 25.38\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 2.22\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 68.62\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 29.16\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 70.84\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 6.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 94.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 07</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q07 : fourfold2_6 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(71\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(67\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(11\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=7.81:0.05~%0%170200:0}%</td>
+<td align="center"> {1:NUMERICAL:=3.19:0.05~%0%170200:0}%</td>
+<td align="center"> {1:NUMERICAL:=11:0.05~%0%170200:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=29.37:0.05~%0%170200:0}%</td>
+<td align="center"> {1:NUMERICAL:=59.63:0.05~%0%170200:0}%</td>
+<td align="center"> {1:NUMERICAL:=89:0.05~%0%170200:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=37.18:0.05~%0%170200:0}%</td>
+<td align="center"> {1:NUMERICAL:=62.82:0.05~%0%170200:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%170200:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.71 \cdot 0.11 = 0.0781 = 7.81\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.67 \cdot 0.89 = 0.5963 = 59.63\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>7.81</strong></td>
+<td align="center"><em>3.19</em></td>
+<td align="center"><strong>11.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>29.37</em></td>
+<td align="center"><strong>59.63</strong></td>
+<td align="center"><em>89.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>37.18</em></td>
+<td align="center"><em>62.82</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 7.81\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 29.37\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 3.19\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 59.63\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 37.18\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 62.82\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 11.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 89.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 08</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q08 : fourfold2_7 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(76\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(61\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(11\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=8.36:0.05~%0%126229:0}%</td>
+<td align="center"> {1:NUMERICAL:=2.64:0.05~%0%126229:0}%</td>
+<td align="center"> {1:NUMERICAL:=11:0.05~%0%126229:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=34.71:0.05~%0%126229:0}%</td>
+<td align="center"> {1:NUMERICAL:=54.29:0.05~%0%126229:0}%</td>
+<td align="center"> {1:NUMERICAL:=89:0.05~%0%126229:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=43.07:0.05~%0%126229:0}%</td>
+<td align="center"> {1:NUMERICAL:=56.93:0.05~%0%126229:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%126229:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.76 \cdot 0.11 = 0.0836 = 8.36\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.61 \cdot 0.89 = 0.5429 = 54.29\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>8.36</strong></td>
+<td align="center"><em>2.64</em></td>
+<td align="center"><strong>11.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>34.71</em></td>
+<td align="center"><strong>54.29</strong></td>
+<td align="center"><em>89.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>43.07</em></td>
+<td align="center"><em>56.93</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 8.36\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 34.71\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 2.64\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 54.29\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 43.07\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 56.93\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 11.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 89.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 09</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q09 : fourfold2_8 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(68\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(79\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(8\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=5.44:0.05~%0%985687:0}%</td>
+<td align="center"> {1:NUMERICAL:=2.56:0.05~%0%985687:0}%</td>
+<td align="center"> {1:NUMERICAL:=8:0.05~%0%985687:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=19.32:0.05~%0%985687:0}%</td>
+<td align="center"> {1:NUMERICAL:=72.68:0.05~%0%985687:0}%</td>
+<td align="center"> {1:NUMERICAL:=92:0.05~%0%985687:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=24.76:0.05~%0%985687:0}%</td>
+<td align="center"> {1:NUMERICAL:=75.24:0.05~%0%985687:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%985687:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.68 \cdot 0.08 = 0.0544 = 5.44\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.79 \cdot 0.92 = 0.7268 = 72.68\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>5.44</strong></td>
+<td align="center"><em>2.56</em></td>
+<td align="center"><strong>8.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>19.32</em></td>
+<td align="center"><strong>72.68</strong></td>
+<td align="center"><em>92.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>24.76</em></td>
+<td align="center"><em>75.24</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 5.44\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 19.32\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 2.56\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 72.68\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 24.76\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 75.24\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 8.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 92.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/fourfold2_/Exercise 10</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> Q10 : fourfold2_9 </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<p>
+<p>Una empresa líder en la industria busca un candidato calificado para un puesto gerencial.
+Una consultoría de gestión realiza un centro de evaluación que concluye en hacer una recomendación positiva o negativa para cada candidato: De evaluaciones anteriores se sabe que de aquellos candidatos que realmente son elegibles para el puesto (evento <span class="math inline">\(E\)</span>), un <span class="math inline">\(72\%\)</span> obtiene una recomendación positiva (evento <span class="math inline">\(R\)</span>). Sin embargo, de esos candidatos que no son elegibles, <span class="math inline">\(64\%\)</span> obtiene una recomendación negativa. En general, se sabe que solo <span class="math inline">\(8\%\)</span> de todos los solicitantes de empleo son realmente elegibles.</p>
+<p>¿Cuál es la tabla cuádruple correspondiente de las probabilidades conjuntas? (Especifique todas las entradas en porcentaje).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">sum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"> {1:NUMERICAL:=5.76:0.05~%0%962251:0}%</td>
+<td align="center"> {1:NUMERICAL:=2.24:0.05~%0%962251:0}%</td>
+<td align="center"> {1:NUMERICAL:=8:0.05~%0%962251:0}%</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"> {1:NUMERICAL:=33.12:0.05~%0%962251:0}%</td>
+<td align="center"> {1:NUMERICAL:=58.88:0.05~%0%962251:0}%</td>
+<td align="center"> {1:NUMERICAL:=92:0.05~%0%962251:0}%</td>
+</tr>
+<tr class="odd">
+<td align="center">sum</td>
+<td align="center"> {1:NUMERICAL:=38.88:0.05~%0%962251:0}%</td>
+<td align="center"> {1:NUMERICAL:=61.12:0.05~%0%962251:0}%</td>
+<td align="center"> {1:NUMERICAL:=100:0.05~%0%962251:0}%</td>
+</tr>
+</tbody>
+</table>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>Usando la información del texto, podemos calcular directamente las siguientes probabilidades conjuntas:
+<span class="math display">\[
+\begin{aligned}
+  P(E \cap R) &amp; =
+    P(R | E) \cdot P(E) = 0.72 \cdot 0.08 = 0.0576 = 5.76\%\\
+  P(\overline{E} \cap \overline{R}) &amp; =
+    P(\overline{R} | \overline{E}) \cdot P(\overline{E}) = 0.64 \cdot 0.92 = 0.5888 = 58.88\%.
+\end{aligned}
+\]</span>
+Las probabilidades restantes se pueden encontrar calculando sumas y diferencias en la tabla cuádruple:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math inline">\(R\)</span></th>
+<th align="center"><span class="math inline">\(\overline{R}\)</span></th>
+<th align="center">suma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(E\)</span></td>
+<td align="center"><strong>5.76</strong></td>
+<td align="center"><em>2.24</em></td>
+<td align="center"><strong>8.00</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\overline{E}\)</span></td>
+<td align="center"><em>33.12</em></td>
+<td align="center"><strong>58.88</strong></td>
+<td align="center"><em>92.00</em></td>
+</tr>
+<tr class="odd">
+<td align="center">suma</td>
+<td align="center"><em>38.88</em></td>
+<td align="center"><em>61.12</em></td>
+<td align="center"><strong>100.00</strong></td>
+</tr>
+</tbody>
+</table>
+<ol type = "a">
+<li> <span class="math inline">\(P(E \cap R) = 5.76\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap R) = 33.12\%\)</span> </li>
+<li> <span class="math inline">\(P(E \cap \overline{R}) = 2.24\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E} \cap \overline{R}) = 58.88\%\)</span> </li>
+<li> <span class="math inline">\(P(R) = 38.88\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{R}) = 61.12\%\)</span> </li>
+<li> <span class="math inline">\(P(E) = 8.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\overline{E}) = 92.00\%\)</span> </li>
+<li> <span class="math inline">\(P(\Omega) = 100.00\%\)</span> </li>
+</ol>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>9</defaultgrade>
+</question>
+
+</quiz>

@@ -1,23 +1,12 @@
 ## exams ----------------------------------------------------------------------------
-setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/SaberICFES_Marzo_2022/P16")
+setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/SaberICFES_Julio_2021_01")
 library(exams)
-#library(ggplot2)
-#library(ggrepel)
 
-## exam with a simple vector of exercises in R/Markdown (.Rmd) format
-## -> alternatively try a list of vectors of more exercises
-
-# qqq <- c("03_C01_G10_2022.Rmd","02_C01_G10_2022.Rmd","01_C01_G10_2022.Rmd")
-# qqq <- sample(c("11a_C01_G11_2021.Rmd","11b_C01_G11_2021.Rmd",
-#                  "11c_C01_G11_2021.Rmd","11d_C01_G11_2021.Rmd"),1)
-
-copias <- 10
-qqq <- rep("P16_01b.Rmd",1)
+copias <- 1
+qqq <- rep("08.Rmd",10)
 #qqq <- rep("15_C01_G09_2022.Rmd",1)
 
 examen01 <- qqq
-
-# examen01 <- c("PermutacionSinRep_02.Rmd")
 
 ## note that the currency exercise is in UTF-8 encoding
 
@@ -35,7 +24,7 @@ set.seed(semilla)
 #           template=("nuevotaller"),dir="salida",edir="ejercicios")
 # ####################################################################
 set.seed(semilla)
-exams2pdf(examen01,name="P16_01b_", encoding="UTF-8",n=copias,
+exams2pdf(examen01,name="08_", encoding="UTF-8",n=copias,
           template=("solpcielo"),dir="salida",edir="ejercicios")
 ##########################################################################
 # set.seed(semilla)
@@ -56,12 +45,12 @@ exams2pdf(examen01,name="P16_01b_", encoding="UTF-8",n=copias,
 #                                                   rule = "none")),
 #              converter = "pandoc-mathjax")
 ################################################################################
-# set.seed(semilla)
-# exams2moodle(examen01,n=copias,svg=TRUE,name="P16_01b_",encoding="UTF-8",
-#              dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
-#                                                             answernumbering = "ABCD",
-#                                                             eval = list(partial = TRUE,
-#                                                                         rule = "none")))
+set.seed(semilla)
+exams2moodle(examen01,n=copias,svg=TRUE,name="08_",encoding="UTF-8",
+             dir="salida",edir="ejercicios", mchoice = list(shuffle = TRUE,
+                                                            answernumbering = "ABCD",
+                                                            eval = list(partial = TRUE,
+                                                                        rule = "none")))
 ################################################################################
 
 ## hint: to quickly check (prior to Moodle export) whether each exercise can be

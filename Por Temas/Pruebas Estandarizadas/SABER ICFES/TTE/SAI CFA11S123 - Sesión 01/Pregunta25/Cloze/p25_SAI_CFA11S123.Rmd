@@ -1,37 +1,54 @@
 ```{r data generation, echo = FALSE, results = "hide"}
 library(exams)
-library(reticulate)
 
 # Para salidas exams2pdf: 
 #   print(xtable(data, align = c('l', 'l', 'c')), type = 'latex', include.rownames = FALSE)
 # Para salidas exams2moodle: 
 #   print(xtable(data, align = c('l', 'l', 'c')), type = 'html', include.rownames = FALSE)
 
-marcela <- sample(c("David", "Patricia", "Valentina", "Andrés", "Gabriela", "Leonardo", "Daniela", "Felipe", "Isabella", "Paula Andrea", "Natalia", "Lina María", "Carlos Eduardo", "Samuel", "Luis Fernando"), 1)
+marcela <- sample(c("David", "Patricia", "Valentina", "Andrés", "Gabriela", "Leonardo", "Daniela", "Felipe", "Isabella", "Paula Andrea", "Natalia", "Lina María", "Consuelo", "Carlos Eduardo", "Samuel", "Luis Fernando"), 1)
 
 # Definir un vector con nombres de estudiantes
 num_students <- sample(5:10, 1)
 est_con <- num_students-2
 nombres_s <- sample(c("Alberto", "Juan", "Alejandra", "Camila", "Sebastián", "Lucía", "Miguel", "Sofía", "Diego", "Carla", "María Antonia", "Violeta", "Martha Lucía", "Manuel Evelio", "Álvaro", "José Álvaro"), num_students)
 
-nombres_c <- nombres_s[3:length(nombres_s)]
+##############################################
 
-# Definir edades aleatorias para los estudiantes (entre 25 y 55)
-edades_al <- sample(25:55, num_students - 2)
-edades_al
 
-tote <- paste(nombres_c, "(", edades_al, ")", sep="")
-totem <- paste(edades_al, collapse=" + ")
+pepe <- 0
 
-# Calcular la edad promedio
-promedio <- round((sum(edades_al) + 2 * sample(25:55, 1)) / num_students)
+while(pepe == 0) {
 
-# Calcular la suma de las edades conocidas
-suma_conocida <- sum(edades_al)
+  nombres_c <- nombres_s[3:length(nombres_s)]
 
-# La suma de las edades de los otros 2 estudiantes es la diferencia entre la suma total y la suma conocida
-suma_total <- num_students * promedio
-suma_resto <- suma_total - suma_conocida
+  # Definir edades aleatorias para los estudiantes (entre 25 y 55)
+  edades_al <- sample(25:55, num_students - 2)
+  
+  tote <- paste(nombres_c, "(", edades_al, ")", sep="")
+  totem <- paste(edades_al, collapse=" + ")
+
+  # Calcular la edad promedio
+  promedio <- round((sum(edades_al) + 2 * sample(25:55, 1)) / num_students)
+
+  # Calcular la suma de las edades conocidas
+  suma_conocida <- sum(edades_al)
+
+  # La suma de las edades de los otros 2 estudiantes es la diferencia entre la suma total y la suma conocida
+  suma_total <- num_students * promedio
+  suma_resto <- suma_total - suma_conocida
+
+  if(suma_resto %% 2 == 0) {
+    pepe <- pepe + 1
+  } else {
+    pepe <- 0
+  }
+}
+
+
+
+#######################
+
 
 # La edad individual de los otros 2 estudiantes (que es la misma para ambos)
 edad_resto <- round(suma_resto / 2)

@@ -37,7 +37,7 @@ set.seed(semilla)
 # ####################################################################
 # set.seed(semilla)
 # exams2pdf(examen01,
-#           name="P25_SAI_CFA11S123_",
+#           name="P25_SAI_CFA11S123_p",
 #           encoding="UTF-8",
 #           n=copias,
 #           template=("solpcielo"),

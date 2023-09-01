@@ -16,7 +16,7 @@
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Luis Fernando recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 37 años. Cuando Luis Fernando vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Alberto y Alejandra.</p>
+<p>Daniela recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 41 años. Cuando Daniela vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Sofía y Martha Lucía.</p>
 <table border="1">
 <tr>
 <th>
@@ -28,18 +28,18 @@ Edad
 </tr>
 <tr>
 <td>
-Alberto
+Sofía
 </td>
 <td align="center">
- {1:NUMERICAL:=27:0.05}
+ {1:NUMERICAL:=39:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Alejandra
+Martha Lucía
 </td>
 <td align="center">
- {1:NUMERICAL:=27:0.05}
+ {1:NUMERICAL:=39:0.05}
 </td>
 </tr>
 <tr>
@@ -47,23 +47,7 @@ Alejandra
 Diego
 </td>
 <td align="center">
-46
-</td>
-</tr>
-<tr>
-<td>
-Carla
-</td>
-<td align="center">
-49
-</td>
-</tr>
-<tr>
-<td>
-Sofía
-</td>
-<td align="center">
-44
+27
 </td>
 </tr>
 <tr>
@@ -71,60 +55,84 @@ Sofía
 Violeta
 </td>
 <td align="center">
-29
+45
+</td>
+</tr>
+<tr>
+<td>
+Lucía
+</td>
+<td align="center">
+46
+</td>
+</tr>
+<tr>
+<td>
+Juan
+</td>
+<td align="center">
+49
+</td>
+</tr>
+<tr>
+<td>
+Sebastián
+</td>
+<td align="center">
+42
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Alberto y Alejandra tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Sofía y Martha Lucía tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Alberto y Alejandra tienen, cada uno, 27 años. ¿De dónde salió esto?</p>
+<p>Sofía y Martha Lucía tienen, cada uno, 39 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Luis Fernando tiene las edades de 6 estudiantes y sabe que el promedio es 37 años. El promedio es simplemente la suma de todas las edades dividida por 6 (ya que son 6 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 6 estudiantes, cada uno tendría un promedio de 37 manzanas.</p>
-Ahora, ya sabemos la edad de 4 estudiantes:<br />
+<p>Daniela tiene las edades de 7 estudiantes y sabe que el promedio es 41 años. El promedio es simplemente la suma de todas las edades dividida por 7 (ya que son 7 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 7 estudiantes, cada uno tendría un promedio de 41 manzanas.</p>
+Ahora, ya sabemos la edad de 5 estudiantes:<br />
 
 <center>
-Diego(46), Carla(49), Sofía(44), Violeta(29)
+Diego(27), Violeta(45), Lucía(46), Juan(49), Sebastián(42)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {46 + 49 + 44 + 29} \\
-\text{Edades conocidas} &amp;= \qquad {168}
+\text{Edades conocidas} &amp;= \qquad {27 + 45 + 46 + 49 + 42} \\
+\text{Edades conocidas} &amp;= \qquad {209}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 6 estudiantes juntos, multiplicamos el promedio (37 años) por 6 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 7 estudiantes juntos, multiplicamos el promedio (41 años) por 7 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {37} \times {6} \\
-\text{Edades todos} &amp;= \qquad {222}
+\text{Edades todos} &amp;= \qquad {41} \times {7} \\
+\text{Edades todos} &amp;= \qquad {287}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Alberto y Alejandra, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Sofía y Martha Lucía, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {222} - {168} \\
-\text{Edades desconocidas} &amp;= \qquad {54}
+\text{Edades desconocidas} &amp;= \qquad {287} - {209} \\
+\text{Edades desconocidas} &amp;= \qquad {78}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Alberto y Alejandra tienen la misma edad, entonces dividimos 54 entre
+<p>Sabemos que Sofía y Martha Lucía tienen la misma edad, entonces dividimos 78 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{54}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {27}
+\text{Edad desconocida} &amp;= \qquad {\frac{78}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {39}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Alberto} &amp;= \qquad {27} \\
-\text{Edad de Alejandra} &amp;= \qquad {27}
+\text{Edad de Sofía} &amp;= \qquad {39} \\
+\text{Edad de Martha Lucía} &amp;= \qquad {39}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -148,7 +156,7 @@ Diego(46), Carla(49), Sofía(44), Violeta(29)
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Daniela recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 37 años. Cuando Daniela vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Violeta y Miguel.</p>
+<p>Isabella recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 39 años. Cuando Isabella vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: María Antonia y Camila.</p>
 <table border="1">
 <tr>
 <th>
@@ -160,18 +168,26 @@ Edad
 </tr>
 <tr>
 <td>
-Violeta
+María Antonia
 </td>
 <td align="center">
- {1:NUMERICAL:=44:0.05}
+ {1:NUMERICAL:=35:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Miguel
+Camila
 </td>
 <td align="center">
- {1:NUMERICAL:=44:0.05}
+ {1:NUMERICAL:=35:0.05}
+</td>
+</tr>
+<tr>
+<td>
+José Álvaro
+</td>
+<td align="center">
+32
 </td>
 </tr>
 <tr>
@@ -179,92 +195,68 @@ Miguel
 Lucía
 </td>
 <td align="center">
-50
+41
 </td>
 </tr>
 <tr>
 <td>
-Carla
+Juan
 </td>
 <td align="center">
-25
-</td>
-</tr>
-<tr>
-<td>
-Sebastián
-</td>
-<td align="center">
-26
-</td>
-</tr>
-<tr>
-<td>
-Alejandra
-</td>
-<td align="center">
-40
-</td>
-</tr>
-<tr>
-<td>
-Sofía
-</td>
-<td align="center">
-29
+52
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Violeta y Miguel tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que María Antonia y Camila tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Violeta y Miguel tienen, cada uno, 44 años. ¿De dónde salió esto?</p>
+<p>María Antonia y Camila tienen, cada uno, 35 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Daniela tiene las edades de 7 estudiantes y sabe que el promedio es 37 años. El promedio es simplemente la suma de todas las edades dividida por 7 (ya que son 7 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 7 estudiantes, cada uno tendría un promedio de 37 manzanas.</p>
-Ahora, ya sabemos la edad de 5 estudiantes:<br />
+<p>Isabella tiene las edades de 5 estudiantes y sabe que el promedio es 39 años. El promedio es simplemente la suma de todas las edades dividida por 5 (ya que son 5 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 5 estudiantes, cada uno tendría un promedio de 39 manzanas.</p>
+Ahora, ya sabemos la edad de 3 estudiantes:<br />
 
 <center>
-Lucía(50), Carla(25), Sebastián(26), Alejandra(40), Sofía(29)
+José Álvaro(32), Lucía(41), Juan(52)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {50 + 25 + 26 + 40 + 29} \\
-\text{Edades conocidas} &amp;= \qquad {170}
+\text{Edades conocidas} &amp;= \qquad {32 + 41 + 52} \\
+\text{Edades conocidas} &amp;= \qquad {125}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 7 estudiantes juntos, multiplicamos el promedio (37 años) por 7 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 5 estudiantes juntos, multiplicamos el promedio (39 años) por 5 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {37} \times {7} \\
-\text{Edades todos} &amp;= \qquad {259}
+\text{Edades todos} &amp;= \qquad {39} \times {5} \\
+\text{Edades todos} &amp;= \qquad {195}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Violeta y Miguel, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de María Antonia y Camila, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {259} - {170} \\
-\text{Edades desconocidas} &amp;= \qquad {89}
+\text{Edades desconocidas} &amp;= \qquad {195} - {125} \\
+\text{Edades desconocidas} &amp;= \qquad {70}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Violeta y Miguel tienen la misma edad, entonces dividimos 89 entre
+<p>Sabemos que María Antonia y Camila tienen la misma edad, entonces dividimos 70 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{89}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {44}
+\text{Edad desconocida} &amp;= \qquad {\frac{70}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {35}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Violeta} &amp;= \qquad {44} \\
-\text{Edad de Miguel} &amp;= \qquad {44}
+\text{Edad de María Antonia} &amp;= \qquad {35} \\
+\text{Edad de Camila} &amp;= \qquad {35}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -288,7 +280,7 @@ Lucía(50), Carla(25), Sebastián(26), Alejandra(40), Sofía(29)
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Paula Andrea recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 35 años. Cuando Paula Andrea vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Carla y Violeta.</p>
+<p>Lina María recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 42 años. Cuando Lina María vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Sebastián y María Antonia.</p>
 <table border="1">
 <tr>
 <th>
@@ -300,95 +292,95 @@ Edad
 </tr>
 <tr>
 <td>
-Carla
+Sebastián
 </td>
 <td align="center">
- {1:NUMERICAL:=28:0.05}
+ {1:NUMERICAL:=46:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Violeta
+María Antonia
 </td>
 <td align="center">
- {1:NUMERICAL:=28:0.05}
+ {1:NUMERICAL:=46:0.05}
 </td>
 </tr>
 <tr>
 <td>
-José Álvaro
+Martha Lucía
 </td>
 <td align="center">
-41
+54
 </td>
 </tr>
 <tr>
 <td>
-Miguel
+Álvaro
 </td>
 <td align="center">
-49
+31
 </td>
 </tr>
 <tr>
 <td>
-Lucía
+Juan
 </td>
 <td align="center">
-29
+33
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Carla y Violeta tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Sebastián y María Antonia tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Carla y Violeta tienen, cada uno, 28 años. ¿De dónde salió esto?</p>
+<p>Sebastián y María Antonia tienen, cada uno, 46 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Paula Andrea tiene las edades de 5 estudiantes y sabe que el promedio es 35 años. El promedio es simplemente la suma de todas las edades dividida por 5 (ya que son 5 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 5 estudiantes, cada uno tendría un promedio de 35 manzanas.</p>
+<p>Lina María tiene las edades de 5 estudiantes y sabe que el promedio es 42 años. El promedio es simplemente la suma de todas las edades dividida por 5 (ya que son 5 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 5 estudiantes, cada uno tendría un promedio de 42 manzanas.</p>
 Ahora, ya sabemos la edad de 3 estudiantes:<br />
 
 <center>
-José Álvaro(41), Miguel(49), Lucía(29)
+Martha Lucía(54), Álvaro(31), Juan(33)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {41 + 49 + 29} \\
-\text{Edades conocidas} &amp;= \qquad {119}
+\text{Edades conocidas} &amp;= \qquad {54 + 31 + 33} \\
+\text{Edades conocidas} &amp;= \qquad {118}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 5 estudiantes juntos, multiplicamos el promedio (35 años) por 5 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 5 estudiantes juntos, multiplicamos el promedio (42 años) por 5 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {35} \times {5} \\
-\text{Edades todos} &amp;= \qquad {175}
+\text{Edades todos} &amp;= \qquad {42} \times {5} \\
+\text{Edades todos} &amp;= \qquad {210}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Carla y Violeta, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Sebastián y María Antonia, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {175} - {119} \\
-\text{Edades desconocidas} &amp;= \qquad {56}
+\text{Edades desconocidas} &amp;= \qquad {210} - {118} \\
+\text{Edades desconocidas} &amp;= \qquad {92}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Carla y Violeta tienen la misma edad, entonces dividimos 56 entre
+<p>Sabemos que Sebastián y María Antonia tienen la misma edad, entonces dividimos 92 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{56}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {28}
+\text{Edad desconocida} &amp;= \qquad {\frac{92}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {46}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Carla} &amp;= \qquad {28} \\
-\text{Edad de Violeta} &amp;= \qquad {28}
+\text{Edad de Sebastián} &amp;= \qquad {46} \\
+\text{Edad de María Antonia} &amp;= \qquad {46}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -412,7 +404,7 @@ José Álvaro(41), Miguel(49), Lucía(29)
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Gabriela recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 41 años. Cuando Gabriela vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Lucía y Camila.</p>
+<p>Lina María recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 40 años. Cuando Lina María vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: José Álvaro y Sebastián.</p>
 <table border="1">
 <tr>
 <th>
@@ -424,50 +416,10 @@ Edad
 </tr>
 <tr>
 <td>
-Lucía
-</td>
-<td align="center">
- {1:NUMERICAL:=36:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Camila
-</td>
-<td align="center">
- {1:NUMERICAL:=36:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Álvaro
-</td>
-<td align="center">
-49
-</td>
-</tr>
-<tr>
-<td>
-Alberto
-</td>
-<td align="center">
-30
-</td>
-</tr>
-<tr>
-<td>
 José Álvaro
 </td>
 <td align="center">
-43
-</td>
-</tr>
-<tr>
-<td>
-Manuel Evelio
-</td>
-<td align="center">
-53
+ {1:NUMERICAL:=39:0.05}
 </td>
 </tr>
 <tr>
@@ -475,15 +427,15 @@ Manuel Evelio
 Sebastián
 </td>
 <td align="center">
-40
+ {1:NUMERICAL:=39:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Violeta
+Carla
 </td>
 <td align="center">
-55
+25
 </td>
 </tr>
 <tr>
@@ -491,60 +443,108 @@ Violeta
 Miguel
 </td>
 <td align="center">
-26
+51
+</td>
+</tr>
+<tr>
+<td>
+Sofía
+</td>
+<td align="center">
+34
+</td>
+</tr>
+<tr>
+<td>
+Juan
+</td>
+<td align="center">
+53
+</td>
+</tr>
+<tr>
+<td>
+Martha Lucía
+</td>
+<td align="center">
+45
+</td>
+</tr>
+<tr>
+<td>
+Violeta
+</td>
+<td align="center">
+44
+</td>
+</tr>
+<tr>
+<td>
+Camila
+</td>
+<td align="center">
+39
+</td>
+</tr>
+<tr>
+<td>
+Diego
+</td>
+<td align="center">
+31
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Lucía y Camila tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que José Álvaro y Sebastián tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Lucía y Camila tienen, cada uno, 36 años. ¿De dónde salió esto?</p>
+<p>José Álvaro y Sebastián tienen, cada uno, 39 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Gabriela tiene las edades de 9 estudiantes y sabe que el promedio es 41 años. El promedio es simplemente la suma de todas las edades dividida por 9 (ya que son 9 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 9 estudiantes, cada uno tendría un promedio de 41 manzanas.</p>
-Ahora, ya sabemos la edad de 7 estudiantes:<br />
+<p>Lina María tiene las edades de 10 estudiantes y sabe que el promedio es 40 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 40 manzanas.</p>
+Ahora, ya sabemos la edad de 8 estudiantes:<br />
 
 <center>
-Álvaro(49), Alberto(30), José Álvaro(43), Manuel Evelio(53), Sebastián(40), Violeta(55), Miguel(26)
+Carla(25), Miguel(51), Sofía(34), Juan(53), Martha Lucía(45), Violeta(44), Camila(39), Diego(31)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {49 + 30 + 43 + 53 + 40 + 55 + 26} \\
-\text{Edades conocidas} &amp;= \qquad {296}
+\text{Edades conocidas} &amp;= \qquad {25 + 51 + 34 + 53 + 45 + 44 + 39 + 31} \\
+\text{Edades conocidas} &amp;= \qquad {322}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 9 estudiantes juntos, multiplicamos el promedio (41 años) por 9 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (40 años) por 10 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {41} \times {9} \\
-\text{Edades todos} &amp;= \qquad {369}
+\text{Edades todos} &amp;= \qquad {40} \times {10} \\
+\text{Edades todos} &amp;= \qquad {400}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Lucía y Camila, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de José Álvaro y Sebastián, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {369} - {296} \\
-\text{Edades desconocidas} &amp;= \qquad {73}
+\text{Edades desconocidas} &amp;= \qquad {400} - {322} \\
+\text{Edades desconocidas} &amp;= \qquad {78}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Lucía y Camila tienen la misma edad, entonces dividimos 73 entre
+<p>Sabemos que José Álvaro y Sebastián tienen la misma edad, entonces dividimos 78 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{73}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {36}
+\text{Edad desconocida} &amp;= \qquad {\frac{78}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {39}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Lucía} &amp;= \qquad {36} \\
-\text{Edad de Camila} &amp;= \qquad {36}
+\text{Edad de José Álvaro} &amp;= \qquad {39} \\
+\text{Edad de Sebastián} &amp;= \qquad {39}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -568,7 +568,7 @@ Ahora, ya sabemos la edad de 7 estudiantes:<br />
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Samuel recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 47 años. Cuando Samuel vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Sebastián y Alberto.</p>
+<p>Valentina recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 39 años. Cuando Valentina vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Camila y Sofía.</p>
 <table border="1">
 <tr>
 <th>
@@ -580,26 +580,18 @@ Edad
 </tr>
 <tr>
 <td>
-Sebastián
+Camila
 </td>
 <td align="center">
- {1:NUMERICAL:=42:0.05}
+ {1:NUMERICAL:=48:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Alberto
+Sofía
 </td>
 <td align="center">
- {1:NUMERICAL:=42:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Carla
-</td>
-<td align="center">
-52
+ {1:NUMERICAL:=48:0.05}
 </td>
 </tr>
 <tr>
@@ -607,68 +599,100 @@ Carla
 Juan
 </td>
 <td align="center">
-53
+30
 </td>
 </tr>
 <tr>
 <td>
-María Antonia
+Sebastián
 </td>
 <td align="center">
-46
+43
+</td>
+</tr>
+<tr>
+<td>
+Manuel Evelio
+</td>
+<td align="center">
+42
+</td>
+</tr>
+<tr>
+<td>
+Alejandra
+</td>
+<td align="center">
+34
+</td>
+</tr>
+<tr>
+<td>
+Martha Lucía
+</td>
+<td align="center">
+36
+</td>
+</tr>
+<tr>
+<td>
+Lucía
+</td>
+<td align="center">
+31
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Sebastián y Alberto tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Camila y Sofía tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Sebastián y Alberto tienen, cada uno, 42 años. ¿De dónde salió esto?</p>
+<p>Camila y Sofía tienen, cada uno, 48 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Samuel tiene las edades de 5 estudiantes y sabe que el promedio es 47 años. El promedio es simplemente la suma de todas las edades dividida por 5 (ya que son 5 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 5 estudiantes, cada uno tendría un promedio de 47 manzanas.</p>
-Ahora, ya sabemos la edad de 3 estudiantes:<br />
+<p>Valentina tiene las edades de 8 estudiantes y sabe que el promedio es 39 años. El promedio es simplemente la suma de todas las edades dividida por 8 (ya que son 8 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 8 estudiantes, cada uno tendría un promedio de 39 manzanas.</p>
+Ahora, ya sabemos la edad de 6 estudiantes:<br />
 
 <center>
-Carla(52), Juan(53), María Antonia(46)
+Juan(30), Sebastián(43), Manuel Evelio(42), Alejandra(34), Martha Lucía(36), Lucía(31)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {52 + 53 + 46} \\
-\text{Edades conocidas} &amp;= \qquad {151}
+\text{Edades conocidas} &amp;= \qquad {30 + 43 + 42 + 34 + 36 + 31} \\
+\text{Edades conocidas} &amp;= \qquad {216}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 5 estudiantes juntos, multiplicamos el promedio (47 años) por 5 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 8 estudiantes juntos, multiplicamos el promedio (39 años) por 8 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {47} \times {5} \\
-\text{Edades todos} &amp;= \qquad {235}
+\text{Edades todos} &amp;= \qquad {39} \times {8} \\
+\text{Edades todos} &amp;= \qquad {312}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Sebastián y Alberto, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Camila y Sofía, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {235} - {151} \\
-\text{Edades desconocidas} &amp;= \qquad {84}
+\text{Edades desconocidas} &amp;= \qquad {312} - {216} \\
+\text{Edades desconocidas} &amp;= \qquad {96}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Sebastián y Alberto tienen la misma edad, entonces dividimos 84 entre
+<p>Sabemos que Camila y Sofía tienen la misma edad, entonces dividimos 96 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{84}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {42}
+\text{Edad desconocida} &amp;= \qquad {\frac{96}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {48}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Sebastián} &amp;= \qquad {42} \\
-\text{Edad de Alberto} &amp;= \qquad {42}
+\text{Edad de Camila} &amp;= \qquad {48} \\
+\text{Edad de Sofía} &amp;= \qquad {48}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -692,7 +716,7 @@ Carla(52), Juan(53), María Antonia(46)
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Patricia recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 42 años. Cuando Patricia vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Álvaro y Violeta.</p>
+<p>Consuelo recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 44 años. Cuando Consuelo vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Miguel y Carla.</p>
 <table border="1">
 <tr>
 <th>
@@ -704,26 +728,10 @@ Edad
 </tr>
 <tr>
 <td>
-Álvaro
+Miguel
 </td>
 <td align="center">
- {1:NUMERICAL:=38:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Violeta
-</td>
-<td align="center">
- {1:NUMERICAL:=38:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Camila
-</td>
-<td align="center">
-37
+ {1:NUMERICAL:=41:0.05}
 </td>
 </tr>
 <tr>
@@ -731,23 +739,15 @@ Camila
 Carla
 </td>
 <td align="center">
-33
+ {1:NUMERICAL:=41:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Alberto
+Alejandra
 </td>
 <td align="center">
-51
-</td>
-</tr>
-<tr>
-<td>
-Martha Lucía
-</td>
-<td align="center">
-53
+55
 </td>
 </tr>
 <tr>
@@ -760,18 +760,26 @@ Lucía
 </tr>
 <tr>
 <td>
-Juan
+Diego
 </td>
 <td align="center">
-29
+44
 </td>
 </tr>
 <tr>
 <td>
-Alejandra
+Álvaro
 </td>
 <td align="center">
-54
+48
+</td>
+</tr>
+<tr>
+<td>
+Sofía
+</td>
+<td align="center">
+52
 </td>
 </tr>
 <tr>
@@ -779,60 +787,60 @@ Alejandra
 Sebastián
 </td>
 <td align="center">
-52
+37
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Álvaro y Violeta tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Miguel y Carla tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Álvaro y Violeta tienen, cada uno, 38 años. ¿De dónde salió esto?</p>
+<p>Miguel y Carla tienen, cada uno, 41 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Patricia tiene las edades de 10 estudiantes y sabe que el promedio es 42 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 42 manzanas.</p>
-Ahora, ya sabemos la edad de 8 estudiantes:<br />
+<p>Consuelo tiene las edades de 8 estudiantes y sabe que el promedio es 44 años. El promedio es simplemente la suma de todas las edades dividida por 8 (ya que son 8 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 8 estudiantes, cada uno tendría un promedio de 44 manzanas.</p>
+Ahora, ya sabemos la edad de 6 estudiantes:<br />
 
 <center>
-Camila(37), Carla(33), Alberto(51), Martha Lucía(53), Lucía(34), Juan(29), Alejandra(54), Sebastián(52)
+Alejandra(55), Lucía(34), Diego(44), Álvaro(48), Sofía(52), Sebastián(37)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {37 + 33 + 51 + 53 + 34 + 29 + 54 + 52} \\
-\text{Edades conocidas} &amp;= \qquad {343}
+\text{Edades conocidas} &amp;= \qquad {55 + 34 + 44 + 48 + 52 + 37} \\
+\text{Edades conocidas} &amp;= \qquad {270}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (42 años) por 10 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 8 estudiantes juntos, multiplicamos el promedio (44 años) por 8 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {42} \times {10} \\
-\text{Edades todos} &amp;= \qquad {420}
+\text{Edades todos} &amp;= \qquad {44} \times {8} \\
+\text{Edades todos} &amp;= \qquad {352}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Álvaro y Violeta, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Miguel y Carla, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {420} - {343} \\
-\text{Edades desconocidas} &amp;= \qquad {77}
+\text{Edades desconocidas} &amp;= \qquad {352} - {270} \\
+\text{Edades desconocidas} &amp;= \qquad {82}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Álvaro y Violeta tienen la misma edad, entonces dividimos 77 entre
+<p>Sabemos que Miguel y Carla tienen la misma edad, entonces dividimos 82 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{77}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {38}
+\text{Edad desconocida} &amp;= \qquad {\frac{82}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {41}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Álvaro} &amp;= \qquad {38} \\
-\text{Edad de Violeta} &amp;= \qquad {38}
+\text{Edad de Miguel} &amp;= \qquad {41} \\
+\text{Edad de Carla} &amp;= \qquad {41}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -856,7 +864,7 @@ Camila(37), Carla(33), Alberto(51), Martha Lucía(53), Lucía(34), Juan(29), Ale
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Daniela recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 44 años. Cuando Daniela vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Miguel y Camila.</p>
+<p>Patricia recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 43 años. Cuando Patricia vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Sebastián y Diego.</p>
 <table border="1">
 <tr>
 <th>
@@ -868,26 +876,10 @@ Edad
 </tr>
 <tr>
 <td>
-Miguel
+Sebastián
 </td>
 <td align="center">
- {1:NUMERICAL:=44:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Camila
-</td>
-<td align="center">
- {1:NUMERICAL:=44:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Alejandra
-</td>
-<td align="center">
-45
+ {1:NUMERICAL:=51:0.05}
 </td>
 </tr>
 <tr>
@@ -895,20 +887,20 @@ Alejandra
 Diego
 </td>
 <td align="center">
-31
+ {1:NUMERICAL:=51:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Álvaro
+Miguel
 </td>
 <td align="center">
-52
+32
 </td>
 </tr>
 <tr>
 <td>
-Sebastián
+Lucía
 </td>
 <td align="center">
 41
@@ -916,18 +908,10 @@ Sebastián
 </tr>
 <tr>
 <td>
-Sofía
-</td>
-<td align="center">
-54
-</td>
-</tr>
-<tr>
-<td>
 Alberto
 </td>
 <td align="center">
-46
+35
 </td>
 </tr>
 <tr>
@@ -935,68 +919,92 @@ Alberto
 Martha Lucía
 </td>
 <td align="center">
-36
+53
 </td>
 </tr>
 <tr>
 <td>
-Violeta
+Sofía
 </td>
 <td align="center">
 48
 </td>
 </tr>
+<tr>
+<td>
+Carla
+</td>
+<td align="center">
+37
+</td>
+</tr>
+<tr>
+<td>
+Alejandra
+</td>
+<td align="center">
+54
+</td>
+</tr>
+<tr>
+<td>
+Juan
+</td>
+<td align="center">
+28
+</td>
+</tr>
 </table>
 <p><br />
-Si se sabe que Miguel y Camila tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Sebastián y Diego tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Miguel y Camila tienen, cada uno, 44 años. ¿De dónde salió esto?</p>
+<p>Sebastián y Diego tienen, cada uno, 51 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Daniela tiene las edades de 10 estudiantes y sabe que el promedio es 44 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 44 manzanas.</p>
+<p>Patricia tiene las edades de 10 estudiantes y sabe que el promedio es 43 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 43 manzanas.</p>
 Ahora, ya sabemos la edad de 8 estudiantes:<br />
 
 <center>
-Alejandra(45), Diego(31), Álvaro(52), Sebastián(41), Sofía(54), Alberto(46), Martha Lucía(36), Violeta(48)
+Miguel(32), Lucía(41), Alberto(35), Martha Lucía(53), Sofía(48), Carla(37), Alejandra(54), Juan(28)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {45 + 31 + 52 + 41 + 54 + 46 + 36 + 48} \\
-\text{Edades conocidas} &amp;= \qquad {353}
+\text{Edades conocidas} &amp;= \qquad {32 + 41 + 35 + 53 + 48 + 37 + 54 + 28} \\
+\text{Edades conocidas} &amp;= \qquad {328}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (44 años) por 10 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (43 años) por 10 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {44} \times {10} \\
-\text{Edades todos} &amp;= \qquad {440}
+\text{Edades todos} &amp;= \qquad {43} \times {10} \\
+\text{Edades todos} &amp;= \qquad {430}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Miguel y Camila, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Sebastián y Diego, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {440} - {353} \\
-\text{Edades desconocidas} &amp;= \qquad {87}
+\text{Edades desconocidas} &amp;= \qquad {430} - {328} \\
+\text{Edades desconocidas} &amp;= \qquad {102}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Miguel y Camila tienen la misma edad, entonces dividimos 87 entre
+<p>Sabemos que Sebastián y Diego tienen la misma edad, entonces dividimos 102 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{87}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {44}
+\text{Edad desconocida} &amp;= \qquad {\frac{102}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {51}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Miguel} &amp;= \qquad {44} \\
-\text{Edad de Camila} &amp;= \qquad {44}
+\text{Edad de Sebastián} &amp;= \qquad {51} \\
+\text{Edad de Diego} &amp;= \qquad {51}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -1020,7 +1028,7 @@ Alejandra(45), Diego(31), Álvaro(52), Sebastián(41), Sofía(54), Alberto(46), 
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Lina María recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 36 años. Cuando Lina María vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Alberto y Camila.</p>
+<p>Luis Fernando recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 40 años. Cuando Luis Fernando vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Violeta y Alejandra.</p>
 <table border="1">
 <tr>
 <th>
@@ -1032,18 +1040,18 @@ Edad
 </tr>
 <tr>
 <td>
-Alberto
+Violeta
 </td>
 <td align="center">
- {1:NUMERICAL:=26:0.05}
+ {1:NUMERICAL:=49:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Camila
+Alejandra
 </td>
 <td align="center">
- {1:NUMERICAL:=26:0.05}
+ {1:NUMERICAL:=49:0.05}
 </td>
 </tr>
 <tr>
@@ -1051,116 +1059,76 @@ Camila
 Sofía
 </td>
 <td align="center">
-27
+25
 </td>
 </tr>
 <tr>
 <td>
-María Antonia
+Camila
 </td>
 <td align="center">
-52
+32
 </td>
 </tr>
 <tr>
 <td>
-Manuel Evelio
+Alberto
 </td>
 <td align="center">
-28
-</td>
-</tr>
-<tr>
-<td>
-Violeta
-</td>
-<td align="center">
-31
-</td>
-</tr>
-<tr>
-<td>
-Sebastián
-</td>
-<td align="center">
-33
-</td>
-</tr>
-<tr>
-<td>
-Carla
-</td>
-<td align="center">
-55
-</td>
-</tr>
-<tr>
-<td>
-Martha Lucía
-</td>
-<td align="center">
-43
-</td>
-</tr>
-<tr>
-<td>
-Juan
-</td>
-<td align="center">
-40
+45
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Alberto y Camila tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Violeta y Alejandra tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Alberto y Camila tienen, cada uno, 26 años. ¿De dónde salió esto?</p>
+<p>Violeta y Alejandra tienen, cada uno, 49 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Lina María tiene las edades de 10 estudiantes y sabe que el promedio es 36 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 36 manzanas.</p>
-Ahora, ya sabemos la edad de 8 estudiantes:<br />
+<p>Luis Fernando tiene las edades de 5 estudiantes y sabe que el promedio es 40 años. El promedio es simplemente la suma de todas las edades dividida por 5 (ya que son 5 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 5 estudiantes, cada uno tendría un promedio de 40 manzanas.</p>
+Ahora, ya sabemos la edad de 3 estudiantes:<br />
 
 <center>
-Sofía(27), María Antonia(52), Manuel Evelio(28), Violeta(31), Sebastián(33), Carla(55), Martha Lucía(43), Juan(40)
+Sofía(25), Camila(32), Alberto(45)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {27 + 52 + 28 + 31 + 33 + 55 + 43 + 40} \\
-\text{Edades conocidas} &amp;= \qquad {309}
+\text{Edades conocidas} &amp;= \qquad {25 + 32 + 45} \\
+\text{Edades conocidas} &amp;= \qquad {102}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (36 años) por 10 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 5 estudiantes juntos, multiplicamos el promedio (40 años) por 5 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {36} \times {10} \\
-\text{Edades todos} &amp;= \qquad {360}
+\text{Edades todos} &amp;= \qquad {40} \times {5} \\
+\text{Edades todos} &amp;= \qquad {200}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Alberto y Camila, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Violeta y Alejandra, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {360} - {309} \\
-\text{Edades desconocidas} &amp;= \qquad {51}
+\text{Edades desconocidas} &amp;= \qquad {200} - {102} \\
+\text{Edades desconocidas} &amp;= \qquad {98}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Alberto y Camila tienen la misma edad, entonces dividimos 51 entre
+<p>Sabemos que Violeta y Alejandra tienen la misma edad, entonces dividimos 98 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{51}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {26}
+\text{Edad desconocida} &amp;= \qquad {\frac{98}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {49}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Alberto} &amp;= \qquad {26} \\
-\text{Edad de Camila} &amp;= \qquad {26}
+\text{Edad de Violeta} &amp;= \qquad {49} \\
+\text{Edad de Alejandra} &amp;= \qquad {49}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -1184,7 +1152,7 @@ Sofía(27), María Antonia(52), Manuel Evelio(28), Violeta(31), Sebastián(33), 
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Lina María recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 40 años. Cuando Lina María vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Martha Lucía y Alberto.</p>
+<p>David recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 33 años. Cuando David vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Juan y José Álvaro.</p>
 <table border="1">
 <tr>
 <th>
@@ -1196,18 +1164,50 @@ Edad
 </tr>
 <tr>
 <td>
-Martha Lucía
+Juan
 </td>
 <td align="center">
- {1:NUMERICAL:=30:0.05}
+ {1:NUMERICAL:=23:0.05}
 </td>
 </tr>
 <tr>
 <td>
-Alberto
+José Álvaro
 </td>
 <td align="center">
- {1:NUMERICAL:=30:0.05}
+ {1:NUMERICAL:=23:0.05}
+</td>
+</tr>
+<tr>
+<td>
+Miguel
+</td>
+<td align="center">
+28
+</td>
+</tr>
+<tr>
+<td>
+Sebastián
+</td>
+<td align="center">
+26
+</td>
+</tr>
+<tr>
+<td>
+Lucía
+</td>
+<td align="center">
+32
+</td>
+</tr>
+<tr>
+<td>
+Camila
+</td>
+<td align="center">
+25
 </td>
 </tr>
 <tr>
@@ -1220,42 +1220,18 @@ Carla
 </tr>
 <tr>
 <td>
-Violeta
+Alejandra
 </td>
 <td align="center">
-28
+43
 </td>
 </tr>
 <tr>
 <td>
-Manuel Evelio
+Álvaro
 </td>
 <td align="center">
-47
-</td>
-</tr>
-<tr>
-<td>
-José Álvaro
-</td>
-<td align="center">
-40
-</td>
-</tr>
-<tr>
-<td>
-Miguel
-</td>
-<td align="center">
-37
-</td>
-</tr>
-<tr>
-<td>
-Lucía
-</td>
-<td align="center">
-53
+46
 </td>
 </tr>
 <tr>
@@ -1263,68 +1239,60 @@ Lucía
 Sofía
 </td>
 <td align="center">
-52
-</td>
-</tr>
-<tr>
-<td>
-Juan
-</td>
-<td align="center">
 48
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Martha Lucía y Alberto tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Juan y José Álvaro tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Martha Lucía y Alberto tienen, cada uno, 30 años. ¿De dónde salió esto?</p>
+<p>Juan y José Álvaro tienen, cada uno, 23 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Lina María tiene las edades de 10 estudiantes y sabe que el promedio es 40 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 40 manzanas.</p>
+<p>David tiene las edades de 10 estudiantes y sabe que el promedio es 33 años. El promedio es simplemente la suma de todas las edades dividida por 10 (ya que son 10 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 10 estudiantes, cada uno tendría un promedio de 33 manzanas.</p>
 Ahora, ya sabemos la edad de 8 estudiantes:<br />
 
 <center>
-Carla(36), Violeta(28), Manuel Evelio(47), José Álvaro(40), Miguel(37), Lucía(53), Sofía(52), Juan(48)
+Miguel(28), Sebastián(26), Lucía(32), Camila(25), Carla(36), Alejandra(43), Álvaro(46), Sofía(48)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {36 + 28 + 47 + 40 + 37 + 53 + 52 + 48} \\
-\text{Edades conocidas} &amp;= \qquad {341}
+\text{Edades conocidas} &amp;= \qquad {28 + 26 + 32 + 25 + 36 + 43 + 46 + 48} \\
+\text{Edades conocidas} &amp;= \qquad {284}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (40 años) por 10 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 10 estudiantes juntos, multiplicamos el promedio (33 años) por 10 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {40} \times {10} \\
-\text{Edades todos} &amp;= \qquad {400}
+\text{Edades todos} &amp;= \qquad {33} \times {10} \\
+\text{Edades todos} &amp;= \qquad {330}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Martha Lucía y Alberto, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Juan y José Álvaro, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {400} - {341} \\
-\text{Edades desconocidas} &amp;= \qquad {59}
+\text{Edades desconocidas} &amp;= \qquad {330} - {284} \\
+\text{Edades desconocidas} &amp;= \qquad {46}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Martha Lucía y Alberto tienen la misma edad, entonces dividimos 59 entre
+<p>Sabemos que Juan y José Álvaro tienen la misma edad, entonces dividimos 46 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{59}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {30}
+\text{Edad desconocida} &amp;= \qquad {\frac{46}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {23}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Martha Lucía} &amp;= \qquad {30} \\
-\text{Edad de Alberto} &amp;= \qquad {30}
+\text{Edad de Juan} &amp;= \qquad {23} \\
+\text{Edad de José Álvaro} &amp;= \qquad {23}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>
@@ -1348,7 +1316,7 @@ Carla(36), Violeta(28), Manuel Evelio(47), José Álvaro(40), Miguel(37), Lucía
 <questiontext format="html">
 <text><![CDATA[
 <p>
-<p>Lina María recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 41 años. Cuando Lina María vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Martha Lucía y Lucía.</p>
+<p>Gabriela recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de 38 años. Cuando Gabriela vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: Martha Lucía y Camila.</p>
 <table border="1">
 <tr>
 <th>
@@ -1363,31 +1331,7 @@ Edad
 Martha Lucía
 </td>
 <td align="center">
- {1:NUMERICAL:=44:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Lucía
-</td>
-<td align="center">
- {1:NUMERICAL:=44:0.05}
-</td>
-</tr>
-<tr>
-<td>
-Sofía
-</td>
-<td align="center">
-43
-</td>
-</tr>
-<tr>
-<td>
-Carla
-</td>
-<td align="center">
-30
+ {1:NUMERICAL:=36:0.05}
 </td>
 </tr>
 <tr>
@@ -1395,60 +1339,116 @@ Carla
 Camila
 </td>
 <td align="center">
-45
+ {1:NUMERICAL:=36:0.05}
+</td>
+</tr>
+<tr>
+<td>
+Miguel
+</td>
+<td align="center">
+29
+</td>
+</tr>
+<tr>
+<td>
+Juan
+</td>
+<td align="center">
+34
+</td>
+</tr>
+<tr>
+<td>
+Manuel Evelio
+</td>
+<td align="center">
+35
+</td>
+</tr>
+<tr>
+<td>
+José Álvaro
+</td>
+<td align="center">
+41
+</td>
+</tr>
+<tr>
+<td>
+Sofía
+</td>
+<td align="center">
+40
+</td>
+</tr>
+<tr>
+<td>
+Álvaro
+</td>
+<td align="center">
+52
+</td>
+</tr>
+<tr>
+<td>
+Violeta
+</td>
+<td align="center">
+39
 </td>
 </tr>
 </table>
 <p><br />
-Si se sabe que Martha Lucía y Lucía tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
+Si se sabe que Martha Lucía y Camila tienen la misma edad, ¿cuántos años tiene cada uno de ellos?</p>
 </p>]]></text>
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>Martha Lucía y Lucía tienen, cada uno, 44 años. ¿De dónde salió esto?</p>
+<p>Martha Lucía y Camila tienen, cada uno, 36 años. ¿De dónde salió esto?</p>
 <p>¡Hagamos esto juntos!</p>
 <p>Primero, entendamos la situación:</p>
-<p>Lina María tiene las edades de 5 estudiantes y sabe que el promedio es 41 años. El promedio es simplemente la suma de todas las edades dividida por 5 (ya que son 5 estudiantes).</p>
-<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 5 estudiantes, cada uno tendría un promedio de 41 manzanas.</p>
-Ahora, ya sabemos la edad de 3 estudiantes:<br />
+<p>Gabriela tiene las edades de 9 estudiantes y sabe que el promedio es 38 años. El promedio es simplemente la suma de todas las edades dividida por 9 (ya que son 9 estudiantes).</p>
+<p>Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los 9 estudiantes, cada uno tendría un promedio de 38 manzanas.</p>
+Ahora, ya sabemos la edad de 7 estudiantes:<br />
 
 <center>
-Sofía(43), Carla(30), Camila(45)
+Miguel(29), Juan(34), Manuel Evelio(35), José Álvaro(41), Sofía(40), Álvaro(52), Violeta(39)
 </center>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades conocidas} &amp;= \qquad {43 + 30 + 45} \\
-\text{Edades conocidas} &amp;= \qquad {118}
+\text{Edades conocidas} &amp;= \qquad {29 + 34 + 35 + 41 + 40 + 52 + 39} \\
+\text{Edades conocidas} &amp;= \qquad {270}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para encontrar la edad total de los 5 estudiantes juntos, multiplicamos el promedio (41 años) por 5 (número de estudiantes):</p>
+<p>Para encontrar la edad total de los 9 estudiantes juntos, multiplicamos el promedio (38 años) por 9 (número de estudiantes):</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades todos} &amp;= \qquad {41} \times {5} \\
-\text{Edades todos} &amp;= \qquad {205}
+\text{Edades todos} &amp;= \qquad {38} \times {9} \\
+\text{Edades todos} &amp;= \qquad {342}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Para saber las edades de Martha Lucía y Lucía, hallamos la diferencia entre ‘Edades todos’ y
+<p>Para saber las edades de Martha Lucía y Camila, hallamos la diferencia entre ‘Edades todos’ y
 ‘Edades conocidas’:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edades desconocidas} &amp;= \qquad {205} - {118} \\
-\text{Edades desconocidas} &amp;= \qquad {87}
+\text{Edades desconocidas} &amp;= \qquad {342} - {270} \\
+\text{Edades desconocidas} &amp;= \qquad {72}
 \end{aligned}
 \end{equation*}\]</span></p>
-<p>Sabemos que Martha Lucía y Lucía tienen la misma edad, entonces dividimos 87 entre
+<p>Sabemos que Martha Lucía y Camila tienen la misma edad, entonces dividimos 72 entre
 2:</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad desconocida} &amp;= \qquad {\frac{87}{2}} \\
-\text{Edad desconocida} &amp;= \qquad {44}
+\text{Edad desconocida} &amp;= \qquad {\frac{72}{2}} \\
+\text{Edad desconocida} &amp;= \qquad {36}
 \end{aligned}
 \end{equation*}\]</span></p>
 <p>Por tanto,</p>
 <p><span class="math display">\[\begin{equation*}
 \begin{aligned}
-\text{Edad de Martha Lucía} &amp;= \qquad {44} \\
-\text{Edad de Lucía} &amp;= \qquad {44}
+\text{Edad de Martha Lucía} &amp;= \qquad {36} \\
+\text{Edad de Camila} &amp;= \qquad {36}
 \end{aligned}
 \end{equation*}\]</span></p>
 </p>]]></text>

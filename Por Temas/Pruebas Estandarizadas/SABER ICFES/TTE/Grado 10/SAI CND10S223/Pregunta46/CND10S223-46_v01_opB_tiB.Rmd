@@ -1,0 +1,463 @@
+```{r Generacion de Datos, echo = FALSE, results = "hide"}
+library(exams)
+library(MASS)
+
+typ <- match_exams_device()
+options(scipen=999)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+ninos1 <- sample(10:40,8, replace = F)
+ninos1
+pobl <- sum(ninos1)
+pobl
+prob_ninos <- (ninos1[1] + ninos1[2] + ninos1[3] + ninos1[4])/pobl
+prob_ninos <- fractions(prob_ninos)
+prob_ninas <- (ninos1[5] + ninos1[6] + ninos1[7] + ninos1[8])/pobl
+prob_ninas <- fractions(prob_ninas)
+pr_est_1 <- (ninos1[1] + ninos1[5])/pobl
+pr_est_1 <- fractions(pr_est_1)
+pr_est_2 <- (ninos1[2] + ninos1[6])/pobl
+pr_est_2 <- fractions(pr_est_2)
+pr_est_3 <- (ninos1[3] + ninos1[7])/pobl
+pr_est_3 <- fractions(pr_est_3)
+pr_est_4 <- (ninos1[4] + ninos1[8])/pobl
+pr_est_4 <- fractions(pr_est_4)
+
+# Calcular las probabilidades
+probs <- ninos1/pobl
+
+# Convertir las probabilidades a fracciones
+probs_frac <- fractions(probs)
+probs_frac
+
+# Función para representar una fracción sin simplificar
+frac_no_simpl <- function(numerador, denominador) {
+  return(paste(numerador, "/", denominador, sep = ""))
+}
+
+# Calcular las probabilidades como fracciones no simplificadas
+probs_frax <- sapply(ninos1, function(x) frac_no_simpl(x, pobl))
+probs_frax
+
+# Se mostrarán algunas opciones sin simplificar para que el estudiante no crea 
+# que siempre se mostrarán las fracciones simplificadas 
+
+
+# Graficando la tabla
+tablappal <- '
+\\begin{tikzpicture}
+  \\node{
+\\begin{tabular}{l|c|c|c|c|}
+\\cline{2-5}
+\\textbf{}                             & \\textbf{PRIMERO} & \\textbf{SEGUNDO} & \\textbf{TERCERO} & \\textbf{CUARTO} \\\\ \\hline
+\\multicolumn{1}{|l|}{\\textbf{NIÑOS}} & %s               & %s               & %s               & %s              \\\\ \\hline
+\\multicolumn{1}{|l|}{\\textbf{NIÑAS}} & %s               & %s               & %s               & %s              \\\\ \\hline
+\\end{tabular}
+};
+\\end{tikzpicture}
+'
+tablappal <-sprintf(tablappal,ninos1[1], ninos1[2], ninos1[3], ninos1[4],
+                    ninos1[5], ninos1[6], ninos1[7], ninos1[8])
+
+# Lista de afirmaciones
+dicci <- list(
+  "La probabilidad de que sea un niño es de" = prob_ninos,
+  "La probabilidad de que sea una niña es de" = prob_ninas,
+  "La probabilidad de que sea un niño de primero es de" = probs_frac[1],
+  "La probabilidad de que sea una niña de primero es de" = probs_frac[5],
+  "La probabilidad de que sea un niño de segundo es de" = probs_frac[2],
+  "La probabilidad de que sea una niña de segundo es de" = probs_frac[6],
+  "La probabilidad de que sea un niño de tercero es de" = probs_frac[3],
+  "La probabilidad de que sea una niña de tercero es de" = probs_frac[7],
+  "La probabilidad de que sea un niño de cuarto es de" = probs_frac[4],
+  "La probabilidad de que sea una niña de cuarto es de" = probs_frac[8],
+  "La probabilidad de que sea un niño de primero es de" = probs_frax[1],
+  "La probabilidad de que sea una niña de primero es de" = probs_frax[5],
+  "La probabilidad de que sea un niño de segundo es de" = probs_frax[2],
+  "La probabilidad de que sea una niña de segundo es de" = probs_frax[6],
+  "La probabilidad de que sea un niño de tercero es de" = probs_frax[3],
+  "La probabilidad de que sea una niña de tercero es de" = probs_frax[7],
+  "La probabilidad de que sea un niño de cuarto es de" = probs_frax[4],
+  "La probabilidad de que sea una niña de cuarto es de" = probs_frax[8],
+  "La probabilidad de que sea un estudiante de primero es de" = pr_est_1,
+  "La probabilidad de que sea un estudiante de segundo es de" = pr_est_2,
+  "La probabilidad de que sea un estudiante de tercero es de" = pr_est_3,
+  "La probabilidad de que sea un estudiante de cuarto es de" = pr_est_4
+)
+
+# 5 opciones, incluyendo referencia cruzada a la opción incorrecta
+claves <- sample(names(dicci), 7) 
+claves
+valores <- lapply(claves, function(clave) dicci[[clave]])
+valores
+
+# Clave 01
+busca_y_asigna <- function(dicci, claves) {
+  # Solo revisar la primera clave en 'claves'
+  key <- claves[1]
+  
+  if (grepl("un niño es de", key)) {
+    patinaje <- "de niños"
+    numerator <<- (ninos1[1] + ninos1[2] + ninos1[3] + ninos1[4])
+  } else if (grepl("una niña es de", key)) {
+    patinaje <- "de niñas"
+    numerator <<- (ninos1[5] + ninos1[6] + ninos1[7] + ninos1[8])
+  } else if (grepl("un niño de primero", key)) {
+    patinaje <- "de niños de primero"
+    numerator <<- (ninos1[1])
+  } else if (grepl("una niña de primero", key)) {
+    patinaje <- "de niñas de primero"
+    numerator <<- (ninos1[5])
+  } else if (grepl("un niño de segundo", key)) {
+    patinaje <- "de niños de segundo"
+    numerator <<- (ninos1[2])
+  } else if (grepl("una niña de segundo", key)) {
+    patinaje <- "de niñas de segundo"
+    numerator <<- (ninos1[6])
+  } else if (grepl("un niño de tercero", key)) {
+    patinaje <- "de niños de tercero"
+    numerator <<- (ninos1[3])
+  } else if (grepl("una niña de tercero", key)) {
+    patinaje <- "de niñas de tercero"
+    numerator <<- (ninos1[7])
+  } else if (grepl("un niño de cuarto", key)) {
+    patinaje <- "de niños de cuarto"
+    numerator <<- (ninos1[4])
+  } else if (grepl("una niña de cuarto", key)) {
+    patinaje <- "de niñas de cuarto"
+    numerator <<- (ninos1[8])
+  } else if (grepl("un estudiante de primero", key)) {
+    patinaje <- "de estudiantes de primero"
+    numerator <<- (ninos1[1] + ninos1[5])
+  } else if (grepl("un estudiante de segundo", key)) {
+    patinaje <- "de estudiantes de segundo"
+    numerator <<- (ninos1[2] + ninos1[6])
+  } else if (grepl("un estudiante de tercero", key)) {
+    patinaje <- "de estudiantes de tercero"
+    numerator <<- (ninos1[3] + ninos1[7])
+  } else if (grepl("un estudiante de cuarto", key)) {
+    patinaje <- "de estudiantes de cuarto"
+    numerator <<- (ninos1[4] + ninos1[8])
+  } else {
+    # Si no encuentra ninguna de las subcadenas anteriores, simplemente asigna el valor original de la clave
+    patinaje <- key
+  }
+  return(patinaje)
+}
+
+# Usar la función para obtener el valor de 'patinaje' para la primera clave en 'claves'
+resultado <- busca_y_asigna(dicci, claves)
+
+
+# Clave 02
+busca_y_asigna <- function(dicci, claves) {
+  # Solo revisar la primera clave en 'claves'
+  key <- claves[2]
+  
+  if (grepl("un niño es de", key)) {
+    patinaje <- "de niños"
+    numerator2 <<- (ninos1[1] + ninos1[2] + ninos1[3] + ninos1[4])
+  } else if (grepl("una niña es de", key)) {
+    patinaje <- "de niñas"
+    numerator2 <<- (ninos1[5] + ninos1[6] + ninos1[7] + ninos1[8])
+  } else if (grepl("un niño de primero", key)) {
+    patinaje <- "de niños de primero"
+    numerator2 <<- (ninos1[1])
+  } else if (grepl("una niña de primero", key)) {
+    patinaje <- "de niñas de primero"
+    numerator2 <<- (ninos1[5])
+  } else if (grepl("un niño de segundo", key)) {
+    patinaje <- "de niños de segundo"
+    numerator2 <<- (ninos1[2])
+  } else if (grepl("una niña de segundo", key)) {
+    patinaje <- "de niñas de segundo"
+    numerator2 <<- (ninos1[6])
+  } else if (grepl("un niño de tercero", key)) {
+    patinaje <- "de niños de tercero"
+    numerator2 <<- (ninos1[3])
+  } else if (grepl("una niña de tercero", key)) {
+    patinaje <- "de niñas de tercero"
+    numerator2 <<- (ninos1[7])
+  } else if (grepl("un niño de cuarto", key)) {
+    patinaje <- "de niños de cuarto"
+    numerator2 <<- (ninos1[4])
+  } else if (grepl("una niña de cuarto", key)) {
+    patinaje <- "de niñas de cuarto"
+    numerator2 <<- (ninos1[8])
+  } else if (grepl("un estudiante de primero", key)) {
+    patinaje <- "de estudiantes de primero"
+    numerator2 <<- (ninos1[1] + ninos1[5])
+  } else if (grepl("un estudiante de segundo", key)) {
+    patinaje <- "de estudiantes de segundo"
+    numerator2 <<- (ninos1[2] + ninos1[6])
+  } else if (grepl("un estudiante de tercero", key)) {
+    patinaje <- "de estudiantes de tercero"
+    numerator2 <<- (ninos1[3] + ninos1[7])
+  } else if (grepl("un estudiante de cuarto", key)) {
+    patinaje <- "de estudiantes de cuarto"
+    numerator2 <<- (ninos1[4] + ninos1[8])
+  } else {
+    # Si no encuentra ninguna de las subcadenas anteriores, simplemente asigna el valor original de la clave
+    patinaje <- key
+  }
+  return(patinaje)
+}
+
+# Usar la función para obtener el valor de 'patinaje' para la primera clave en 'claves'
+resultado2 <- busca_y_asigna(dicci, claves)
+
+
+# Clave 03
+busca_y_asigna <- function(dicci, claves) {
+  # Solo revisar la primera clave en 'claves'
+  key <- claves[3]
+  
+  if (grepl("un niño es de", key)) {
+    patinaje <- "de niños"
+    numerator3 <<- (ninos1[1] + ninos1[2] + ninos1[3] + ninos1[4])
+  } else if (grepl("una niña es de", key)) {
+    patinaje <- "de niñas"
+    numerator3 <<- (ninos1[5] + ninos1[6] + ninos1[7] + ninos1[8])
+  } else if (grepl("un niño de primero", key)) {
+    patinaje <- "de niños de primero"
+    numerator3 <<- (ninos1[1])
+  } else if (grepl("una niña de primero", key)) {
+    patinaje <- "de niñas de primero"
+    numerator3 <<- (ninos1[5])
+  } else if (grepl("un niño de segundo", key)) {
+    patinaje <- "de niños de segundo"
+    numerator3 <<- (ninos1[2])
+  } else if (grepl("una niña de segundo", key)) {
+    patinaje <- "de niñas de segundo"
+    numerator3 <<- (ninos1[6])
+  } else if (grepl("un niño de tercero", key)) {
+    patinaje <- "de niños de tercero"
+    numerator3 <<- (ninos1[3])
+  } else if (grepl("una niña de tercero", key)) {
+    patinaje <- "de niñas de tercero"
+    numerator3 <<- (ninos1[7])
+  } else if (grepl("un niño de cuarto", key)) {
+    patinaje <- "de niños de cuarto"
+    numerator3 <<- (ninos1[4])
+  } else if (grepl("una niña de cuarto", key)) {
+    patinaje <- "de niñas de cuarto"
+    numerator3 <<- (ninos1[8])
+  } else if (grepl("un estudiante de primero", key)) {
+    patinaje <- "de estudiantes de primero"
+    numerator3 <<- (ninos1[1] + ninos1[5])
+  } else if (grepl("un estudiante de segundo", key)) {
+    patinaje <- "de estudiantes de segundo"
+    numerator3 <<- (ninos1[2] + ninos1[6])
+  } else if (grepl("un estudiante de tercero", key)) {
+    patinaje <- "de estudiantes de tercero"
+    numerator3 <<- (ninos1[3] + ninos1[7])
+  } else if (grepl("un estudiante de cuarto", key)) {
+    patinaje <- "de estudiantes de cuarto"
+    numerator3 <<- (ninos1[4] + ninos1[8])
+  } else {
+    # Si no encuentra ninguna de las subcadenas anteriores, simplemente asigna el valor original de la clave
+    patinaje <- key
+  }
+  return(patinaje)
+}
+
+# Usar la función para obtener el valor de 'patinaje' para la primera clave en 'claves'
+resultado3 <- busca_y_asigna(dicci, claves)
+
+
+# Clave 04
+busca_y_asigna <- function(dicci, claves) {
+  # Solo revisar la primera clave en 'claves'
+  key <- claves[4]
+  
+  if (grepl("un niño es de", key)) {
+    patinaje <- "de niños"
+    numerator4 <<- (ninos1[1] + ninos1[2] + ninos1[3] + ninos1[4])
+  } else if (grepl("una niña es de", key)) {
+    patinaje <- "de niñas"
+    numerator4 <<- (ninos1[5] + ninos1[6] + ninos1[7] + ninos1[8])
+  } else if (grepl("un niño de primero", key)) {
+    patinaje <- "de niños de primero"
+    numerator4 <<- (ninos1[1])
+  } else if (grepl("una niña de primero", key)) {
+    patinaje <- "de niñas de primero"
+    numerator4 <<- (ninos1[5])
+  } else if (grepl("un niño de segundo", key)) {
+    patinaje <- "de niños de segundo"
+    numerator4 <<- (ninos1[2])
+  } else if (grepl("una niña de segundo", key)) {
+    patinaje <- "de niñas de segundo"
+    numerator4 <<- (ninos1[6])
+  } else if (grepl("un niño de tercero", key)) {
+    patinaje <- "de niños de tercero"
+    numerator4 <<- (ninos1[3])
+  } else if (grepl("una niña de tercero", key)) {
+    patinaje <- "de niñas de tercero"
+    numerator4 <<- (ninos1[7])
+  } else if (grepl("un niño de cuarto", key)) {
+    patinaje <- "de niños de cuarto"
+    numerator4 <<- (ninos1[4])
+  } else if (grepl("una niña de cuarto", key)) {
+    patinaje <- "de niñas de cuarto"
+    numerator4 <<- (ninos1[8])
+  } else if (grepl("un estudiante de primero", key)) {
+    patinaje <- "de estudiantes de primero"
+    numerator4 <<- (ninos1[1] + ninos1[5])
+  } else if (grepl("un estudiante de segundo", key)) {
+    patinaje <- "de estudiantes de segundo"
+    numerator4 <<- (ninos1[2] + ninos1[6])
+  } else if (grepl("un estudiante de tercero", key)) {
+    patinaje <- "de estudiantes de tercero"
+    numerator4 <<- (ninos1[3] + ninos1[7])
+  } else if (grepl("un estudiante de cuarto", key)) {
+    patinaje <- "de estudiantes de cuarto"
+    numerator4 <<- (ninos1[4] + ninos1[8])
+  } else {
+    # Si no encuentra ninguna de las subcadenas anteriores, simplemente asigna el valor original de la clave
+    patinaje <- key
+  }
+  return(patinaje)
+}
+
+# Usar la función para obtener el valor de 'patinaje' para la primera clave en 'claves'
+resultado4 <- busca_y_asigna(dicci, claves)
+
+
+# MULKTIPLICANDO Y ALEATORIZANDO LAS 4 OPCIONES
+
+# Opción 1
+num1_1 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado, "es", numerator, 
+              "; luego, la probabilidad realmente es")
+
+num1_2 <- paste("porque el número de estudiantes es", pobl, 
+              "y la cantidad", resultado, "es", numerator, 
+              "; por tanto, la probabilidad es")
+num1_3 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado, "es", numerator, 
+              "; luego, la probabilidad realmente es")
+num1_4 <- paste("porque el número de casos", resultado, "es", numerator, 
+              ", pero, el número de casos totales sigue siendo", pobl)
+
+# Crea una lista con las cadenas
+lista_cadenas1 <- list(num1_1, num1_2, num1_3)
+
+# Selecciona aleatoriamente una de las cadenas
+opc01 <- sample(lista_cadenas1, 1)
+
+# Opción 2
+num2_1 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado2, "es", numerator2, 
+              "; luego, la probabilidad realmente es")
+
+num2_2 <- paste("porque el número de estudiantes es", pobl, 
+              "y la cantidad", resultado2, "es", numerator2, 
+              "; por tanto, la probabilidad es")
+num2_3 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado2, "es", numerator2, 
+              "; luego, la probabilidad realmente es")
+num2_4 <- paste("porque el número de casos", resultado2, "es", numerator2, 
+              ", pero, el número de casos totales sigue siendo", pobl)
+
+# Crea una lista con las cadenas
+lista_cadenas2 <- list(num2_1, num2_2, num2_3)
+
+# Selecciona aleatoriamente una de las cadenas
+opc02 <- sample(lista_cadenas2, 1)
+
+# Opción 3
+num3_1 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado3, "es", numerator3, 
+              "; luego, la probabilidad realmente es")
+
+num3_2 <- paste("porque el número de estudiantes es", pobl, 
+              "y la cantidad", resultado3, "es", numerator3, 
+              "; por tanto, la probabilidad es")
+num3_3 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado3, "es", numerator3, 
+              "; luego, la probabilidad realmente es")
+num3_4 <- paste("porque el número de casos", resultado3, "es", numerator3, 
+              ", pero, el número de casos totales sigue siendo", pobl)
+
+# Crea una lista con las cadenas
+lista_cadenas3 <- list(num3_1, num3_2, num3_3)
+
+# Selecciona aleatoriamente una de las cadenas
+opc03 <- sample(lista_cadenas3, 1)
+
+# Opción 4
+num4_1 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado4, "es", numerator4, " por consiguiente
+              su probabilidad es")
+num4_2 <- paste("porque el número de estudiantes es", pobl, 
+              "y la cantidad", resultado4, "es", numerator4, " por consiguiente
+              su probabilidad es")
+num4_3 <- paste("porque el número total de estudiantes es", pobl, 
+              "y la cantidad total", resultado4, "es", numerator4, " por consiguiente
+              su probabilidad es")
+num4_4 <- paste("porque el número de casos", resultado4, "es", numerator4, " por consiguiente
+              su probabilidad es")
+
+# Crea una lista con las cadenas
+lista_cadenas4 <- list(num4_1, num4_2, num4_3)
+
+# Selecciona aleatoriamente una de las cadenas
+opc04 <- sample(lista_cadenas4, 1)
+```
+
+Question
+========
+
+En una academia de patinaje hay `r pobl` estudiantes, repartidos por niveles, de la siguiente forma:\
+
+```{r image01, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+include_tikz(tablappal, 
+             name = "tablappal", 
+             markup = "markdown",
+             format = typ, 
+             library = c("3d", 
+                         "babel"), 
+             packages=c("tikz",
+                        "xcolor"),
+             width = "11cm")
+```
+
+Se tienen, además, las siguientes expresiones:
+
+I. `r claves[2]` `r valores[5]`\
+II. `r claves[1]` `r valores[1]`\
+III. `r claves[3]` `r valores[6]`\
+IV. `r claves[4]` `r valores[7]`\
+
+Si se elige un estudiante al azar, ¿cuál de las afirmaciones anteriores es CORRECTA?\
+
+Answerlist
+----------
+
+- 
+La expresión I, `r opc02` `r valores[5]`
+
+- 
+La expresión II, `r opc01` `r valores[1]`
+
+- 
+La expresión III, `r opc03` `r valores[6]`
+
+- 
+La expresión IV, `r opc04` `r valores[7]`
+
+
+Solution
+========
+
+La afirmación CORRECTA es: "II. `r claves[1]` `r valores[1]`"\
+
+
+Meta-information
+================
+
+exname: CND10S223-46_v01_opB_tiB(single-choice)
+extype: schoice
+exsolution: 0100
+exshuffle: FALSE

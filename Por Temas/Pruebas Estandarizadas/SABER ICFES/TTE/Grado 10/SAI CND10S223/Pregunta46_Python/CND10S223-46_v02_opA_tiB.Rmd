@@ -1,0 +1,286 @@
+```{r Generacion de Datos, echo = FALSE, results = "hide"}
+library(exams)
+library(reticulate)
+library(MASS)
+
+typ <- match_exams_device()
+use_python('/usr/bin/python3.10', required = TRUE)
+options(scipen=999)
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+```
+
+```{python bloque1, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import numpy as np
+from fractions import Fraction
+
+# Seleccionar 8 números aleatorios entre 10 y 40 sin repetición
+ninos1 = np.random.choice(range(10, 41), 8, replace=False)
+
+print("ninos1:", ninos1)
+
+# Calcular la población total
+pobl = sum(ninos1)
+print("pobl:", pobl)
+
+# Calcular la probabilidad de niños y niñas
+prob_ninos = sum(ninos1[:4]) / pobl
+prob_ninas = sum(ninos1[4:]) / pobl
+
+# Calcular las probabilidades estimadas
+pr_est_1 = (ninos1[0] + ninos1[4]) / pobl
+pr_est_2 = (ninos1[1] + ninos1[5]) / pobl
+pr_est_3 = (ninos1[2] + ninos1[6]) / pobl
+pr_est_4 = (ninos1[3] + ninos1[7]) / pobl
+
+# Convertir las probabilidades a fracciones
+prob_ninos_frac = Fraction(prob_ninos).limit_denominator()
+prob_ninas_frac = Fraction(prob_ninas).limit_denominator()
+pr_est_1_frac = Fraction(pr_est_1).limit_denominator()
+pr_est_2_frac = Fraction(pr_est_2).limit_denominator()
+pr_est_3_frac = Fraction(pr_est_3).limit_denominator()
+pr_est_4_frac = Fraction(pr_est_4).limit_denominator()
+
+# Función para representar una fracción sin simplificar
+def frac_no_simpl(numerador, denominador):
+    return f"{numerador}/{denominador}"
+
+# Calcular las probabilidades como fracciones no simplificadas
+probs_frax = [frac_no_simpl(nino, pobl) for nino in ninos1]
+
+print("probs_frax:", probs_frax)
+```
+
+
+```{r tabla1, echo = FALSE, results = "hide"}
+# Dibujando la tabla en Latex y R
+
+ninos1 <- py$ninos1
+
+tablappal <- '
+\\begin{tikzpicture}
+  \\node{
+\\begin{tabular}{l|c|c|c|c|}
+\\cline{2-5}
+\\textbf{}                             & \\textbf{PRIMERO} & \\textbf{SEGUNDO} & \\textbf{TERCERO} & \\textbf{CUARTO} \\\\ \\hline
+\\multicolumn{1}{|l|}{\\textbf{NIÑOS}} & %s               & %s               & %s               & %s              \\\\ \\hline
+\\multicolumn{1}{|l|}{\\textbf{NIÑAS}} & %s               & %s               & %s               & %s              \\\\ \\hline
+\\end{tabular}
+};
+\\end{tikzpicture}
+'
+tablappal <-sprintf(tablappal,ninos1[1], ninos1[2], ninos1[3], ninos1[4],
+                    ninos1[5], ninos1[6], ninos1[7], ninos1[8])
+```
+
+```{python bloque2p, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+# Lista de afirmaciones
+dicci = {
+    "La probabilidad de que sea un niño es de": prob_ninos,
+    "La probabilidad de que sea una niña es de": prob_ninas,
+    "La probabilidad de que sea un niño de primero es de": prob_ninos_frac,
+    "La probabilidad de que sea una niña de primero es de": pr_est_1_frac,
+    "La probabilidad de que sea un niño de segundo es de": pr_est_2_frac,
+    "La probabilidad de que sea una niña de segundo es de": pr_est_2_frac,
+    "La probabilidad de que sea un niño de tercero es de": pr_est_3_frac,
+    "La probabilidad de que sea una niña de tercero es de": pr_est_3_frac,
+    "La probabilidad de que sea un niño de cuarto es de": pr_est_4_frac,
+    "La probabilidad de que sea una niña de cuarto es de": pr_est_4_frac,
+    "La probabilidad de que sea un niño de primero es de": probs_frax[0],
+    "La probabilidad de que sea una niña de primero es de": probs_frax[4],
+    "La probabilidad de que sea un niño de segundo es de": probs_frax[1],
+    "La probabilidad de que sea una niña de segundo es de": probs_frax[5],
+    "La probabilidad de que sea un niño de tercero es de": probs_frax[2],
+    "La probabilidad de que sea una niña de tercero es de": probs_frax[6],
+    "La probabilidad de que sea un niño de cuarto es de": probs_frax[3],
+    "La probabilidad de que sea una niña de cuarto es de": probs_frax[7],
+    "La probabilidad de que sea un estudiante de primero es de": pr_est_1,
+    "La probabilidad de que sea un estudiante de segundo es de": pr_est_2,
+    "La probabilidad de que sea un estudiante de tercero es de": pr_est_3,
+    "La probabilidad de que sea un estudiante de cuarto es de": pr_est_4
+}
+
+# 5 opciones, incluyendo referencia cruzada a la opción incorrecta
+import numpy as np
+from fractions import Fraction
+
+# 5 opciones, incluyendo referencia cruzada a la opción incorrecta
+claves = np.random.choice(list(dicci.keys()), 5, replace=False)
+print("claves:", claves)
+
+# Convertir cada valor a una fracción simplificada
+valores = [str(Fraction(dicci[clave]).limit_denominator()) for clave in claves]
+print("valores:", valores)
+```
+
+```{python bloque3p, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+def busca_y_asigna(dicci, claves, index):
+    key = claves[index]
+    
+    # Utilizamos una lista de patrones y sus correspondientes acciones para simplificar el código
+    patterns = [
+        ("un niño es de", "de niños", sum(ninos1[:4])),
+        ("una niña es de", "de niñas", sum(ninos1[4:])),
+        ("un niño de primero", "de niños de primero", ninos1[0]),
+        ("una niña de primero", "de niñas de primero", ninos1[4]),
+        ("un niño de segundo", "de niños de segundo", ninos1[1]),
+        ("una niña de segundo", "de niñas de segundo", ninos1[5]),
+        ("un niño de tercero", "de niños de tercero", ninos1[2]),
+        ("una niña de tercero", "de niñas de tercero", ninos1[6]),
+        ("un niño de cuarto", "de niños de cuarto", ninos1[3]),
+        ("una niña de cuarto", "de niñas de cuarto", ninos1[7]),
+        ("un estudiante de primero", "de estudiantes de primero", ninos1[0] + ninos1[4]),
+        ("un estudiante de segundo", "de estudiantes de segundo", ninos1[1] + ninos1[5]),
+        ("un estudiante de tercero", "de estudiantes de tercero", ninos1[2] + ninos1[6]),
+        ("un estudiante de cuarto", "de estudiantes de cuarto", ninos1[3] + ninos1[7])
+    ]
+    
+    for pattern, patinaje_str, numerator in patterns:
+        if pattern in key:
+            patinaje = patinaje_str
+            # Usamos la notación de variable global para modificar la variable fuera de la función
+            if index == 0:
+                global numerator1
+                numerator1 = numerator
+            elif index == 1:
+                global numerator2
+                numerator2 = numerator
+            elif index == 2:
+                global numerator3
+                numerator3 = numerator
+            elif index == 3:
+                global numerator4
+                numerator4 = numerator
+            return patinaje
+    
+    # Si no encuentra ninguna de las subcadenas anteriores, simplemente asigna el valor original de la clave
+    return key
+
+resultado = busca_y_asigna(dicci, claves, 0)
+print("resultado:", resultado)
+
+resultado2 = busca_y_asigna(dicci, claves, 1)
+print("resultado2:", resultado2)
+
+resultado3 = busca_y_asigna(dicci, claves, 2)
+print("resultado3:", resultado3)
+
+resultado4 = busca_y_asigna(dicci, claves, 3)
+print("resultado4:", resultado4)
+```
+
+
+```{python bloque4p, echo = FALSE, results = "hide", fig.path = "", fig.cap = ""}
+import random
+
+# Función auxiliar para generar opciones basadas en los resultados y numeradores
+def genera_opciones(pobl, resultado, numerator, valor):
+    num1 = f"porque el número total de estudiantes es {pobl} y la cantidad total {resultado} es {numerator}; luego, la probabilidad realmente es {valor}"
+    num2 = f"porque el número de estudiantes es {pobl} y la cantidad {resultado} es {numerator}; por tanto, la probabilidad es {valor}"
+    num3 = f"porque el número total de estudiantes es {pobl} y la cantidad total {resultado} es {numerator}; luego, la probabilidad realmente es {valor}"
+    num4 = f" esa es la probabilidad, porque el número de casos {resultado} es {numerator}, pero, el número de casos totales sigue siendo {pobl}"
+
+    # Retorna una opción aleatoria de las 4
+    return random.choice([num1, num2, num3, num4])
+
+# Genera las opciones para los resultados 1, 2, 3 y 4, incluyendo los valores correspondientes
+opc01 = genera_opciones(pobl, resultado, numerator1, valores[0])
+opc02 = genera_opciones(pobl, resultado2, numerator2, valores[3])
+opc03 = genera_opciones(pobl, resultado3, numerator3, valores[1])
+opc04 = genera_opciones(pobl, resultado4, numerator4, valores[2])
+
+print(opc01)
+print(opc02)
+print(opc03)
+print(opc04)
+```
+
+```{r bloque3r, echo = FALSE, results = "hide"}
+pobl <- py$pobl
+opc1 <- py$opc01
+opc2 <- py$opc02
+opc3 <- py$opc03
+opc4 <- py$opc04
+
+# Crear la variable con los números enteros
+numeros <- c(1, 2, 3, 4, 5)
+
+# El primer número siempre será 1
+primer_numero <- numeros[1]
+numeros <- numeros[-1]  # Eliminamos el 1 de la lista
+
+# El segundo número será diferente de 2
+segundo_numero <- sample(numeros[numeros != 2], 1)
+numeros <- numeros[numeros != segundo_numero]  # Eliminamos el número seleccionado de la lista
+
+# El tercer número será diferente de 3
+tercer_numero <- ifelse(length(numeros[numeros != 3]) > 0, sample(numeros[numeros != 3], 1), numeros[1])
+numeros <- numeros[numeros != tercer_numero]  # Eliminamos el número seleccionado de la lista
+
+# El cuarto número será diferente de 4
+cuarto_numero <- ifelse(length(numeros[numeros != 4]) > 0, sample(numeros[numeros != 4], 1), numeros[1])
+numeros <- numeros[numeros != cuarto_numero]  # Eliminamos el número seleccionado de la lista
+
+# El quinto número será el que queda en la lista
+quinto_numero <- numeros[1]
+
+# Mostrar los números seleccionados
+cat(primer_numero, segundo_numero, tercer_numero, cuarto_numero, quinto_numero, "\n")
+```
+
+Question
+========
+
+En una academia de patinaje hay `r pobl` estudiantes, repartidos por niveles, de la siguiente forma:\
+
+```{r tabladib, warning=FALSE,echo = FALSE, results = "asis"}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+include_tikz(tablappal, 
+             name = "tablappal", 
+             markup = "markdown",
+             format = typ, 
+             library = c("3d", 
+                         "babel"), 
+             packages=c("tikz",
+                        "xcolor"),
+             width = "11cm")
+```
+
+Se tienen, además, las siguientes expresiones:
+
+I. `r py$claves[1]` `r py$valores[1]`\
+II. `r py$claves[2]` `r py$valores[segundo_numero]`\
+III. `r py$claves[3]` `r py$valores[tercer_numero]`\
+IV. `r py$claves[4]` `r py$valores[cuarto_numero]`\
+
+Si se elige un estudiante al azar, ¿cuál de las afirmaciones anteriores es CORRECTA?\
+
+Answerlist
+----------
+
+- 
+La expresión I, `r opc1`
+
+- 
+La expresión II, `r opc2`
+
+- 
+La expresión III, `r opc3`
+
+- 
+La expresión IV, `r opc4`
+
+
+Solution
+========
+
+La afirmación CORRECTA es: "I. `r py$claves[1]` `r py$valores[1]`"\
+
+
+Meta-information
+================
+
+exname: CND10S223-46_v02_opA_tiB(single-choice)
+extype: schoice
+exsolution: 1000
+exshuffle: FALSE

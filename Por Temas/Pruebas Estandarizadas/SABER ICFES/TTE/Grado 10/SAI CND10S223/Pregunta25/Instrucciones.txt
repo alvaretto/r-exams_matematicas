@@ -1,0 +1,2 @@
+CND10S223-25_v01_opAll_tiA = Moodle
+CND10S223-25_v01_opAll_tiB = PDF

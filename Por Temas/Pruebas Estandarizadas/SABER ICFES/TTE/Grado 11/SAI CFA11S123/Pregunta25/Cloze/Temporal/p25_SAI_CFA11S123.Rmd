@@ -1,0 +1,171 @@
+```{r data generation, echo = FALSE, results = "hide"}
+library(exams)
+
+# Para salidas exams2pdf: 
+#   print(xtable(data, align = c('l', 'l', 'c')), type = 'latex', include.rownames = FALSE)
+# Para salidas exams2moodle: 
+#   print(xtable(data, align = c('l', 'l', 'c')), type = 'html', include.rownames = FALSE)
+
+marcela <- sample(c("David", "Patricia", "Valentina", "Andrés", "Gabriela", "Leonardo", "Daniela", "Felipe", "Isabella", "Paula Andrea", "Natalia", "Lina María", "Consuelo", "Carlos Eduardo", "Samuel", "Luis Fernando"), 1)
+
+# Definir un vector con nombres de estudiantes
+num_students <- sample(5:10, 1)
+est_con <- num_students-2
+nombres_s <- sample(c("Alberto", "Juan", "Alejandra", "Camila", "Sebastián", "Lucía", "Miguel", "Sofía", "Diego", "Carla", "María Antonia", "Violeta", "Martha Lucía", "Manuel Evelio", "Álvaro", "José Álvaro"), num_students)
+
+##############################################
+
+
+pepe <- 0
+
+while(pepe == 0) {
+
+  nombres_c <- nombres_s[3:length(nombres_s)]
+
+  # Definir edades aleatorias para los estudiantes (entre 25 y 55)
+  edades_al <- sample(25:55, num_students - 2)
+  
+  tote <- paste(nombres_c, "(", edades_al, ")", sep="")
+  totem <- paste(edades_al, collapse=" + ")
+
+  # Calcular la edad promedio
+  promedio <- round((sum(edades_al) + 2 * sample(25:55, 1)) / num_students)
+
+  # Calcular la suma de las edades conocidas
+  suma_conocida <- sum(edades_al)
+
+  # La suma de las edades de los otros 2 estudiantes es la diferencia entre la suma total y la suma conocida
+  suma_total <- num_students * promedio
+  suma_resto <- suma_total - suma_conocida
+
+  if(suma_resto %% 2 == 0) {
+    pepe <- pepe + 1
+  } else {
+    pepe <- 0
+  }
+}
+
+
+
+#######################
+
+
+# La edad individual de los otros 2 estudiantes (que es la misma para ambos)
+edad_resto <- round(suma_resto / 2)
+
+# Asegurarse de que edad_resto sea mayor o igual a 4
+while(edad_resto < 4) {
+  edades_al <- sample(25:55, num_students - 2)
+  promedio <- round((sum(edades_al) + 2 * sample(25:55, 1)) / num_students)
+  suma_conocida <- sum(edades_al)
+  suma_total <- num_students * promedio
+  suma_resto <- suma_total - suma_conocida
+  edad_resto <- round(suma_resto / 2)
+}
+
+sol <- c(edad_resto)
+```
+
+Question
+========
+`r marcela` recibe un listado con las edades de algunos estudiantes de su colegio y calcula que el promedio de edad es de `r promedio` años. Cuando `r marcela` vuelve a revisar el listado, encuentra que borró la información de dos estudiantes: `r nombres_s[1]` y `r nombres_s[2]`.
+
+
+```{r, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
+library(xtable)
+
+# Suponiendo que tienes dos vectores en R: nombres_s y edades_al
+data <- data.frame(
+  Estudiante = nombres_s,
+  Edad = c(rep("##ANSWER1##", 2), edades_al)
+)
+# Imprimir sin nombres de filas y comentario
+print(xtable(data, align = c('l', 'l', 'c')), type = 'html', include.rownames = FALSE, comment = FALSE)
+```
+\
+Si se sabe que `r nombres_s[1]` y `r nombres_s[2]` tienen la misma edad, ¿cuántos años tiene cada uno de ellos?
+
+```{r questionlist, echo = FALSE, results = "asis", warning=FALSE, message=FALSE}
+answerlist(rep("", length(sol)), markup = "markdown")
+```
+
+Solution
+========
+`r nombres_s[1]` y `r nombres_s[2]` tienen, cada uno, `r sol` años. ¿De dónde salió esto?
+
+¡Hagamos esto juntos!
+
+Primero, entendamos la situación:
+
+`r marcela` tiene las edades de `r num_students` estudiantes y sabe que el promedio es `r promedio` años. El promedio es simplemente la suma de todas las edades dividida por `r num_students` (ya que son `r num_students` estudiantes).
+
+Para entender esto mejor, imaginemos que cada estudiante lleva un número de manzanas igual a su edad. Si sumamos todas las manzanas y las dividimos entre los `r num_students` estudiantes, cada uno tendría un promedio de `r promedio` manzanas.
+
+Ahora, ya sabemos la edad de `r est_con` estudiantes: 
+\
+<center>`r tote`</center>
+
+```{=latex}
+\begin{equation*}
+\begin{aligned}
+\text{Edades conocidas} &= \qquad {`r totem`} \\
+\text{Edades conocidas} &= \qquad {`r suma_conocida`}
+\end{aligned}
+\end{equation*}
+```
+
+Para encontrar la edad total de los `r num_students` estudiantes juntos, multiplicamos el promedio (`r promedio` años) por `r num_students` (número de estudiantes):
+
+```{=latex}
+\begin{equation*}
+\begin{aligned}
+\text{Edades todos} &= \qquad {`r promedio`} \times {`r num_students`} \\
+\text{Edades todos} &= \qquad {`r suma_total`}
+\end{aligned}
+\end{equation*}
+```
+
+Para saber las edades de `r nombres_s[1]` y `r nombres_s[2]`, hallamos la diferencia entre 'Edades todos' y
+'Edades conocidas':
+
+```{=latex}
+\begin{equation*}
+\begin{aligned}
+\text{Edades desconocidas} &= \qquad {`r suma_total`} - {`r suma_conocida`} \\
+\text{Edades desconocidas} &= \qquad {`r suma_resto`}
+\end{aligned}
+\end{equation*}
+```
+
+Sabemos que  `r nombres_s[1]` y `r nombres_s[2]` tienen la misma edad, entonces dividimos `r suma_resto` entre
+2:
+
+```{=latex}
+\begin{equation*}
+\begin{aligned}
+\text{Edad desconocida} &= \qquad {\frac{`r suma_resto`}{2}} \\
+\text{Edad desconocida} &= \qquad {`r edad_resto`}
+\end{aligned}
+\end{equation*}
+```
+
+Por tanto, 
+
+
+```{=latex}
+\begin{equation*}
+\begin{aligned}
+\text{Edad de `r nombres_s[1]`} &= \qquad {`r edad_resto`} \\
+\text{Edad de `r nombres_s[2]`} &= \qquad {`r edad_resto`}
+\end{aligned}
+\end{equation*}
+```
+
+
+Meta-information
+================
+extype: cloze
+exsolution: `r paste(as.character(sol))`
+exclozetype: num
+exname: P25
+extol: 0.05

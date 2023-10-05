@@ -28,13 +28,7 @@ options(tinytex.verbose = TRUE)
 knitr::opts_chunk$set(warning = FALSE, 
                       message = FALSE)
 
-if (!require(purrr)) {
-  install.packages('purrr')
-}
 ########
-contador <- 0
-
-while (contador == 0) {
 
 algod_dur<- sample(seq(100, 150, 10), 1)
 mixto_dur <- sample(seq(60, 90, 10), 1)
@@ -410,23 +404,6 @@ if (carga_ropa7 == "Algodones") {
   trapo_ag7 <- 0
 }
 ######################
-
-tot_gramos <- resultado + resultado2
-
-correcta <- carga1 * trapo_det1 + carga2 * trapo_det2
-distractor2 <- carga1 * trapo_det3 + carga2 * trapo_det3
-distractor3 <- carga2 * trapo_det5 + carga1 * trapo_det6
-distractor4 <- carga1 * trapo_det6 + carga2 * trapo_det7
-
-if(correcta != distractor2 && correcta != distractor3 && correcta != distractor4) {
-  contador <- contador + 1
-} else {
-  contador <- 0
-}
-}
-
-correcta
-tot_gramos
 ```
 
 Question

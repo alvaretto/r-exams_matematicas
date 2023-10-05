@@ -2,8 +2,8 @@
 setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/TTE/Grado 10/SAI CND10S223/Pregunta25")
 library(exams)
 
-qqq <- rep("CND10S223-25_v01_opAll_tiA.Rmd", 1)
-copias <- 200
+qqq <- rep("CND10S223-25B_v01_opAll_tiA.Rmd", 1)
+copias <- 10
 nombre_sin_extension <- sub("\\.Rmd$", "", qqq)
 nombre_arch <- paste0(nombre_sin_extension, "_")
 

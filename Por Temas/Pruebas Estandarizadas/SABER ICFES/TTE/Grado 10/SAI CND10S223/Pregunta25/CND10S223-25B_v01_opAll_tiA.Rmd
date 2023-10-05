@@ -11,15 +11,11 @@ library(ggplot2)
 library(knitr)
 library(kableExtra)
 
-# Instala y carga el paquete 'purrr' si aún no está instalado
-if (!require(purrr)) {
-  install.packages('purrr')
-}
 
 options(pdflatex = "/usr/bin/pdflatex")
-# Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", 
-#                         Sys.getenv("PATH"), 
-#                         sep = ":"))
+ Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", 
+                         Sys.getenv("PATH"), 
+                         sep = ":"))
 typ <- match_exams_device()
 use_python("/usr/bin/python3", 
            required = TRUE)
@@ -32,9 +28,6 @@ if (!require(purrr)) {
   install.packages('purrr')
 }
 ########
-contador <- 0
-
-while (contador == 0) {
 
 algod_dur<- sample(seq(100, 150, 10), 1)
 mixto_dur <- sample(seq(60, 90, 10), 1)
@@ -201,24 +194,31 @@ if (carga_ropa1 == "Algodones") {
   trapo_ag1 <- algod_ag
 } else if (carga_ropa1 == "Mixto") {
   resultado <- mixto_ag - (carga1p * mixto_ag)
+  resultadoco <- carga1p * mixto_ag
   trapo_ag1 <- mixto_ag
 } else if (carga_ropa1 == "Vestidos") {
   resultado <- vest_ag - (carga1p * vest_ag)
+  resultadoco <- carga1p * vest_ag
   trapo_ag1 <- vest_ag
 } else if (carga_ropa1 == "Sintéticos") {
   resultado <- sint_ag - (carga1p * sint_ag)
+  resultadoco <- carga1p * sint_ag
   trapo_ag1 <- sint_ag
 } else if (carga_ropa1 == "Delicados") {
   resultado <- delic_ag - (carga1p * delic_ag)
+  resultadoco <- carga1p * delic_ag
   trapo_ag1 <- delic_ag
 } else if (carga_ropa1 == "De lana") {
   resultado <- lana_ag - (carga1p * lana_ag)
+  resultadoco <- carga1p * lana_ag
   trapo_ag1 <- lana_ag
 } else if (carga_ropa1 == "Express") {
   resultado <- express_ag - (carga1p * express_ag)
+  resultadoco <- carga1p * express_ag
   trapo_ag1 <- express_ag
 } else if (carga_ropa1 == "Tendidos") {
   resultado <- tend_ag - (carga1p * tend_ag)
+  resultadoco <- carga1p * tend_ag
   trapo_ag1 <- tend_ag
 } else {
   resultado <- 0  # Si carga_ropa1 no coincide con ninguna opción
@@ -410,23 +410,6 @@ if (carga_ropa7 == "Algodones") {
   trapo_ag7 <- 0
 }
 ######################
-
-tot_gramos <- resultado + resultado2
-
-correcta <- carga1 * trapo_det1 + carga2 * trapo_det2
-distractor2 <- carga1 * trapo_det3 + carga2 * trapo_det3
-distractor3 <- carga2 * trapo_det5 + carga1 * trapo_det6
-distractor4 <- carga1 * trapo_det6 + carga2 * trapo_det7
-
-if(correcta != distractor2 && correcta != distractor3 && correcta != distractor4) {
-  contador <- contador + 1
-} else {
-  contador <- 0
-}
-}
-
-correcta
-tot_gramos
 ```
 
 Question

@@ -1,6 +1,5 @@
 ## exams ----------------------------------------------------------------------------
 setwd("~/Insync/alvaroangelm@iepedacitodecielo.edu.co/Google Drive/2023/Rexams2023/Repositorio/schoice/Schoice_2023/2023_Repo/r-exams_matematicas/r-exams_matematicas/Por Temas/Pruebas Estandarizadas/SABER ICFES/SaberICFES_Marzo_2022/P100")
-library(exams)
 library(ggplot2)
 library(ggrepel)
 

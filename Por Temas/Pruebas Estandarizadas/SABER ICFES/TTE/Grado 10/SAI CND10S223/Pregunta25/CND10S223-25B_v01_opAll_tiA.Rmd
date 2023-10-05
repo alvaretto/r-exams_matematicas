@@ -17,9 +17,9 @@ if (!require(purrr)) {
 }
 
 options(pdflatex = "/usr/bin/pdflatex")
-Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", 
-                        Sys.getenv("PATH"), 
-                        sep = ":"))
+# Sys.setenv(PATH = paste("/usr/local/texlive/2017basic/bin/x86_64-linux", 
+#                         Sys.getenv("PATH"), 
+#                         sep = ":"))
 typ <- match_exams_device()
 use_python("/usr/bin/python3", 
            required = TRUE)
@@ -45,14 +45,18 @@ lana_dur <- sample(seq(35, 50, 5), 1)
 express_dur <- sample(seq(15, 25, 5), 1)
 tend_dur <- sample(seq(60, 90, 10), 1)
 
-algod_ag<- sample(seq(50, 80, 10), 1)
-mixto_ag <- sample(seq(40, 60, 10), 1)
-vest_ag <- sample(seq(30, 50, 10), 1)
-sint_ag <- sample(seq(40, 60, 10), 1)
-delic_ag <- sample(seq(50, 80, 10), 1)
-lana_ag <- sample(seq(15, 30, 5), 1)
-express_ag <- sample(seq(25, 40, 5), 1)
-tend_ag <- sample(seq(50, 80, 10), 1)
+# Create a vector of all possible numbers
+aguas <- seq(10, 150, 10)
+unas_aguas <- sample(aguas, 8)
+
+algod_ag<- unas_aguas[1]
+mixto_ag <- unas_aguas[2]
+vest_ag <- unas_aguas[3]
+sint_ag <- unas_aguas[4]
+delic_ag <- unas_aguas[5]
+lana_ag <- unas_aguas[6]
+express_ag <- unas_aguas[7]
+tend_ag <- unas_aguas[8]
 
 # Create a vector of all possible numbers
 all_numbers <- seq(15, 80, 5)
@@ -168,233 +172,242 @@ tabla2 <- data.frame(
 )
 ################
 
-carga1 <- sample(c(1:3),1)
-carga2 <- sample(c(1:2),1)
-cargaz <- carga1 + carga2
+carga1 <- sample(seq(10, 30, by=5), 1)
+carga1p <- carga1/100
 
-carga3 <- sample(c(1:3),1)
-carga4 <- sample(c(1:2),1)
+carga2 <- sample(c(10:30),1)
+carga2p <- carga2/100
 
-carga5 <- sample(c(1:3),1)
-carga6 <- sample(c(1:2),1)
+carga3 <- sample(c(10:30),1)
+carga3p <- carga3/100
 
-carga7 <- sample(c(1:3),1)
+carga4 <- sample(c(10:30),1)
+carga4p <- carga4/100
+
+carga5 <- sample(c(10:30),1)
+carga5p <- carga5/100
+
+carga6 <- sample(c(10:30),1)
+carga6p <- carga6/100
+
+carga7 <- sample(c(10:30),1)
+carga7p <- carga7/100
 
 ################
 
 if (carga_ropa1 == "Algodones") {
-  resultado <- carga1 * algod_det
-  trapo_det1 <- algod_det
+  resultado <- algod_ag - (carga1p * algod_ag)
+  resultadoco <- carga1p * algod_ag
+  trapo_ag1 <- algod_ag
 } else if (carga_ropa1 == "Mixto") {
-  resultado <- carga1 * mixto_det
-  trapo_det1 <- mixto_det
+  resultado <- mixto_ag - (carga1p * mixto_ag)
+  trapo_ag1 <- mixto_ag
 } else if (carga_ropa1 == "Vestidos") {
-  resultado <- carga1 * vest_det
-  trapo_det1 <- vest_det
+  resultado <- vest_ag - (carga1p * vest_ag)
+  trapo_ag1 <- vest_ag
 } else if (carga_ropa1 == "Sintéticos") {
-  resultado <- carga1 * sint_det
-  trapo_det1 <- sint_det
+  resultado <- sint_ag - (carga1p * sint_ag)
+  trapo_ag1 <- sint_ag
 } else if (carga_ropa1 == "Delicados") {
-  resultado <- carga1 * delic_det
-  trapo_det1 <- delic_det
+  resultado <- delic_ag - (carga1p * delic_ag)
+  trapo_ag1 <- delic_ag
 } else if (carga_ropa1 == "De lana") {
-  resultado <- carga1 * lana_det
-  trapo_det1 <- lana_det
+  resultado <- lana_ag - (carga1p * lana_ag)
+  trapo_ag1 <- lana_ag
 } else if (carga_ropa1 == "Express") {
-  resultado <- carga1 * express_det
-  trapo_det1 <- express_det
+  resultado <- express_ag - (carga1p * express_ag)
+  trapo_ag1 <- express_ag
 } else if (carga_ropa1 == "Tendidos") {
-  resultado <- carga1 * tend_det
-  trapo_det1 <- tend_det
+  resultado <- tend_ag - (carga1p * tend_ag)
+  trapo_ag1 <- tend_ag
 } else {
   resultado <- 0  # Si carga_ropa1 no coincide con ninguna opción
-  trapo_det1 <- 0
+  trapo_ag1 <- 0
 }
-
 ######################
 
 if (carga_ropa2 == "Algodones") {
-  resultado2 <- carga2 * algod_det
-  trapo_det2 <- algod_det
+  resultado2 <- carga2 * algod_ag
+  trapo_ag2 <- algod_ag
 } else if (carga_ropa2 == "Mixto") {
-  resultado2 <- carga2 * mixto_det
-  trapo_det2 <- mixto_det
+  resultado2 <- carga2 * mixto_ag
+  trapo_ag2 <- mixto_ag
 } else if (carga_ropa2 == "Vestidos") {
-  resultado2 <- carga2 * vest_det
-  trapo_det2 <- vest_det
+  resultado2 <- carga2 * vest_ag
+  trapo_ag2 <- vest_ag
 } else if (carga_ropa2 == "Sintéticos") {
-  resultado2 <- carga2 * sint_det
-  trapo_det2 <- sint_det
+  resultado2 <- carga2 * sint_ag
+  trapo_ag2 <- sint_ag
 } else if (carga_ropa2 == "Delicados") {
-  resultado2 <- carga2 * delic_det
-  trapo_det2 <- delic_det
+  resultado2 <- carga2 * delic_ag
+  trapo_ag2 <- delic_ag
 } else if (carga_ropa2 == "De lana") {
-  resultado2 <- carga2 * lana_det
-  trapo_det2 <- lana_det
+  resultado2 <- carga2 * lana_ag
+  trapo_ag2 <- lana_ag
 } else if (carga_ropa2 == "Express") {
-  resultado2 <- carga2 * express_det
-  trapo_det2 <- express_det
+  resultado2 <- carga2 * express_ag
+  trapo_ag2 <- express_ag
 } else if (carga_ropa2 == "Tendidos") {
-  resultado2 <- carga2 * tend_det
-  trapo_det2 <- tend_det
+  resultado2 <- carga2 * tend_ag
+  trapo_ag2 <- tend_ag
 } else {
   resultado2 <- 0  # Si carga_ropa2 no coincide con ninguna opción
-  trapo_det2 <- 0
+  trapo_ag2 <- 0
 }
 
 ######################
 
 if (carga_ropa3 == "Algodones") {
-  resultado3 <- carga3 * algod_det
-  trapo_det3 <- algod_det
+  resultado3 <- carga3 * algod_ag
+  trapo_ag3 <- algod_ag
 } else if (carga_ropa3 == "Mixto") {
-  resultado3 <- carga3 * mixto_det
-  trapo_det3 <- mixto_det
+  resultado3 <- carga3 * mixto_ag
+  trapo_ag3 <- mixto_ag
 } else if (carga_ropa3 == "Vestidos") {
-  resultado3 <- carga3 * vest_det
-  trapo_det3 <- vest_det
+  resultado3 <- carga3 * vest_ag
+  trapo_ag3 <- vest_ag
 } else if (carga_ropa3 == "Sintéticos") {
-  resultado3 <- carga3 * sint_det
-  trapo_det3 <- sint_det
+  resultado3 <- carga3 * sint_ag
+  trapo_ag3 <- sint_ag
 } else if (carga_ropa3 == "Delicados") {
-  resultado3 <- carga3 * delic_det
-  trapo_det3 <- delic_det
+  resultado3 <- carga3 * delic_ag
+  trapo_ag3 <- delic_ag
 } else if (carga_ropa3 == "De lana") {
-  resultado3 <- carga3 * lana_det
-  trapo_det3 <- lana_det
+  resultado3 <- carga3 * lana_ag
+  trapo_ag3 <- lana_ag
 } else if (carga_ropa3 == "Express") {
-  resultado3 <- carga3 * express_det
-  trapo_det3 <- express_det
+  resultado3 <- carga3 * express_ag
+  trapo_ag3 <- express_ag
 } else if (carga_ropa3 == "Tendidos") {
-  resultado3 <- carga3 * tend_det
-  trapo_det3 <- tend_det
+  resultado3 <- carga3 * tend_ag
+  trapo_ag3 <- tend_ag
 } else {
   resultado3 <- 0  # Si carga_ropa3 no coincide con ninguna opción
-  trapo_det3 <- 0
+  trapo_ag3 <- 0
 }
 
 ######################
 
 if (carga_ropa4 == "Algodones") {
-  resultado4 <- carga4 * algod_det
-  trapo_det4 <- algod_det
+  resultado4 <- carga4 * algod_ag
+  trapo_ag4 <- algod_ag
 } else if (carga_ropa4 == "Mixto") {
-  resultado4 <- carga4 * mixto_det
-  trapo_det4 <- mixto_det
+  resultado4 <- carga4 * mixto_ag
+  trapo_ag4 <- mixto_ag
 } else if (carga_ropa4 == "Vestidos") {
-  resultado4 <- carga4 * vest_det
-  trapo_det4 <- vest_det
+  resultado4 <- carga4 * vest_ag
+  trapo_ag4 <- vest_ag
 } else if (carga_ropa4 == "Sintéticos") {
-  resultado4 <- carga4 * sint_det
-  trapo_det4 <- sint_det
+  resultado4 <- carga4 * sint_ag
+  trapo_ag4 <- sint_ag
 } else if (carga_ropa4 == "Delicados") {
-  resultado4 <- carga4 * delic_det
-  trapo_det4 <- delic_det
+  resultado4 <- carga4 * delic_ag
+  trapo_ag4 <- delic_ag
 } else if (carga_ropa4 == "De lana") {
-  resultado4 <- carga4 * lana_det
-  trapo_det4 <- lana_det
+  resultado4 <- carga4 * lana_ag
+  trapo_ag4 <- lana_ag
 } else if (carga_ropa4 == "Express") {
-  resultado4 <- carga4 * express_det
-  trapo_det4 <- express_det
+  resultado4 <- carga4 * express_ag
+  trapo_ag4 <- express_ag
 } else if (carga_ropa4 == "Tendidos") {
-  resultado4 <- carga4 * tend_det
-  trapo_det4 <- tend_det
+  resultado4 <- carga4 * tend_ag
+  trapo_ag4 <- tend_ag
 } else {
   resultado4 <- 0  # Si carga_ropa4 no coincide con ninguna opción
-  trapo_det4 <- 0
+  trapo_ag4 <- 0
 }
 
 ######################
 
 if (carga_ropa5 == "Algodones") {
-  resultado5 <- carga5 * algod_det
-  trapo_det5 <- algod_det
+  resultado5 <- carga5 * algod_ag
+  trapo_ag5 <- algod_ag
 } else if (carga_ropa5 == "Mixto") {
-  resultado5 <- carga5 * mixto_det
-  trapo_det5 <- mixto_det
+  resultado5 <- carga5 * mixto_ag
+  trapo_ag5 <- mixto_ag
 } else if (carga_ropa5 == "Vestidos") {
-  resultado5 <- carga5 * vest_det
-  trapo_det5 <- vest_det
+  resultado5 <- carga5 * vest_ag
+  trapo_ag5 <- vest_ag
 } else if (carga_ropa5 == "Sintéticos") {
-  resultado5 <- carga5 * sint_det
-  trapo_det5 <- sint_det
+  resultado5 <- carga5 * sint_ag
+  trapo_ag5 <- sint_ag
 } else if (carga_ropa5 == "Delicados") {
-  resultado5 <- carga5 * delic_det
-  trapo_det5 <- delic_det
+  resultado5 <- carga5 * delic_ag
+  trapo_ag5 <- delic_ag
 } else if (carga_ropa5 == "De lana") {
-  resultado5 <- carga5 * lana_det
-  trapo_det5 <- lana_det
+  resultado5 <- carga5 * lana_ag
+  trapo_ag5 <- lana_ag
 } else if (carga_ropa5 == "Express") {
-  resultado5 <- carga5 * express_det
-  trapo_det5 <- express_det
+  resultado5 <- carga5 * express_ag
+  trapo_ag5 <- express_ag
 } else if (carga_ropa5 == "Tendidos") {
-  resultado5 <- carga5 * tend_det
-  trapo_det5 <- tend_det
+  resultado5 <- carga5 * tend_ag
+  trapo_ag5 <- tend_ag
 } else {
   resultado5 <- 0  # Si carga_ropa5 no coincide con ninguna opción
-  trapo_det5 <- 0
+  trapo_ag5 <- 0
 }
 
 ######################
 
 if (carga_ropa6 == "Algodones") {
-  resultado6 <- carga6 * algod_det
-  trapo_det6 <- algod_det
+  resultado6 <- carga6 * algod_ag
+  trapo_ag6 <- algod_ag
 } else if (carga_ropa6 == "Mixto") {
-  resultado6 <- carga6 * mixto_det
-  trapo_det6 <- mixto_det
+  resultado6 <- carga6 * mixto_ag
+  trapo_ag6 <- mixto_ag
 } else if (carga_ropa6 == "Vestidos") {
-  resultado6 <- carga6 * vest_det
-  trapo_det6 <- vest_det
+  resultado6 <- carga6 * vest_ag
+  trapo_ag6 <- vest_ag
 } else if (carga_ropa6 == "Sintéticos") {
-  resultado6 <- carga6 * sint_det
-  trapo_det6 <- sint_det
+  resultado6 <- carga6 * sint_ag
+  trapo_ag6 <- sint_ag
 } else if (carga_ropa6 == "Delicados") {
-  resultado6 <- carga6 * delic_det
-  trapo_det6 <- delic_det
+  resultado6 <- carga6 * delic_ag
+  trapo_ag6 <- delic_ag
 } else if (carga_ropa6 == "De lana") {
-  resultado6 <- carga6 * lana_det
-  trapo_det6 <- lana_det
+  resultado6 <- carga6 * lana_ag
+  trapo_ag6 <- lana_ag
 } else if (carga_ropa6 == "Express") {
-  resultado6 <- carga6 * express_det
-  trapo_det6 <- express_det
+  resultado6 <- carga6 * express_ag
+  trapo_ag6 <- express_ag
 } else if (carga_ropa6 == "Tendidos") {
-  resultado6 <- carga6 * tend_det
-  trapo_det6 <- tend_det
+  resultado6 <- carga6 * tend_ag
+  trapo_ag6 <- tend_ag
 } else {
   resultado6 <- 0  # Si carga_ropa6 no coincide con ninguna opción
-  trapo_det6 <- 0
+  trapo_ag6 <- 0
 }
 
 ######################
 
 if (carga_ropa7 == "Algodones") {
-  resultado7 <- carga7 * algod_det
-  trapo_det7 <- algod_det
+  resultado7 <- carga7 * algod_ag
+  trapo_ag7 <- algod_ag
 } else if (carga_ropa7 == "Mixto") {
-  resultado7 <- carga7 * mixto_det
-  trapo_det7 <- mixto_det
+  resultado7 <- carga7 * mixto_ag
+  trapo_ag7 <- mixto_ag
 } else if (carga_ropa7 == "Vestidos") {
-  resultado7 <- carga7 * vest_det
-  trapo_det7 <- vest_det
+  resultado7 <- carga7 * vest_ag
+  trapo_ag7 <- vest_ag
 } else if (carga_ropa7 == "Sintéticos") {
-  resultado7 <- carga7 * sint_det
-  trapo_det7 <- sint_det
+  resultado7 <- carga7 * sint_ag
+  trapo_ag7 <- sint_ag
 } else if (carga_ropa7 == "Delicados") {
-  resultado7 <- carga7 * delic_det
-  trapo_det7 <- delic_det
+  resultado7 <- carga7 * delic_ag
+  trapo_ag7 <- delic_ag
 } else if (carga_ropa7 == "De lana") {
-  resultado7 <- carga7 * lana_det
-  trapo_det7 <- lana_det
+  resultado7 <- carga7 * lana_ag
+  trapo_ag7 <- lana_ag
 } else if (carga_ropa7 == "Express") {
-  resultado7 <- carga7 * express_det
-  trapo_det7 <- express_det
+  resultado7 <- carga7 * express_ag
+  trapo_ag7 <- express_ag
 } else if (carga_ropa7 == "Tendidos") {
-  resultado7 <- carga7 * tend_det
-  trapo_det7 <- tend_det
+  resultado7 <- carga7 * tend_ag
+  trapo_ag7 <- tend_ag
 } else {
   resultado7 <- 0  # Si carga_ropa7 no coincide con ninguna opción
-  trapo_det7 <- 0
+  trapo_ag7 <- 0
 }
 ######################
 
@@ -477,8 +490,8 @@ tabla2 %>%
 ```
 
 \
-La lavadora incluye una función "ecológica" que reduce en un 15% el consumo de 
-agua de cada programa. En el caso del programa "Delicados", la gráfica que 
+La lavadora incluye una función "ecológica" que reduce en un `r carga1`% el consumo de 
+agua de cada programa. En el caso del programa "`r carga_ropa1`", la gráfica que 
 representa el consumo en litros de agua es:
 
 Answerlist
@@ -487,19 +500,36 @@ Answerlist
 - 
 ```{python clave, echo = FALSE, results = "asis"}
 import matplotlib.pyplot as plt
+import random
 
-y = ['Delicados', 'Ecológico']
-x = [65, 80]
+# Textos entre los que escoger
+sinbarra = ['barh', 'bar']
+
+# Escoger un texto aleatoriamente
+barra = random.choice(sinbarra)
+
+# Supongamos que estas son las variables de R, por ahora las definiré aquí.
+# En tu código real, ya tienes acceso a estas a través de reticulate.
+
+trapo_ag1 = r.trapo_ag1
+resultado = r.resultado
+carga_ropa1 = r.carga_ropa1
+
+y = [carga_ropa1, 'Ecológico']
+x = [trapo_ag1, resultado]
 
 fig, ax = plt.subplots(figsize=(8,4))
 
-# Crear el gráfico de barras en el eje especificado
-ax.barh(y, x, align='center')
+# Usar el valor de `barra` para decidir si usar `bar` o `barh`
+getattr(ax, barra)(y, x, align='center')
 
 # Ajustar la posición del eje dentro de la figura
-fig.subplots_adjust(left=0.1, right=0.8)  # Ajustar los valores según tus necesidades
+if barra == "barh":
+  fig.subplots_adjust(left=0.1, right=0.8)
+else:
+  fig.subplots_adjust(left=0.1, right=0.4)
 
-# Eliminando las etiquetas de los ejes y el título
+# Eliminar las etiquetas de los ejes y el título
 ax.set_ylabel("")
 ax.set_xlabel("")
 ax.set_title("")
@@ -512,10 +542,16 @@ plt.show()
 ```{python distractor2, echo = FALSE, results = "asis"}
 import matplotlib.pyplot as plt
 
-y=['Delicados', 'Ecológico']
+# Acceder a las variables de R usando el objeto `r`
+trapo_ag1 = r.trapo_ag1
+resultado = r.resultado
+carga_ropa1 = r.carga_ropa1
+resultadoco = r.resultadoco
+
+y=[carga_ropa1, 'Ecológico']
  
 # getting values against each value of y
-x=[80, 15]
+x=[resultado, resultadoco]
 plt.bar(y, x)
  
 # setting label of y-axis
@@ -532,8 +568,13 @@ plt.show()
 ```{python distractor3, echo = FALSE, results = "asis"}
 import matplotlib.pyplot as plt
 
-y = ['Ecológico', 'Delicados']
-x = [65, 80]
+# Acceder a las variables de R usando el objeto `r`
+trapo_ag1 = r.trapo_ag1
+resultado = r.resultado
+carga_ropa1 = r.carga_ropa1
+
+y = ['Ecológico', carga_ropa1]
+x = [trapo_ag1, resultado]
 
 fig, ax = plt.subplots(figsize=(8,4))
 
@@ -557,9 +598,14 @@ plt.show()
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
+# Acceder a las variables de R usando el objeto `r`
+trapo_ag1 = r.trapo_ag1
+resultado = r.resultado
+carga_ropa1 = r.carga_ropa1
+
 # Datos
-y = ['Delicados', 'Ecológico']
-x = [80, 65]
+y = [carga_ropa1, 'Ecológico']
+x = [trapo_ag1, resultado]
 
 # Crear el gráfico de barras
 plt.bar(y, x)
@@ -584,8 +630,38 @@ plt.show()
 Solution
 ========
 
-`r carga1` carga(s) en el programa `r carga_ropa1` y `r carga2` carga(s) en el 
-programa `r carga_ropa2`.
+```{python sol, echo = FALSE, results = "asis"}
+import matplotlib.pyplot as plt
+import random
+
+# Supongamos que estas son las variables de R, por ahora las definiré aquí.
+# En tu código real, ya tienes acceso a estas a través de reticulate.
+
+trapo_ag1 = r.trapo_ag1
+resultado = r.resultado
+carga_ropa1 = r.carga_ropa1
+
+y = [carga_ropa1, 'Ecológico']
+x = [trapo_ag1, resultado]
+
+fig, ax = plt.subplots(figsize=(8,4))
+
+# Usar el valor de `barra` para decidir si usar `bar` o `barh`
+getattr(ax, barra)(y, x, align='center')
+
+# Ajustar la posición del eje dentro de la figura
+if barra == "barh":
+  fig.subplots_adjust(left=0.1, right=0.8)
+else:
+  fig.subplots_adjust(left=0.1, right=0.4)
+
+# Eliminar las etiquetas de los ejes y el título
+ax.set_ylabel("")
+ax.set_xlabel("")
+ax.set_title("")
+
+plt.show()
+```
 
 Meta-information
 ================
